@@ -10,6 +10,7 @@
 </head>
 <body class="">
 
+ 
      <!-- Navigation Bar -->
      <?php
     include("./layout/header/header.php");

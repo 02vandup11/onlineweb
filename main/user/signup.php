@@ -7,6 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Add this to the head of your HTML file -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://jsuites.net/v4/jsuites.js"></script>
+<link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
 
     <title> Jewelry Shop</title>
     
@@ -100,73 +102,7 @@
 
 
 <!-- Add script for validation -->
-<script>
-    $(document).ready(function () {
-        $("form").submit(function (event) {
-            event.preventDefault();
-            if (validateForm()) {
-                $("form").unbind("submit").submit();
-            }
-        });
-
-        function validateForm() {
-            $(".error-message").remove();
-            let isValid = true;
-
-            // Validate First Name
-            const firstName = $("#first-name").val().trim();
-            if (firstName === "") {
-                $("#first-name").after('<div class="error-message text-red-500">First Name is required.</div>');
-                isValid = false;
-            }
-
-            // Validate Last Name
-            const lastName = $("#last-name").val().trim();
-            if (lastName === "") {
-                $("#last-name").after('<div class="error-message text-red-500">Last Name is required.</div>');
-                isValid = false;
-            }
-
-            // Validate Email
-            const email = $("#email").val().trim();
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (email === "" || !emailRegex.test(email)) {
-                $("#email").after('<div class="error-message text-red-500">Enter a valid Email address.</div>');
-                isValid = false;
-            }
-
-            // Validate Phone Number
-            const phoneNumber = $("#phone-number").val().trim();
-            const phoneRegex = /^\d{10}$/;
-            if (phoneNumber === "" || !phoneRegex.test(phoneNumber)) {
-                $("#phone-number").after('<div class="error-message text-red-500">Enter a valid Phone Number (10 digits).</div>');
-                isValid = false;
-            }
-
-            // Validate Username
-            // const username = $("#username").val().trim();
-            // if (username === "") {
-            //     $("#username").after('<div class="error-message text-red-500">Username is required.</div>');
-            //     isValid = false;
-            // }
-
-            // Validate Password
-            const password = $("#password").val().trim();
-            if (password === "") {
-                $("#password").after('<div class="error-message text-red-500">Password is required.</div>');
-                isValid = false;
-            }
-
-            // Validate Confirm Password
-            const confirmPassword = $("#confirm-password").val().trim();
-            if (confirmPassword === "" || confirmPassword !== password) {
-                $("#confirm-password").after('<div class="error-message text-red-500">Passwords do not match.</div>');
-                isValid = false;
-            }
-
-            return isValid;
-        }
-    });
+<script src="../../js/register.js">
 </script>
 
 
