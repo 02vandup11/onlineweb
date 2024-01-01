@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Jewelry Shop</title>
     <script src="https://jsuites.net/v4/jsuites.js"></script>
-<link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+    <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
 </head>
 
 <body class="">
@@ -81,11 +81,7 @@
     </div>
 
     <!-- jQuery script for validation -->
-    <script>
-       
-    </script>
 
-    <!-- Add script for validation -->
 <script src="../../js/login.js">
 </script>
 

@@ -21,7 +21,7 @@ $(document).ready(function () {
                         jSuites.notification({
                             message: 'Successfully Login',
                         });
-                        window.location.href = "./index.php";
+                        window.location.href = "./home.php";
                     }else{
                         jSuites.notification({
                             error: 1,
