@@ -49,7 +49,7 @@
                             </label>
 
                             <div class="w-full text-right">
-                                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="#">
+                                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="./forpass.php">
                                     Forgot Password
                                 </a>
                             </div>
