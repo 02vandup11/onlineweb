@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"  rel="stylesheet" />
-    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
     <title>Jewelry Shop</title>
  
 
@@ -35,7 +36,7 @@
     </form>
     </div>    
 
-<div id="gallery" class="relative w-full m-2" data-carousel="slide" >
+<div id="gallery" class="relative w-full m-2 z-0" data-carousel="slide" >
     <!-- Carousel wrapper -->
     <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
          <!-- Item 1 -->
@@ -81,8 +82,8 @@
 
 
 <!-- category -->
-<div class="container mx-auto">
-        <h1 class="text-5xl italic text-center font-bold text-amber-800 m-8">Categories</h1>
+<div class="container mx-auto" >
+        <h1 class="text-5xl italic text-center font-bold text-amber-800 m-8" id="category">Categories</h1>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-4">
             <!-- Blog Post Card 1 -->
@@ -407,18 +408,18 @@
 
 <!-- chatbot -->
 
-<div class="fixed bottom-0 right-0 mb-4 mr-2">
-        <button id="open-chat" class="bg-amber-700 text-white py-2 px-4 rounded-md hover:bg-amber-600 transition duration-300 flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-            </svg>
-            Chat with Admin Bot
-        </button>
+<div class="fixed bottom-0 right-0 mb-4 mr-2 ">
+        <button id="open-chat" class="border-2 border-black-600 bg-amber-700 text-white  rounded-lg hover:bg-amber-600 transition duration-300 flex items-center">
+        
+        <svg fill="#050505" width="60px" height="50px" viewBox="-2.4 -2.4 28.80 28.80" id="conversation-alt" data-name="Flat Line" xmlns="http://www.w3.org/2000/svg" class="icon flat-line" transform="matrix(1, 0, 0, 1, 0, 0)" stroke="#050505"><g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(0,0), scale(1)"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="1.44"><path id="secondary" d="M17,4v8a1,1,0,0,1-1,1H7L3,17V4A1,1,0,0,1,4,3H16A1,1,0,0,1,17,4Z" style="fill: #c9b21d; stroke-width:1.08;"></path><path id="primary" d="M8,17h9l4,4V7a1,1,0,0,0-1-1H17" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width:1.08;"></path><path id="primary-2" data-name="primary" d="M17,4v8a1,1,0,0,1-1,1H7L3,17V4A1,1,0,0,1,4,3H16A1,1,0,0,1,17,4Z" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width:1.08;"></path></g><g id="SVGRepo_iconCarrier"><path id="secondary" d="M17,4v8a1,1,0,0,1-1,1H7L3,17V4A1,1,0,0,1,4,3H16A1,1,0,0,1,17,4Z" style="fill: #c9b21d; stroke-width:1.08;"></path><path id="primary" d="M8,17h9l4,4V7a1,1,0,0,0-1-1H17" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width:1.08;"></path><path id="primary-2" data-name="primary" d="M17,4v8a1,1,0,0,1-1,1H7L3,17V4A1,1,0,0,1,4,3H16A1,1,0,0,1,17,4Z" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width:1.08;"></path></g></svg>        
+        
+    </button>
+        
     </div>
     <div id="chat-container" class="hidden fixed bottom-16 right-4 w-96">
         <div class="bg-white shadow-md rounded-lg max-w-lg w-full">
             <div class="p-4 border-b bg-amber-800 text-white rounded-t-lg flex justify-between items-center">
-                <p class="text-lg font-semibold">Admin Bot</p>
+                <p class="text-lg font-semibold">Chat with us...</p>
                 <button id="close-chat" class="text-gray-300 hover:text-gray-400 focus:outline-none focus:text-gray-400">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -478,8 +479,9 @@ closeChatButton.addEventListener("click", toggleChatbox);
 sendButton.addEventListener("click", function () {
     const userMessage = userInput.value;
     if (userMessage.trim() !== "") {
+        console.log(userMessage);
         addUserMessage(userMessage);
-        respondToUser(userMessage);
+        // respondToUser(userMessage);
         userInput.value = "";
     }
 });
@@ -488,7 +490,7 @@ userInput.addEventListener("keyup", function (event) {
     if (event.key === "Enter") {
         const userMessage = userInput.value;
         addUserMessage(userMessage);
-        respondToUser(userMessage);
+        // respondToUser(userMessage);
         userInput.value = "";
     }
 });
@@ -499,6 +501,18 @@ function addUserMessage(message) {
     messageElement.innerHTML = `<p class="bg-amber-800 text-white rounded-lg py-2 px-4 inline-block">${message}</p>`;
     chatbox.appendChild(messageElement);
     chatbox.scrollTop = chatbox.scrollHeight;
+    $.ajax({
+                type: 'POST',
+                url: '../ajax/chatbotajax.php',
+                data:'value='+message,
+                success: function(data) {
+                    console.log(data);
+                    addBotMessage(data);
+                },
+                error: function() {
+                    console.log(response.status);
+                },
+            })
 }
 
 function addBotMessage(message) {
@@ -509,15 +523,15 @@ function addBotMessage(message) {
     chatbox.scrollTop = chatbox.scrollHeight;
 }
 
-function respondToUser(userMessage) {
-    // Replace this with your chatbot logic
-    setTimeout(() => {
-        addBotMessage("This is a response from the chatbot.");
-    }, 500);
-}
+// function respondToUser(userMessage) {
+//     // Replace this with your chatbot logic
+//     setTimeout(() => {
+//         addBotMessage("This is a response from the chatbot.");
+//     }, 500);
+// }
 
 // Automatically open the chatbox on page load
-toggleChatbox();
+// toggleChatbox();
 
         </script>
   

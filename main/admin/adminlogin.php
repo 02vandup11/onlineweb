@@ -17,7 +17,7 @@
 
     <!-- Navigation Bar -->
     <?php
-    include("./layout/header/header.php");
+    include("../user/layout/header/header.php");
     ?>
 
     <!-- Login Form -->
@@ -28,7 +28,7 @@
                 <div class="card bg-orange-800 shadow-lg w-full h-full rounded-3xl absolute transform rotate-6"></div>
                 <div class="relative w-full rounded-3xl px-6 py-4 bg-gray-100 shadow-md">
                     <label for="" class="block mt-3 text-sm text-gray-700 text-center font-semibold">
-                        Login
+                       Admin Login
                     </label>
                     <form id="loginForm" method="#" action="#" class="mt-10">
 
@@ -63,14 +63,6 @@
                             </button>
                         </div>
 
-                        <div class="mt-7">
-                            <div class="flex justify-center items-center">
-                                <label class="mr-2">Create Account ?</label>
-                                <a href="./signup.php" class=" text-blue-500 transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
-                                    Sign Up Here
-                                </a>
-                            </div>
-                        </div>
                     </form>
                 </div>
             </div>
@@ -78,13 +70,13 @@
 
         <!-- Footer -->
         <?php
-        include("./layout/footer/footer.php");
+        include("../user/layout/footer/footer.php");
         ?>
     </div>
 
     <!-- jQuery script for validation -->
 
-<script src="../../js/login.js">
+<script src="../../js/adminlogin.js">
 
 </script>
 
