@@ -8,7 +8,34 @@
 
 </head>
 <body>
-<div class="font-[sans-serif]">
+
+<?php
+    include("./layout/header/header.php");
+    include("../../config/connect.php");
+    ?>
+
+<?php 
+
+  if(!isset($_GET["category"])&&!isset($_GET["id"]))
+  {
+    echo ("<script>location.href='home.php'</script>");
+  }
+  if(!empty($_GET["category"])&&!empty($_GET["id"]))
+  {
+    $category=$_GET["category"];
+    $id=$_GET["id"];
+
+  }
+  	else{
+      echo ("<script>location.href='home.php'</script>");
+    }
+
+  
+?>
+
+
+
+<div class="font-[sans-serif] mt-16">
       <div class="p-6 lg:max-w-6xl max-w-2xl mx-auto">
         <div class="grid items-start grid-cols-1 lg:grid-cols-2 gap-8">
           <div class="w-full lg:sticky top-0 sm:flex gap-2">
@@ -191,5 +218,10 @@
         </div>
       </div>
     </div>
+
+    <?php
+    include("./layout/footer/footer.php");
+    ?>
+
 </body>
 </html>
