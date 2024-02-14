@@ -32,7 +32,7 @@
                     Registration
                 </label>
 
-                <form id="registration-form" class="max-w-md mx-auto bg-white p-8 border rounded-md shadow-md m-2">
+    <form id="registration-form" class="max-w-md mx-auto bg-white p-8 border rounded-md shadow-md m-2">
         <div class="mb-4">
             <label for="first-name" class="block text-gray-700 text-sm font-bold mb-2">First Name:</label>
             <input type="text" id="first-name" name="first-name" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 px-2" maxlength="20">

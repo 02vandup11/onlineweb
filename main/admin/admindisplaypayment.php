@@ -36,11 +36,12 @@
                     <table class="min-w-full">
                         <thead>
                             <tr>
-                                <th class="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-amber-500 tracking-wider">cus_email</th>
-                                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-amber-500 tracking-wider">cus_password</th>
-                                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-amber-500 tracking-wider">cus_fname</th>
-                                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-amber-500 tracking-wider">cus_lname</th>
-                                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-amber-500 tracking-wider">cus_phone</th>
+                                <th class="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-amber-500 tracking-wider">pay_id</th>
+                                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-amber-500 tracking-wider">pay_date</th>
+                                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-amber-500 tracking-wider">pay_amount</th>
+                                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-amber-500 tracking-wider">pay_status</th>
+                                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-amber-500 tracking-wider">pay_order_id</th>
+                                <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-amber-500 tracking-wider">pay_cus_email</th>
                             </tr>
                         </thead>
 
@@ -49,16 +50,17 @@
                                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
                                         <div class="flex items-center">
                                             <div>
-                                                <div class="text-sm leading-5 text-gray-800">abc@gmail.com</div>
+                                                <div class="text-sm leading-5 text-gray-800">1</div>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                        <div class="text-sm leading-5 text-amber-900">vandana02</div>
+                                        <div class="text-sm leading-5 text-amber-900">02-02-2004</div>
                                     </td>
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b text-amber-900 border-gray-500 text-sm leading-5">vandana</td>
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b text-amber-900 border-gray-500 text-sm leading-5">padhi</td>
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b text-amber-900 border-gray-500 text-sm leading-5">9702980423</td>
+                                    <td class="px-6 py-4 whitespace-no-wrap border-b text-amber-900 border-gray-500 text-sm leading-5">500</td>
+                                    <td class="px-6 py-4 whitespace-no-wrap border-b text-amber-900 border-gray-500 text-sm leading-5">success</td>
+                                    <td class="px-6 py-4 whitespace-no-wrap border-b text-amber-900 border-gray-500 text-sm leading-5">1</td>
+                                    <td class="px-6 py-4 whitespace-no-wrap border-b text-amber-900 border-gray-500 text-sm leading-5">abc@gmail.com</td>
                                     <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
                                         <button class="px-5 py-2 border-amber-500 border text-amber-500 rounded transition duration-300 hover:bg-amber-700 hover:text-white focus:outline-none">View Details</button>
                                     </td>
