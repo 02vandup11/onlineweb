@@ -12,6 +12,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"  rel="stylesheet" />
 </head>
 <body>
+
+<?php                
+    include("../../config/connect.php");
+?>
     
         <!-- component -->
     <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 pr-10 lg:px-8">    
@@ -47,27 +51,62 @@
                         </thead>
 
                         <tbody class="bg-white">
+                        <?php                
+                            $product = "SELECT * FROM `product`";
+                            $executequery = mysqli_query($con,$product);
+                            if(mysqli_num_rows($executequery))
+                            {
+                                while($row_of_product=mysqli_fetch_assoc($executequery))
+                                {
+                                
+                                    ?>
                                 <tr>
                                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
                                         <div class="flex items-center">
                                             <div>
-                                                <div class="text-sm leading-5 text-gray-800">1</div>
+                                                <div class="text-sm leading-5 text-gray-800">
+                                                    <?php
+                                                    echo $row_of_product["pro_id"];
+                                                    ?></div>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                        <div class="text-sm leading-5 text-amber-900">Pendant Necklace</div>
+                                        <div class="text-sm leading-5 text-amber-900">
+                                        <?php
+                                        echo $row_of_product["pro_name"];
+                                        ?>
+                                        </div>
                                     </td>
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b text-amber-900 border-gray-500 text-sm leading-5">Pendant Necklaces: Elevate your style with our ex...</td>
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b text-amber-900 border-gray-500 text-sm leading-5">299</td>
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b text-amber-900 border-gray-500 text-sm leading-5">yes</td>
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b text-amber-900 border-gray-500 text-sm leading-5">1</td>
+                                    <td class="px-6 py-4 whitespace-no-wrap border-b text-amber-900 border-gray-500 text-sm leading-5 line-clamp-auto">
+                                        <?php
+                                        echo $row_of_product["pro_descrip"];
+                                        ?>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-no-wrap border-b text-amber-900 border-gray-500 text-sm leading-5">
+                                        <?php
+                                        echo $row_of_product["pro_price"];
+                                        ?>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-no-wrap border-b text-amber-900 border-gray-500 text-sm leading-5">
+                                        <?php
+                                        echo $row_of_product["pro_customization"];
+                                        ?>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-no-wrap border-b text-amber-900 border-gray-500 text-sm leading-5">
+                                        <?php
+                                        echo $row_of_product["pro_category_id"];
+                                        ?>
+                                    </td>
 
                                     <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
-                                        <button class="px-5 py-2 border-amber-500 border text-amber-500 rounded transition duration-300 hover:bg-amber-700 hover:text-white focus:outline-none">View Details</button>
+                                        <button class="px-5 py-2 border-amber-500 border text-amber-500 rounded transition duration-300 hover:bg-amber-700 hover:text-white focus:outline-none">Edit Details</button>
                                     </td>
                           </tr>
-
+                          <?php
+                    }
+                }
+            ?>
                                
                         </tbody>
                     </table>

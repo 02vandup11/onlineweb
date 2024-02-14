@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jewelry Shop</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 </head>
 <body>
@@ -30,28 +31,39 @@
       echo ("<script>location.href='home.php'</script>");
     }
 
-  
-?>
-
-
-
+    $productQuery = "SELECT * FROM `product`,`category` WHERE `category`.`category_name` = '$category' AND `product`.`pro_category_id` = `category`.`category_id` AND `product`.`pro_id`='$id' ";
+    $executequery = mysqli_query($con,$productQuery);
+    if(mysqli_num_rows($executequery))
+    {
+      while($row_of_product=mysqli_fetch_assoc($executequery))
+      {
+        
+        ?>
+        
 <div class="font-[sans-serif] mt-16">
       <div class="p-6 lg:max-w-6xl max-w-2xl mx-auto">
         <div class="grid items-start grid-cols-1 lg:grid-cols-2 gap-8">
-          <div class="w-full lg:sticky top-0 sm:flex gap-2">
-            <div class="sm:space-y-3 w-16 max-sm:flex max-sm:mb-4 max-sm:gap-4">
-              <img src="https://readymadeui.com/images/product1.webp" alt="Product1" class="w-full cursor-pointer outline" />
-              <img src="https://readymadeui.com/images/product6.webp" alt="Product2" class="w-full cursor-pointer" />
-              <img src="https://readymadeui.com/images/product7.webp" alt="Product3" class="w-full cursor-pointer" />
-              <img src="https://readymadeui.com/images/product3.webp" alt="Product4" class="w-full cursor-pointer" />
+        <div class="w-full lg:sticky top-0 sm:flex gap-2">
+            <div class="sm:space-y-3 w-16 max-sm:flex max-sm:mb-4 max-sm:gap-4" id="image-thumbnails">
+                <?php
+                $ImageQuery = "SELECT * FROM `image` WHERE `image`.`image_product_id`='$id'";
+                $executeImgquery = mysqli_query($con, $ImageQuery);
+                if (mysqli_num_rows($executeImgquery)) {
+                    while ($row_of_product_img = mysqli_fetch_assoc($executeImgquery)) {
+                ?>
+                        <img src="<?php echo $row_of_product_img["image_name"]; ?>" alt="Product4" class="w-full cursor-pointer product-img" />
+                <?php
+                    }
+                }
+                ?>
             </div>
-            <img src="https://readymadeui.com/images/product2.webp" alt="Product" class="w-4/5 rounded object-cover" />
-          </div>
-          <div>
-            <h2 class="text-2xl font-extrabold text-gray-800">Adjective Attire | T-shirt</h2>
+
+            <img src="https://readymadeui.com/images/product2.webp" alt="Product" class="w-4/5 rounded object-cover" id="main-image" />
+        </div>
+        <div>
+            <h2 class="text-2xl font-extrabold text-gray-800"><?php echo $row_of_product["pro_name"] ?></h2>
             <div class="flex flex-wrap gap-4 mt-4">
-              <p class="text-gray-800 text-xl font-bold">$12</p>
-              <p class="text-gray-400 text-xl"><strike>$16</strike> <span class="text-sm ml-1">Tax included</span></p>
+              <p class="text-gray-800 text-xl font-bold"><?php echo $row_of_product["pro_price"] ?></p>
             </div>
             <div class="flex space-x-2 mt-4">
               <svg class="w-5 fill-gray-800" viewBox="0 0 14 13" fill="none"
@@ -92,31 +104,29 @@
             </div> -->
             <div class="mt-8">
               <h3 class="text-lg font-bold text-gray-800">About the item</h3>
-              <ul class="space-y-3 list-disc mt-4 pl-4 text-sm text-gray-800">
-                <li>A gray t-shirt is a wardrobe essential because it is so versatile.</li>
-                <li>Available in a wide range of sizes, from extra small to extra large, and even in tall and petite sizes.</li>
-                <li>This is easy to care for. They can usually be machine-washed and dried on low heat.</li>
-                <li>You can add your own designs, paintings, or embroidery to make it your own.</li>
-              </ul>
+              <?php echo $row_of_product["pro_descrip"] ?>
             </div>
 
-            <button type="button"
-                class="px-6 py-2.5 text-white text-sm tracking-wider font-semibold border-none outline-none bg-gray-600 hover:bg-gray-700 active:bg-gray-600 m-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18px" fill="#fff" class="mr-2 inline animate-spin"
-                viewBox="0 0 26.349 26.35">
-                <circle cx="13.792" cy="3.082" r="3.082" data-original="#000000" />
-                <circle cx="13.792" cy="24.501" r="1.849" data-original="#000000" />
-                <circle cx="6.219" cy="6.218" r="2.774" data-original="#000000" />
-                <circle cx="21.365" cy="21.363" r="1.541" data-original="#000000" />
-                <circle cx="3.082" cy="13.792" r="2.465" data-original="#000000" />
-                <circle cx="24.501" cy="13.791" r="1.232" data-original="#000000" />
-                <path
-                    d="M4.694 19.84a2.155 2.155 0 0 0 0 3.05 2.155 2.155 0 0 0 3.05 0 2.155 2.155 0 0 0 0-3.05 2.146 2.146 0 0 0-3.05 0z"
-                    data-original="#000000" />
-                <circle cx="21.364" cy="6.218" r=".924" data-original="#000000" />
-                </svg>
-                Personalization
-            </button>
+            <a href="custom.php" class="inline-block">
+                <button type="button"
+                        class="px-6 py-2.5 text-white text-sm tracking-wider font-semibold border-none outline-none bg-gray-600 hover:bg-gray-700 active:bg-gray-600 m-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18px" fill="#fff" class="mr-2 inline animate-spin"
+                        viewBox="0 0 26.349 26.35">
+                        <circle cx="13.792" cy="3.082" r="3.082" data-original="#000000" />
+                        <circle cx="13.792" cy="24.501" r="1.849" data-original="#000000" />
+                        <circle cx="6.219" cy="6.218" r="2.774" data-original="#000000" />
+                        <circle cx="21.365" cy="21.363" r="1.541" data-original="#000000" />
+                        <circle cx="3.082" cy="13.792" r="2.465" data-original="#000000" />
+                        <circle cx="24.501" cy="13.791" r="1.232" data-original="#000000" />
+                        <path
+                            d="M4.694 19.84a2.155 2.155 0 0 0 0 3.05 2.155 2.155 0 0 0 3.05 0 2.155 2.155 0 0 0 0-3.05 2.146 2.146 0 0 0-3.05 0z"
+                            data-original="#000000" />
+                        <circle cx="21.364" cy="6.218" r=".924" data-original="#000000" />
+                        </svg>
+                        Personalization
+                </button>
+            </a>
+
 
             <div class="max-w-md">
               <h3 class="text-lg font-bold text-gray-800">Reviews(10)</h3>
@@ -218,6 +228,53 @@
         </div>
       </div>
     </div>
+        <?php
+      }
+    }
+?>
+
+
+<script>
+    $(document).ready(function() {
+        $('.product-img').click(function() {
+            // Remove 'selected' class from all thumbnails
+            $('.product-img').removeClass('selected');
+            
+            // Add 'selected' class to the clicked thumbnail
+            $(this).addClass('selected');
+            
+            // Set the main image source to the clicked thumbnail source
+            $('#main-image').attr('src', $(this).attr('src'));
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var thumbnails = document.querySelectorAll(".product-img");
+        var mainImage = document.getElementById("main-image");
+
+        // Set initial image as the first image
+        thumbnails[0].classList.add("selected");
+        mainImage.src = thumbnails[0].src;
+
+        // Add click event listener to thumbnails
+        thumbnails.forEach(function(thumbnail) {
+            thumbnail.addEventListener("click", function() {
+                // Remove 'selected' class from all thumbnails
+                thumbnails.forEach(function(item) {
+                    item.classList.remove("selected");
+                });
+
+                // Add 'selected' class to the clicked thumbnail
+                thumbnail.classList.add("selected");
+
+                // Set the main image source to the clicked thumbnail source
+                mainImage.src = thumbnail.src;
+            });
+        });
+    });
+</script>
 
     <?php
     include("./layout/footer/footer.php");
