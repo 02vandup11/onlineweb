@@ -37,7 +37,7 @@
       <!-- Title -->
       <div class="flex flex-col gap-5">
         <h3 class="text-2xl font-bold md:text-5xl">Filter products</h3>
-        <p class="text-sm text-[#808080] sm:text-base">Lorem ipsum dolor sit amet</p>
+        <p class="text-sm text-[#808080] sm:text-base"></p>
       </div>
       <!-- Content -->
       <div class="grid gap-10 md:gap-12 lg:grid-cols-[max-content_1fr]">
