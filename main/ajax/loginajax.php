@@ -1,4 +1,7 @@
 <?php
+ob_start();
+session_start();
+
 include("../../config/connect.php");
 if(
     !empty($_POST["email"]) && !empty($_POST["password"])
@@ -14,8 +17,10 @@ if(
    {
     while($row=mysqli_fetch_assoc($exutequery))
     {
-        session_start();
         $_SESSION["email"]=$row["cus_email"];
+        $_SESSION["firstname"] = $row["cus_fname"];
+        $_SESSION["lastname"] = $row["cus_lname"];
+        $_SESSION["type"] = "c";
         echo("1");
     }
    }
@@ -23,4 +28,6 @@ if(
     echo("2");
    }
 }
+
+ob_flush();
 ?>

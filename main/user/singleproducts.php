@@ -107,9 +107,11 @@
               <?php echo $row_of_product["pro_descrip"] ?>
             </div>
 
+            <div class="flex">
             <a href="custom.php" class="inline-block">
                 <button type="button"
                         class="px-6 py-2.5 text-white text-sm tracking-wider font-semibold border-none outline-none bg-gray-600 hover:bg-gray-700 active:bg-gray-600 m-4">
+                        <div class="flex">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18px" fill="#fff" class="mr-2 inline animate-spin"
                         viewBox="0 0 26.349 26.35">
                         <circle cx="13.792" cy="3.082" r="3.082" data-original="#000000" />
@@ -124,8 +126,24 @@
                         <circle cx="21.364" cy="6.218" r=".924" data-original="#000000" />
                         </svg>
                         Personalization
+                        </div>
                 </button>
             </a>
+
+                <button type="button" onclick="addtocart(<?php echo $row_of_product['pro_id']; ?>)"
+                        class="px-6 py-2.5 text-white text-sm tracking-wider font-semibold border-none outline-none bg-gray-600 hover:bg-gray-700 active:bg-gray-600 m-4">
+                        <div class="flex h-5">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000"  class="h-7 w-9 mr-2">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier"> 
+                              <path d="M7.2998 5H22L20 12H8.37675M21 16H9L7 3H4M4 8H2M5 11H2M6 14H2M10 20C10 20.5523 9.55228 21 9 21C8.44772 21 8 20.5523 8 20C8 19.4477 8.44772 19 9 19C9.55228 19 10 19.4477 10 20ZM21 20C21 20.5523 20.5523 21 20 21C19.4477 21 19 20.5523 19 20C19 19.4477 19.4477 19 20 19C20.5523 19 21 19.4477 21 20Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> 
+                            </g>
+                          </svg>
+                          Add to Cart
+                        </div> 
+                </button>
+           </div>
 
 
             <div class="max-w-md">

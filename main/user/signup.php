@@ -75,7 +75,7 @@
             <div id="confirm-password-error" class="text-red-500"></div>
         </div>
 
-        <button type="button" onclick="validateForm()" class="bg-yellow-950 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">Submit</button>
+        <button type="submit" onclick="validateForm()" class="bg-yellow-950 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">Submit</button>
 
         <div class="mt-7">
                         <div class="flex justify-center items-center">

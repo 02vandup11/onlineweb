@@ -164,7 +164,7 @@ $(document).ready(function ()
 
         if (isValid) {
             // Perform additional form submission or processing logic
-            alert("Form is valid. Submitting...");
+            return true;
         }
     }
 
