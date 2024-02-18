@@ -87,6 +87,15 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
             </table>
           </div>
         </div>
+        <div>
+        <div class="bg-gray-50 p-10">
+          <h3 class="text-xl font-extrabold text-[#333] border-b pb-4">Select Address</h3>
+          <select class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" placeholder="">
+                    <option value="" disabled selected>Select Address</option>
+                    <option value="option1">Home</option>
+                    <option value="option2">Work</option>
+                </select>
+        </div>
         <div class="bg-gray-50 p-10">
           <h3 class="text-xl font-extrabold text-[#333] border-b pb-4">Order Summary</h3>
           <ul class="text-[#333] divide-y mt-6">
@@ -96,6 +105,7 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
             out</button>
 
         </div>
+      </div>
       </div>
     </div>
     <input type="text" id="user_email" class="hidden" value="<?php echo($email); ?>">

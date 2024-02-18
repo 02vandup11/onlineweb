@@ -8,17 +8,20 @@ if(
 
     $data = $_POST["data"];
     // Example fixing the error
-$decodedData = json_decode($data, true);
+    $decodedData = json_decode($data, true);
 
     // Check if decoding was successful
 
     $pay_amount=$_POST["pay_amount"];
     $pay_id=$_POST["pay_id"];
     $cus_id = $_POST["cust_id"];
-   $currentDate = date("Y-m-d");
+    $currentDate = date("Y-m-d");
     // Output: Current date in the format YYYY-MM-DD
    $currentDateTime = date("H:i:s");
     // Output: Current time in the format HH:MM:SS
+
+    $setorder = "INSERT INTO `orders` (`order_pk`, `order_datee`, `order_statuss`, `order_add_idd`, `order_cus_emaill`) VALUES (NULL, '$currentDate', 'success', '1', 'rushi@gmail.com')";
+
     $setpayment = "INSERT INTO `payment` (`pay_id`, `pay_date`, `pay_amount`, `pay_status`, `pay_time`, `pay_order_id`, `pay_cus_email`) VALUES ('$pay_id', 'online', '$pay_amount', '$currentDate', '$currentDateTime', 'success')";
     
     $exutequery=mysqli_query($con,$setpayment);

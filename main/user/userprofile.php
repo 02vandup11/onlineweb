@@ -13,57 +13,203 @@
 
 </head>
 
-<body class="">
+<body class="flex flex-col min-h-screen">
 
     <!-- Navigation Bar -->
     <?php
     include("./layout/header/header.php");
     ?>
 
-  <!-- profile -->
+<div class="flex flex-grow">
 
-<div class="mx-auto ring ring-amber-500 ring-offset-8 shadow-2xl  w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-24 mb-8">
-    <div class="flex justify-end px-4 pt-4">
-        <button id="dropdownButton" data-dropdown-toggle="dropdown" class="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5" type="button">
-            <span class="sr-only">Open dropdown</span>
-            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 3">
-                <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/>
-            </svg>
-        </button>
-        <!-- Dropdown menu -->
-        <div id="dropdown" class="z-10 hidden text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-            <ul class="py-2" aria-labelledby="dropdownButton">
-            <li>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Edit</a>
-            </li>
-            <li>
-                <a href="#" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete Account</a>
-            </li>
-            </ul>
-        </div>
+<aside class="w-64 h-screen px-4 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700 mt-20">
+    <a href="#" class="mx-auto">
+        <img class="w-auto h-6 sm:h-7" src="https://merakiui.com/images/full-logo.svg" alt="">
+    </a>
+
+    <div class="flex flex-col items-center mt-6 -mx-2">
+    <svg height="120px" width="120px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-8.49 -8.49 77.65 77.65" xml:space="preserve" fill="#000000" stroke="#000000" stroke-width="1.82013"><g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(0,0), scale(1)"><rect x="-8.49" y="-8.49" width="77.65" height="77.65" rx="38.825" fill="#bb6502" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#fcf7f7" stroke-width="2.669524"> <g> <g> <ellipse style="fill:#ffffff;" cx="30.336" cy="12.097" rx="11.997" ry="12.097"></ellipse> <path style="fill:#ffffff;" d="M35.64,30.079H25.031c-7.021,0-12.714,5.739-12.714,12.821v17.771h36.037V42.9 C48.354,35.818,42.661,30.079,35.64,30.079z"></path> </g> </g> </g><g id="SVGRepo_iconCarrier"> <g> <g> <ellipse style="fill:#ffffff;" cx="30.336" cy="12.097" rx="11.997" ry="12.097"></ellipse> <path style="fill:#ffffff;" d="M35.64,30.079H25.031c-7.021,0-12.714,5.739-12.714,12.821v17.771h36.037V42.9 C48.354,35.818,42.661,30.079,35.64,30.079z">     
+    </path> </g> </g> </g></svg>      
+        <h4 class="mx-2 mt-2 font-medium text-gray-800 dark:text-gray-200">John Doe</h4>
+        <p class="mx-2 mt-1 text-sm font-medium text-gray-600 dark:text-gray-400">john@example.com</p>
     </div>
-    <div class="flex flex-col items-center pb-10">
-        <img class="ring ring-amber-700 ring-offset-8 shadow-2xl shadow-amber-400/50 w-24 h-24 mb-3 rounded-full shadow-lg object-cover" src="data:image/jpeg;base64,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" alt="Bonnie image"/>
-        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Bonnie Green</h5>
-        <span class="text-sm text-gray-500 dark:text-gray-400">Visual Designer</span>
-        <!-- <div class="flex mt-4 md:mt-6">
-            <a href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-amber-700 rounded-lg hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800">Add friend</a>
-            <a href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700 ms-3">Message</a>
-        </div> -->
-    </div> 
-</div>
 
+    <div class="flex flex-col justify-between flex-1 mt-6">
+        <nav>
+            <a class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700" href="#">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                <span class="mx-4 font-medium">Edit Details</span>
+            </a>
+
+            <a href="javascript:void(0)" class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
+                viewBox="0 0 6.35 6.35">
+                <path
+                  d="M3.172.53a.265.266 0 0 0-.262.268v2.127a.265.266 0 0 0 .53 0V.798A.265.266 0 0 0 3.172.53zm1.544.532a.265.266 0 0 0-.026 0 .265.266 0 0 0-.147.47c.459.391.749.973.749 1.626 0 1.18-.944 2.131-2.116 2.131A2.12 2.12 0 0 1 1.06 3.16c0-.65.286-1.228.74-1.62a.265.266 0 1 0-.344-.404A2.667 2.667 0 0 0 .53 3.158a2.66 2.66 0 0 0 2.647 2.663 2.657 2.657 0 0 0 2.645-2.663c0-.812-.363-1.542-.936-2.03a.265.266 0 0 0-.17-.066z"
+                  data-original="#000000" />
+              </svg>
+              <span class="mx-4 font-medium">Logout</span>
+            </a>
+
+        </nav>
+    </div>
+</aside>
+
+    <div class="flex-grow p-8 mt-20">
+        <h2 class="text-2xl font-bold text-[#333]">Update Details</h2>
+          <form class="mt-10">
+            <div>
+              <h3 class="text-lg font-bold text-[#333] mb-6">Personal Details</h3>
+              <div class="grid sm:grid-cols-2 gap-6">
+                <div class="relative flex items-center">
+                  <input type="text" placeholder="First Name"
+                    class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-[18px] h-[18px] absolute right-4"
+                    viewBox="0 0 24 24">
+                    <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
+                    <path
+                      d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z"
+                      data-original="#000000"></path>
+                  </svg>
+                </div>
+                <div class="relative flex items-center">
+                  <input type="text" placeholder="Last Name"
+                    class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-[18px] h-[18px] absolute right-4"
+                    viewBox="0 0 24 24">
+                    <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
+                    <path
+                      d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z"
+                      data-original="#000000"></path>
+                  </svg>
+                </div>
+                <div class="relative flex items-center">
+                  <input type="email" placeholder="Email" readonly
+                    class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-[18px] h-[18px] absolute right-4"
+                    viewBox="0 0 682.667 682.667">
+                    <defs>
+                      <clipPath id="a" clipPathUnits="userSpaceOnUse">
+                        <path d="M0 512h512V0H0Z" data-original="#000000"></path>
+                      </clipPath>
+                    </defs>
+                    <g clip-path="url(#a)" transform="matrix(1.33 0 0 -1.33 0 682.667)">
+                      <path fill="none" stroke-miterlimit="10" stroke-width="40"
+                        d="M452 444H60c-22.091 0-40-17.909-40-40v-39.446l212.127-157.782c14.17-10.54 33.576-10.54 47.746 0L492 364.554V404c0 22.091-17.909 40-40 40Z"
+                        data-original="#000000"></path>
+                      <path
+                        d="M472 274.9V107.999c0-11.027-8.972-20-20-20H60c-11.028 0-20 8.973-20 20V274.9L0 304.652V107.999c0-33.084 26.916-60 60-60h392c33.084 0 60 26.916 60 60v196.653Z"
+                        data-original="#000000"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="relative flex items-center">
+                  <input type="number" placeholder="Phone No."
+                    class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                  <svg fill="#bbb" class="w-[18px] h-[18px] absolute right-4" viewBox="0 0 64 64">
+                    <path
+                      d="m52.148 42.678-6.479-4.527a5 5 0 0 0-6.963 1.238l-1.504 2.156c-2.52-1.69-5.333-4.05-8.014-6.732-2.68-2.68-5.04-5.493-6.73-8.013l2.154-1.504a4.96 4.96 0 0 0 2.064-3.225 4.98 4.98 0 0 0-.826-3.739l-4.525-6.478C20.378 10.5 18.85 9.69 17.24 9.69a4.69 4.69 0 0 0-1.628.291 8.97 8.97 0 0 0-1.685.828l-.895.63a6.782 6.782 0 0 0-.63.563c-1.092 1.09-1.866 2.472-2.303 4.104-1.865 6.99 2.754 17.561 11.495 26.301 7.34 7.34 16.157 11.9 23.011 11.9 1.175 0 2.281-.136 3.29-.406 1.633-.436 3.014-1.21 4.105-2.302.199-.199.388-.407.591-.67l.63-.899a9.007 9.007 0 0 0 .798-1.64c.763-2.06-.007-4.41-1.871-5.713z"
+                      data-original="#000000"></path>
+                  </svg>
+                </div>
+              </div>
+              <button type="button" class="rounded-md my-6 px-6 py-3 w-full text-sm font-semibold bg-[#333] text-white hover:bg-[#222]">Confirm</button>
+            </div>
+            <div class="mt-6">
+
+            <!-- modal for add address -->
+
+            <!-- Main modal -->
+            <div id="crud-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                <div class="relative p-4 w-full max-w-lg  max-h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 p-10">
+                        <!-- Modal header -->
+                        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                Add New Address
+                            </h3>
+                            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="crud-modal">
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <form class="mt-10" id="myForm">
+                            <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <select id="type" class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" placeholder="">
+                                <option value="" disabled selected>Select Type</option>
+                                <option value="option1">Home</option>
+                                <option value="option2">Work</option>
+                            </select>
+                        </div>
+                        <div>
+                            <input type="text" id="Room" placeholder="Room No" maxlength="10"
+                            class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                        </div>
+                        <div>
+                            <input type="text" id="Building" placeholder="Building No" maxlength="10"
+                            class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                        </div>
+                        <div>
+                            <input type="text" id="Landmark" placeholder="Landmark" maxlength="40"
+                            class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                        </div>
+                        <div>
+                            <input type="text" id="Street" placeholder="Street" maxlength="40"
+                            class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                        </div>
+                        <div>
+                            <input type="text" id="City" placeholder="City" maxlength="20"
+                            class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                        </div>
+                        <div>
+                            <input type="number" id="pincode" placeholder="Pincode" maxlength="6"
+                            class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                        </div>
+
+                            </div>
+
+                            <div id="error-msg"></div>
+
+                            <button type="button" id="submit" class="rounded-md my-6 px-6 py-3 w-full text-sm font-semibold bg-[#333] text-white hover:bg-[#222]">Confirm</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div> 
+
+              
+              <div class="flex gap-6 max-sm:flex-col items-center justify-between">
+                <h3 class="text-lg font-bold text-[#333] mb-6">Shipping Address</h3>
+                
+                    <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" type="button" class="flex rounded-md px-6 py-3 w-50 mb-4 text-sm font-semibold bg-transparent hover:bg-gray-100 border-2 text-[#333]">
+                    <svg class="mr-2" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 12H20M12 4V20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    Add Address</button>
+                
+              </div>
+              
+              
+            </div>
+          </form>
+        </div>
+</div>
 
     <!-- Footer -->
     <?php
     include("./layout/footer/footer.php");
-    ?>
-   
-
-   
+    ?> 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 
+<script src="../../js/addaddress.js"></script>
 
 </body>
 
