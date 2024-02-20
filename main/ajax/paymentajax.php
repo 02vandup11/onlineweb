@@ -10,8 +10,11 @@ if(
     // Example fixing the error
     $decodedData = json_decode($data, true);
 
-    // Check if decoding was successful
+    
+   
 
+    // Check if decoding was successful
+    $address=$_POST["address"];
     $pay_amount=$_POST["pay_amount"];
     $pay_id=$_POST["pay_id"];
     $cus_id = $_POST["cust_id"];
@@ -19,10 +22,12 @@ if(
     // Output: Current date in the format YYYY-MM-DD
    $currentDateTime = date("H:i:s");
     // Output: Current time in the format HH:MM:SS
+    //datetime
+    $formattedDateTime = $datetime->format('Y-m-d H:i:s');
 
-    $setorder = "INSERT INTO `orders` (`order_pk`, `order_datee`, `order_statuss`, `order_add_idd`, `order_cus_emaill`) VALUES (NULL, '$currentDate', 'success', '1', 'rushi@gmail.com')";
+    $setorder = "INSERT INTO `orders` (`order_datee`, `order_statuss`, `order_add_idd`, `order_cus_emaill`) VALUES ('$$formattedDateTime', 'confirm', '$address', '$cus_id')";
 
-    $setpayment = "INSERT INTO `payment` (`pay_id`, `pay_date`, `pay_amount`, `pay_status`, `pay_time`, `pay_order_id`, `pay_cus_email`) VALUES ('$pay_id', 'online', '$pay_amount', '$currentDate', '$currentDateTime', 'success')";
+    $setpayment = "INSERT INTO `payment` (`transaction_id`, `pay_mode`, `pay_amount`, `pay_date`, `pay_time`, `pay_status`) VALUES ('$pay_id', 'online', '$pay_amount', '$currentDate', '$currentDateTime', 'success')";
     
     $exutequery=mysqli_query($con,$setpayment);
    if($exutequery)

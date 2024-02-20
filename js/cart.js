@@ -108,6 +108,7 @@ function deletefromcart(pro_id) {
 }
 
 function GetPayProcess() {
+  var add_id;
     var priceText = $('#cart_price').text(); // Get the text content of the element
     var priceInteger = parseInt(priceText); // Convert the text to an integer
     console.log(priceText); 
@@ -134,6 +135,7 @@ function GetPayProcess() {
             type:'POST',
             url:'../Ajax/paymentajax.php',
             data:{
+              address:add_id,
               pay_id: response.razorpay_payment_id,
               pay_amount: priceInteger,
               cust_id: $email,
@@ -177,6 +179,8 @@ localStorage.setItem('cart', JSON.stringify(cartItems));
       };
       var rzp1 = new Razorpay(options);
       document.getElementById('rzp-button1').onclick = function (e) {
+         add_id = $('#add_id').val();
+
         rzp1.open();
         e.preventDefault();
       }

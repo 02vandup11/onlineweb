@@ -1,3 +1,6 @@
+$email = $('#user_email').val();
+console.log($email);
+
 $(document).ready(function() {
     // Function to limit the input length of a field
     function limitInputLength(input, maxLength) {
@@ -65,8 +68,44 @@ $(document).ready(function() {
             isValid = false;
         }
 
+
+
         // If all fields pass validation, submit the form
         if (isValid) {
+            $.ajax({
+                type: 'POST',
+                url: '../ajax/addaddressajax.php',
+                data: {
+                    type:type,
+                    room:room,
+                    building:building,
+                    landmark:landmark,
+                    street:street,
+                    city:city,
+                    pincode:pincode,
+                    email:$email
+                },
+                success: function(data) {
+                    if(data==1){
+                        jSuites.notification({
+                            message: 'Successfull',
+                        });
+                        window.location.reload();
+                    }else{
+                        jSuites.notification({
+                            error: 1,
+                            message: 'Failed',
+                        })
+                       
+                    }
+                    
+                    console.log(data);
+                },
+                error: function() {
+                    console.log(response.status);
+                },
+            })
+
             $('#myForm').submit();
         }
     });

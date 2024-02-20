@@ -29,6 +29,7 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
 
 <?php
     include("./layout/header/header.php");
+    include("../../config/connect.php");
   ?>
 
 <div class="font-[sans-serif] mt-10">
@@ -90,10 +91,22 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
         <div>
         <div class="bg-gray-50 p-10">
           <h3 class="text-xl font-extrabold text-[#333] border-b pb-4">Select Address</h3>
-          <select class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" placeholder="">
-                    <option value="" disabled selected>Select Address</option>
-                    <option value="option1">Home</option>
-                    <option value="option2">Work</option>
+          <select id="add_id" class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none"  placeholder="">
+            <option value="" disabled selected>Select Address</option>
+          <?php
+              $addressQuery = "SELECT * FROM `address` WHERE `add_cus_email` = '$email' ";
+              $executequery = mysqli_query($con,$addressQuery);
+              if(mysqli_num_rows($executequery)>0)
+              {
+                while($row_of_address=mysqli_fetch_assoc($executequery))
+                {
+                  ?>
+                  <option value="<?php echo $row_of_address["add_id"];?>"><?php echo $row_of_address["add_type"] ?> <?php echo $row_of_address["add_room"] ?> <?php echo $row_of_address["add_blg"] ?> <?php echo $row_of_address["add_landmark"] ?> <?php echo $row_of_address["add_street"] ?> <?php echo $row_of_address["add_city"] ?> <?php echo $row_of_address["add_pincode"] ?> </option>
+                  <?php
+                }
+              }
+            ?>
+                    
                 </select>
         </div>
         <div class="bg-gray-50 p-10">
@@ -101,8 +114,8 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
           <ul class="text-[#333] divide-y mt-6">
             <li class="flex flex-wrap gap-4 text-md py-4 font-bold">Total <span class="ml-auto">Rs.<span id="cart_price"></span></span></li>
           </ul>
-          <button type="button" id="rzp-button1" class="mt-6 text-md px-6 py-2.5 w-full bg-amber-800 hover:bg-amber-700 text-white rounded">Check
-            out</button>
+          <button type="button" id="rzp-button1" class="mt-6 text-md px-6 py-2.5 w-full bg-amber-800 hover:bg-amber-700 text-white rounded">
+            Checkout</button>
 
         </div>
       </div>

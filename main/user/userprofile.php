@@ -10,17 +10,20 @@
     <script src="https://jsuites.net/v4/jsuites.js"></script>
     <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"  rel="stylesheet" />
+    <link rel="stylesheet" href="https://horizon-tailwind-react-git-tailwind-components-horizon-ui.vercel.app/static/css/main.ad49aa9b.css" />
+
 
 </head>
 
-<body class="flex flex-col min-h-screen">
+<body class="">
 
     <!-- Navigation Bar -->
     <?php
     include("./layout/header/header.php");
+    include("../../config/connect.php");
     ?>
 
-<div class="flex flex-grow">
+<div class="flex flex-grow ">
 
 <aside class="w-64 h-screen px-4 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700 mt-20">
     <a href="#" class="mx-auto">
@@ -146,8 +149,8 @@
                         <div>
                             <select id="type" class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" placeholder="">
                                 <option value="" disabled selected>Select Type</option>
-                                <option value="option1">Home</option>
-                                <option value="option2">Work</option>
+                                <option value="Home">Home</option>
+                                <option value="Work">Work</option>
                             </select>
                         </div>
                         <div>
@@ -193,19 +196,94 @@
                     <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" type="button" class="flex rounded-md px-6 py-3 w-50 mb-4 text-sm font-semibold bg-transparent hover:bg-gray-100 border-2 text-[#333]">
                     <svg class="mr-2" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 12H20M12 4V20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                     Add Address</button>
-                
               </div>
-              
+
+            <?php
+              $addressQuery = "SELECT * FROM `address` WHERE `add_cus_email` = '$email' ";
+              $executequery = mysqli_query($con,$addressQuery);
+              if(mysqli_num_rows($executequery)>0)
+              {
+                while($row_of_address=mysqli_fetch_assoc($executequery))
+                {
+            ?>
+
+           <div class="flex flex-col justify-center items-center mb-2">
+             <div class="relative flex flex-col items-center rounded-[20px] w-[700px] max-w-[95%] mx-auto bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:!shadow-none p-3 border-solid border-2 border-gray-600">
+                <div class=" w-full">
+                    <h4 class="px-2 text-xl font-bold text-navy-700 dark:text-white">
+                    Address Information
+                    </h4>
+                </div> 
+                <div class="grid grid-cols-2 gap-4 px-2 w-full">
+                  <div class="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+                    <p class="text-sm text-gray-600">Type</p>
+                    <p class="text-base font-medium text-navy-700 dark:text-white">
+                      <?php echo $row_of_address["add_type"] ?>
+                    </p>
+                  </div>
+
+                  <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+                    <p class="text-sm text-gray-600">Room No</p>
+                    <p class="text-base font-medium text-navy-700 dark:text-white">
+                      <?php echo $row_of_address["add_room"] ?>
+                    </p>
+                  </div>
+
+                  <div class="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+                    <p class="text-sm text-gray-600">Building No</p>
+                    <p class="text-base font-medium text-navy-700 dark:text-white">
+                      <?php echo $row_of_address["add_blg"] ?>
+                    </p>
+                  </div>
+
+                  <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+                    <p class="text-sm text-gray-600">Landmark</p>
+                    <p class="text-base font-medium text-navy-700 dark:text-white">
+                      <?php echo $row_of_address["add_landmark"] ?>
+                    </p>
+                  </div>
+
+                  <div class="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+                    <p class="text-sm text-gray-600">Street</p>
+                    <p class="text-base font-medium text-navy-700 dark:text-white">
+                      <?php echo $row_of_address["add_street"] ?> 
+                    </p>
+                  </div>
+
+                  <div class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+                    <p class="text-sm text-gray-600">City</p>
+                    <p class="text-base font-medium text-navy-700 dark:text-white">
+                      <?php echo $row_of_address["add_city"] ?>
+                    </p>
+                  </div>
+
+                  <div class="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+                    <p class="text-sm text-gray-600">Pincode</p>
+                    <p class="text-base font-medium text-navy-700 dark:text-white">
+                      <?php echo $row_of_address["add_pincode"] ?>
+                    </p>
+                  </div>
+                </div>
+             </div>          
+           </div>
+           <?php
+      }
+    }
+?>
               
             </div>
+            <input type="text" class="hidden" name="text" placeholder="Enter..." id="user_email" value="<?php echo $email ;?>">
+
           </form>
         </div>
-</div>
+      </div>
+
 
     <!-- Footer -->
     <?php
     include("./layout/footer/footer.php");
     ?> 
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 
