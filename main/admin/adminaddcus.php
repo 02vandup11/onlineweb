@@ -13,6 +13,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"  rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
 
 
 </head>
@@ -24,7 +26,7 @@
 ?>
 
 <!-- button to add product -->
-    <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="flex m-4 block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+    <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="flex m-4 block text-white bg-amber-700 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800" type="button">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2" aria-hidden="true"  viewBox="0 0 24 24"><path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm4,11H13v3a1,1,0,0,1-2,0V13H8a1,1,0,0,1,0-2h3V8a1,1,0,0,1,2,0v3h3a1,1,0,0,1,0,2Z"/></svg>
         Add Product  
     </button>
@@ -191,26 +193,24 @@
                         
 
                             <!-- <td class="flex items-center px-4 py-2">
-                                <a href="editproduct.php?pro_id=$row[pro_id]" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                <a href="editproduct.php?pro_id=$row[pro_id]" class="font-medium text-amber-600 dark:text-amber-500 hover:underline">Edit</a>
                                 <a href="deleteproduct.php?pro_id=$row[pro_id]" class="font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Remove</a>
                             </td> -->
 
                             <td class="p-2">
                                 <div class="flex justify-center">
                                     <button type="button"  onclick="delete_chan(<?php echo $productid; ?>)">
-                                        <svg class="h-8 w-8 rounded-full p-1 text-gray-800 hover:bg-gray-100 hover:text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="h-8 w-8 rounded-full p-1 text-gray-800 hover:bg-gray-100 hover:text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                                         </svg>
                                         
                                     </button>
-                                    <button type="button" onclick="update_chan(<?php echo $productid; ?> )">
-                                    <svg class="h-8 w-8 rounded-full p-1 hover:bg-gray-100 hover:text-blue-600" fill="#000000" viewBox="-4 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                    <button id="editbtn" data-modal-target="crud-modal1" data-modal-toggle="crud-modal1" onclick="update_chan(<?php echo $productid; ?>)">                                    
+                                        <svg class="h-8 w-8 rounded-full p-1 hover:bg-gray-100 hover:text-amber-600" fill="#000000" viewBox="-4 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                                         <title>edit</title>
                                                         <path d="M17.438 22.469v-4.031l2.5-2.5v7.344c0 1.469-1.219 2.688-2.656 2.688h-14.625c-1.469 0-2.656-1.219-2.656-2.688v-14.594c0-1.469 1.188-2.688 2.656-2.688h14.844v0.031l-2.5 2.469h-11.5c-0.531 0-1 0.469-1 1.031v12.938c0 0.563 0.469 1 1 1h12.938c0.531 0 1-0.438 1-1zM19.813 7.219l2.656 2.656 1.219-1.219-2.656-2.656zM10.469 16.594l2.625 2.656 8.469-8.469-2.625-2.656zM8.594 21.094l3.625-0.969-2.656-2.656z"></path>
                                                         </svg>
                                     </button>
-
-
                                 </div>
                             </td>
 
@@ -230,20 +230,18 @@
 <!-- update product model main -->
 <!-- Main modal -->
 <!-- button to edit product -->
-<button id="editbtn" data-modal-target="crud-modal1" data-modal-toggle="crud-modal1" class="flex m-4 block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2" aria-hidden="true"  viewBox="0 0 24 24"><path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm4,11H13v3a1,1,0,0,1-2,0V13H8a1,1,0,0,1,0-2h3V8a1,1,0,0,1,2,0v3h3a1,1,0,0,1,0,2Z"/></svg>
-        Edit Product  
-    </button>
-<div id="crud-modal1" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+
+   
+<div id="crud-modal1" data-modal-target="crud-modal1" data-modal-toggle="crud-modal1" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative p-4 w-full max-w-md max-h-full">
         <!-- Modal content -->
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <!-- Modal header -->
             <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                    Create New Product
+                    Edit Product Details
                 </h3>
-                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="crud-modal">
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="crud-modal1">
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                     </svg>
@@ -320,123 +318,61 @@
                     </div>
                     <div class="col-span-2">
                         <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Description</label>
-                        <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write product description here"></textarea>                    
+                        <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-amber-500 focus:border-amber-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Write product description here"></textarea>                    
                     </div>
+                    
                     <div class="col-span-2">
-                    <div class="mb-6 pt-4">
-        <label class="mb-5 block text-xl font-semibold text-[#07074D]">
-          Upload File
-        </label>
+                            <h2 class="text-lg font-semibold mb-4">Upload Images</h2>
+                            <form action="#" method="POST" enctype="multipart/form-data">
+                                <div class="mb-4">
+                                    <label for="image1" class="block text-sm font-medium text-gray-700">Image 1:</label>
+                                    <input type="file" id="image1" name="image1" accept="image/*" class="mt-1">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="image2" class="block text-sm font-medium text-gray-700">Image 2:</label>
+                                    <input type="file" id="image2" name="image2" accept="image/*" class="mt-1">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="image3" class="block text-sm font-medium text-gray-700">Image 3:</label>
+                                    <input type="file" id="image3" name="image3" accept="image/*" class="mt-1">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="image4" class="block text-sm font-medium text-gray-700">Image 4:</label>
+                                    <input type="file" id="image4" name="image4" accept="image/*" class="mt-1">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="image5" class="block text-sm font-medium text-gray-700">Image 5:</label>
+                                    <input type="file" id="image5" name="image5" accept="image/*" class="mt-1">
+                                </div>
+                                <div class="flex justify-end">
+                                    <button type="submit"
+                                            class="bg-amber-800 text-white py-2 px-4 rounded-md hover:bg-amber-600">Upload Images</button>
+                                </div>
 
-        <div class="mb-8">
-          <input type="file" name="file" id="file" class="sr-only" />
-          <label
-            for="file"
-            class="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center"
-          >
-            <div>
-              <span class="mb-2 block text-xl font-semibold text-[#07074D]">
-                Drop files here
-              </span>
-              <span class="mb-2 block text-base font-medium text-[#6B7280]">
-                Or
-              </span>
-              <span
-                class="inline-flex rounded border border-[#e0e0e0] py-2 px-7 text-base font-medium text-[#07074D]"
-              >
-                Browse
-              </span>
-            </div>
-          </label>
-        </div>
+                            </form>
+                    
+                        <hr class="border-t border-amber-800 my-2 w-full">
+                        <hr class="border-t border-amber-800 my-2 w-full">
 
-        <div class="mb-5 rounded-md bg-[#F5F7FB] py-4 px-8">
-          <div class="flex items-center justify-between">
-            <span class="truncate pr-3 text-base font-medium text-[#07074D]">
-              banner-design.png
-            </span>
-            <button class="text-[#07074D]">
-              <svg
-                width="10"
-                height="10"
-                viewBox="0 0 10 10"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M0.279337 0.279338C0.651787 -0.0931121 1.25565 -0.0931121 1.6281 0.279338L9.72066 8.3719C10.0931 8.74435 10.0931 9.34821 9.72066 9.72066C9.34821 10.0931 8.74435 10.0931 8.3719 9.72066L0.279337 1.6281C-0.0931125 1.25565 -0.0931125 0.651788 0.279337 0.279338Z"
-                  fill="currentColor"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M0.279337 9.72066C-0.0931125 9.34821 -0.0931125 8.74435 0.279337 8.3719L8.3719 0.279338C8.74435 -0.0931127 9.34821 -0.0931123 9.72066 0.279338C10.0931 0.651787 10.0931 1.25565 9.72066 1.6281L1.6281 9.72066C1.25565 10.0931 0.651787 10.0931 0.279337 9.72066Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
 
-        <div class="rounded-md bg-[#F5F7FB] py-4 px-8">
-          <div class="flex items-center justify-between">
-            <span class="truncate pr-3 text-base font-medium text-[#07074D]">
-              banner-design.png
-            </span>
-            <button class="text-[#07074D]">
-              <svg
-                width="10"
-                height="10"
-                viewBox="0 0 10 10"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M0.279337 0.279338C0.651787 -0.0931121 1.25565 -0.0931121 1.6281 0.279338L9.72066 8.3719C10.0931 8.74435 10.0931 9.34821 9.72066 9.72066C9.34821 10.0931 8.74435 10.0931 8.3719 9.72066L0.279337 1.6281C-0.0931125 1.25565 -0.0931125 0.651788 0.279337 0.279338Z"
-                  fill="currentColor"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M0.279337 9.72066C-0.0931125 9.34821 -0.0931125 8.74435 0.279337 8.3719L8.3719 0.279338C8.74435 -0.0931127 9.34821 -0.0931123 9.72066 0.279338C10.0931 0.651787 10.0931 1.25565 9.72066 1.6281L1.6281 9.72066C1.25565 10.0931 0.651787 10.0931 0.279337 9.72066Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </button>
-          </div>
-          <div class="relative mt-5 h-[6px] w-full rounded-lg bg-[#E2E5EF]">
-            <div
-              class="absolute left-0 right-0 h-full w-[75%] rounded-lg bg-[#6A64F1]"
-            ></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+                    </div>
+                    <div class="col-span-2">  
+                        <button type="submit" class="w-full text-white flex items-center bg-amber-700 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800">
+                            <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                            Add new product
+                        </button>
+                    </div>
                 </div>
-                <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
-                    Edit product
-                </button>
-                <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
-                    Add Image
-                </button>
-                
             </form>
         </div>
     </div>
-</div> 
+</div>  
 
 
 
 
 <!-- add product Main modal -->
-<div id="crud-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+<div id="crud-modal" data-modal-target="crud-modal" data-modal-toggle="crud-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative p-4 w-full max-w-md max-h-full">
         <!-- Modal content -->
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -522,40 +458,51 @@
                     </div>
                     <div class="col-span-2">
                         <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Description</label>
-                        <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write product description here"></textarea>                    
+                        <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-amber-500 focus:border-amber-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Write product description here"></textarea>                    
                     </div>
                     
                     <div class="col-span-2">
-    <div class="mb-6 pt-4">
-        <label class="mb-5 block text-xl font-semibold text-[#07074D]">
-            Upload Files
-        </label>
+                        <h2 class="text-lg font-semibold mb-4">Upload Images</h2>
+                            <form action="#" method="POST" enctype="multipart/form-data">
+                                <div class="mb-4">
+                                    <label for="image1" class="block text-sm font-medium text-gray-700">Image 1:</label>
+                                    <input type="file" id="image1" name="image1" accept="image/*" class="mt-1">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="image2" class="block text-sm font-medium text-gray-700">Image 2:</label>
+                                    <input type="file" id="image2" name="image2" accept="image/*" class="mt-1">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="image3" class="block text-sm font-medium text-gray-700">Image 3:</label>
+                                    <input type="file" id="image3" name="image3" accept="image/*" class="mt-1">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="image4" class="block text-sm font-medium text-gray-700">Image 4:</label>
+                                    <input type="file" id="image4" name="image4" accept="image/*" class="mt-1">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="image5" class="block text-sm font-medium text-gray-700">Image 5:</label>
+                                    <input type="file" id="image5" name="image5" accept="image/*" class="mt-1">
+                                </div>
+                                <div class="flex justify-end">
+                                    <button type="submit"
+                                            class="bg-amber-800 text-white py-2 px-4 rounded-md hover:bg-amber-600">Upload Images</button>
+                                </div>
 
-        <div class="mb-8">
-            <input type="file" id="file-input" name="files[]" multiple>
+                            </form>
+                    
+                        <hr class="border-t border-amber-800 my-2 w-full">
+                        <hr class="border-t border-amber-800 my-2 w-full">
 
-            <div id="image-preview" class="mt-4"></div>
-            <div id="base64-input"></div>
-        </div>
 
-    </div>
-</div>
-
-       
-
-    </div>
-</div>
-
+                    </div>
+                    <div class="col-span-2">  
+                        <button type="submit" class="w-full text-white flex items-center bg-amber-700 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800">
+                            <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                            Add new product
+                        </button>
+                    </div>
                 </div>
-                <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
-                    Add new product
-                </button>
-                <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
-                   Add image
-                </button>
-                
             </form>
         </div>
     </div>
@@ -565,7 +512,7 @@
 
 
 
-<script>
+<!-- <script>
     $(document).ready(function () {
         $('#file-input').change(function () {
             $('#image-preview').empty();
@@ -586,7 +533,7 @@
             }
         });
     });
-</script>
+</script> -->
 
 
 
