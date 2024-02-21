@@ -6,8 +6,15 @@
     <title>Jewelry Shop</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      /* Ensure filter section remains visible */
+      .flex-col {
+        visibility: visible;
+      }
+      </style>
 </head>
+
 <body>
 
   <?php
@@ -54,89 +61,45 @@
               </a>
             </div>
             <!-- Search input -->
-            <input type="text" class="mb-10 block h-9 min-h-[44px] w-full rounded-md border border-solid border-[#cccccc] bg-[#f2f2f7] bg-[16px_center] bg-no-repeat py-3 pl-11 pr-4 text-sm font-bold text-[#333333] [background-size:18px] [border-bottom:1px_solid_rgb(215,_215,_221)]" placeholder="Search" style="background-image: url('https://assets.website-files.com/6458c625291a94a195e6cf3a/64b7a3a33cd5dc368f46daaa_MagnifyingGlass.svg');" />
-            <!-- Categories
-            <div class="flex flex-col gap-6">
-              <p class="font-semibold">Categories</p>
-              <div class="flex flex-wrap items-center gap-2">
-                <a href="#" class="flex gap-3 rounded-md bg-[#f2f2f7] p-3 font-semibold">
-                  <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/64b7a3a33cd5dc368f46daab_design.svg" alt="" class="inline-block" />
-                  <p>Design</p>
-                </a>
-                <a href="#" class="flex gap-3 rounded-md bg-[#f2f2f7] p-3 font-semibold">
-                  <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/64b7a3a33cd5dc368f46daae_illustration.svg" alt="" class="inline-block" />
-                  <p>Illustrations</p>
-                </a>
-                <a href="#" class="flex gap-3 rounded-md bg-[#f2f2f7] p-3 font-semibold">
-                  <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/64b7a3a33cd5dc368f46daad_icons.svg" alt="" class="inline-block" />
-                  <p>Icons</p>
-                </a>
-                <a href="#" class="flex gap-3 rounded-md bg-[#f2f2f7] p-3 font-semibold">
-                  <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/64b7a3a33cd5dc368f46daaf_plugins.svg" alt="" class="inline-block" />
-                  <p>Plugins</p>
-                </a>
-                <a href="#" class="flex gap-3 rounded-md bg-[#f2f2f7] p-3 font-semibold">
-                  <img src="https://assets.website-files.com/6458c625291a94a195e6cf3a/64b7a3a33cd5dc368f46daac_color%20palette.svg" alt="" class="inline-block" />
-                  <p>Color Palette</p>
-                </a>
-              </div>
-            </div> -->
-            <!-- Divider -->
-            <div class="mb-6 mt-6 h-px w-full bg-[#d9d9d9]"></div>
-            <!-- Rating -->
-            <div class="flex flex-col gap-6">
-              <p class="font-semibold">Rating</p>
-              <div class="flex flex-wrap gap-2 lg:justify-between">
-                <div class="flex h-9 w-14 cursor-pointer items-center justify-center rounded-md border border-solid border-[#cccccc] bg-[#f2f2f7] text-sm font-semibold">
-                  <span>1</span>
-                </div>
-                <div class="flex h-9 w-14 cursor-pointer items-center justify-center rounded-md border border-solid border-[#cccccc] bg-black text-sm font-semibold text-white">
-                  <span>2</span>
-                </div>
-                <div class="flex h-9 w-14 cursor-pointer items-center justify-center rounded-md border border-solid border-[#cccccc] bg-[#f2f2f7] text-sm font-semibold">
-                  <span>3</span>
-                </div>
-                <div class="flex h-9 w-14 cursor-pointer items-center justify-center rounded-md border border-solid border-[#cccccc] bg-[#f2f2f7] text-sm font-semibold">
-                  <span>4</span>
-                </div>
-                <div class="flex h-9 w-14 cursor-pointer items-center justify-center rounded-md border border-solid border-[#cccccc] bg-[#f2f2f7] text-sm font-semibold">
-                  <span>5</span>
-                </div>
-              </div>
-            </div>
+            <input type="text" id="productNameFilter" class="mb-10 block h-9 min-h-[44px] w-full rounded-md border border-solid border-[#cccccc] bg-[#f2f2f7] bg-[16px_center] bg-no-repeat py-3 pl-11 pr-4 text-sm font-bold text-[#333333] [background-size:18px] [border-bottom:1px_solid_rgb(215,_215,_221)]" placeholder="Search" style="background-image: url('https://assets.website-files.com/6458c625291a94a195e6cf3a/64b7a3a33cd5dc368f46daaa_MagnifyingGlass.svg');" />
+            
+            
             <!-- Divider -->
               <div class="mb-6 mt-6 h-px w-full bg-[#d9d9d9]"></div>
               <!-- Filter One -->
-              <div class="flex flex-col gap-6">
-                <div class="flex cursor-pointer items-center justify-between py-4 [border-top:1px_solid_rgba(0,_0,_0,_0)] md:py-0">
-                  <p class="font-semibold">Color</p>
-                  <a href="#" class="inline-block text-sm text-black">
-                    <p>Clear</p>
-                  </a>
+              <!-- Filter by Color -->
+                <div class="flex flex-col gap-6">
+                    <div class="flex cursor-pointer items-center justify-between py-4 [border-top:1px_solid_rgba(0,_0,_0,_0)] md:py-0">
+                        <p class="font-semibold">Color</p>
+                        <a href="#" class="inline-block text-sm text-black" onclick="clearColorFilter()">
+                          <p>Clear</p>
+                        </a>
+
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <label class="flex items-center text-sm font-medium">
+                            <input type="checkbox" name="color[]" value="Black" class="mr-3 h-5 w-5 cursor-pointer rounded-sm border border-solid bg-[#f2f2f7]">
+                            <span class="inline-block cursor-pointer">Black</span>
+                        </label>
+                        <label class="flex items-center text-sm font-medium">
+                            <input type="checkbox" name="color[]" value="White" class="mr-3 h-5 w-5 cursor-pointer rounded-sm border border-solid bg-[#f2f2f7]">
+                            <span class="inline-block cursor-pointer">White</span>
+                        </label>
+                        <label class="flex items-center text-sm font-medium">
+                            <input type="checkbox" name="color[]" value="Silver" class="mr-3 h-5 w-5 cursor-pointer rounded-sm border border-solid bg-[#f2f2f7]">
+                            <span class="inline-block cursor-pointer">Silver</span>
+                        </label>
+                        <label class="flex items-center text-sm font-medium">
+                            <input type="checkbox" name="color[]" value="Gold" class="mr-3 h-5 w-5 cursor-pointer rounded-sm border border-solid bg-[#f2f2f7]">
+                            <span class="inline-block cursor-pointer">Gold</span>
+                        </label>
+                        <label class="flex items-center text-sm font-medium">
+                            <input type="checkbox" name="color[]" value="Bronze" class="mr-3 h-5 w-5 cursor-pointer rounded-sm border border-solid bg-[#f2f2f7]">
+                            <span class="inline-block cursor-pointer">Bronze</span>
+                        </label>
+                    </div>
                 </div>
-                <div class="flex flex-col gap-3">
-                  <label class="flex items-center text-sm font-medium">
-                    <input type="checkbox" class="mr-3 h-5 w-5 cursor-pointer rounded-sm border border-solid bg-[#f2f2f7]">
-                    <span class="inline-block cursor-pointer">Black</span>
-                  </label>
-                  <label class="flex items-center text-sm font-medium">
-                    <input type="checkbox" class="mr-3 h-5 w-5 cursor-pointer rounded-sm border border-solid bg-[#f2f2f7]">
-                    <span class="inline-block cursor-pointer">White</span>
-                  </label>
-                  <label class="flex items-center text-sm font-medium">
-                    <input type="checkbox" class="mr-3 h-5 w-5 cursor-pointer rounded-sm border border-solid bg-[#f2f2f7]">
-                    <span class="inline-block cursor-pointer">Silver</span>
-                  </label>
-                  <label class="flex items-center text-sm font-medium">
-                    <input type="checkbox" class="mr-3 h-5 w-5 cursor-pointer rounded-sm border border-solid bg-[#f2f2f7]">
-                    <span class="inline-block cursor-pointer">Gold</span>
-                  </label>
-                  <label class="flex items-center text-sm font-medium">
-                    <input type="checkbox" class="mr-3 h-5 w-5 cursor-pointer rounded-sm border border-solid bg-[#f2f2f7]">
-                    <span class="inline-block cursor-pointer">Bronze</span>
-                  </label>
-                </div>
-              </div>
+
 
               <!-- Divider -->
               <div class="mb-6 mt-6 h-px w-full bg-[#d9d9d9]"></div>
@@ -181,18 +144,18 @@
               <!-- Filter Two -->
               <div class="flex flex-col gap-6">
                 <div class="flex cursor-pointer items-center justify-between py-4 [border-top:1px_solid_rgba(0,_0,_0,_0)] md:py-0">
-                  <p class="font-semibold">Material</p>
-                  <a href="#" class="inline-block text-sm text-black">
+                  <p class="font-semibold">Price</p>
+                  <a href="#" class="inline-block text-sm text-black" onclick="clearPriceFilter()">
                     <p>Clear</p>
                   </a>
                 </div>
                   <div class="relative mb-6">
                     <label for="labels-range-input" class="sr-only">Labels range</label>
-                    <input id="labels-range-input" type="range" value="1000" min="100" max="1500" class="w-full h-2 bg-gray-500 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
-                    <span class="text-sm text-gray-700 dark:text-gray-700 absolute start-0 -bottom-6">Min ($100)</span>
-                    <span class="text-sm text-gray-700 dark:text-gray-700 absolute start-1/3 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">$500</span>
-                    <span class="text-sm text-gray-700 dark:text-gray-700 absolute start-2/3 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">$1000</span>
-                    <span class="text-sm text-gray-700 dark:text-gray-700 absolute end-0 -bottom-6">Max ($1500)</span>
+                    <input id="priceRangeInput" type="range" value="1000" min="100" max="1500" class="w-full h-2 bg-gray-500 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                    <span class="text-sm text-gray-700 dark:text-gray-700 absolute start-0 -bottom-6">Rs.100</span>
+                    <span class="text-sm text-gray-700 dark:text-gray-700 absolute start-1/3 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">Rs.500</span>
+                    <span class="text-sm text-gray-700 dark:text-gray-700 absolute start-2/3 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6 mr-2">Rs.1000</span> 
+                    <span class="text-sm text-gray-700 dark:text-gray-700 absolute end-0 -bottom-6">Rs.1500</span>
                 </div>
               </div>
             
@@ -206,17 +169,17 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <?php 
-
-
-
-      $productQuery = "SELECT * FROM `product`,`category` WHERE `category`.`category_name` = '$category' AND `product`.`pro_category_id` = `category`.`category_id` ";
+         $productQuery = "SELECT * FROM `product`,`category` WHERE `category`.`category_name` = '$category' AND `product`.`pro_category_id` = `category`.`category_id` ";
           $executequery = mysqli_query($con,$productQuery);
           if(mysqli_num_rows($executequery))
           {
             while($row_of_product=mysqli_fetch_assoc($executequery))
             {
+              $product_id = $row_of_product["pro_id"];
+             
+            ?>
            
-              ?>
+              
              
               <div class="bg-white rounded-2xl p-6 cursor-pointer hover:-translate-y-2 transition-all relative">
                 <div class="bg-gray-100 w-10 h-10 flex items-center justify-center rounded-full cursor-pointer absolute top-4 right-4">
@@ -228,8 +191,7 @@
                 </div>
                 <div class="w-11/12 h-[220px] overflow-hidden mx-auto aspect-w-16 aspect-h-8 md:mb-2 mb-4">
                   <?php
-                    $product_id = $row_of_product["pro_id"];
-                    $imageQuery = "SELECT image_name 
+                  $imageQuery = "SELECT image_name 
                FROM image 
                WHERE image_product_id = $product_id 
                LIMIT 1";
@@ -253,6 +215,25 @@
                       <h3 class="text-lg font-bold text-gray-800"><?php echo $row_of_product["pro_name"]; ?></h3>
                      
                       <h4 class="text-lg text-gray-700 font-bold mt-4">Rs.<?php echo $row_of_product["pro_price"]; ?></h4>
+                      <ul>
+                      <?php
+                      $getcolors="SELECT * FROM `colors` ,`pcolors` WHERE `colors`.`color_id`=`pcolors`.`pcolor_color_id` AND `pcolors`.`pcolor_product_id`='$product_id'";
+                        $execute_color = mysqli_query($con,$getcolors);
+                        if(mysqli_num_rows($execute_color))
+                        {
+                          while($row_of_color=mysqli_fetch_assoc($execute_color))
+                          {
+                            ?>
+                            <li>
+                              <?php
+                              echo($row_of_color["color_name"]);
+                              ?>
+                            </li>
+                            <?php
+                          }
+                        }
+                        ?>
+                        </ul>
                 </div>
                 </a>
               </div>
@@ -269,6 +250,9 @@
     </div>
   </div>
 </section>
+
+<script src="../../js/filter.js">
+</script>
 
 <?php
     include("./layout/footer/footer.php");

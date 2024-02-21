@@ -6,6 +6,9 @@
     <title>Jewelry Shop</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://jsuites.net/v4/jsuites.js"></script>
+    <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
 
 </head>
 <body>
@@ -63,7 +66,7 @@
         <div>
             <h2 class="text-2xl font-extrabold text-gray-800"><?php echo $row_of_product["pro_name"] ?></h2>
             <div class="flex flex-wrap gap-4 mt-4">
-              <p class="text-gray-800 text-xl font-bold"><?php echo $row_of_product["pro_price"] ?></p>
+              <p class="text-gray-800 text-xl font-bold">Rs.<?php echo $row_of_product["pro_price"] ?></p>
             </div>
             <div class="flex space-x-2 mt-4">
               <svg class="w-5 fill-gray-800" viewBox="0 0 14 13" fill="none"
@@ -92,16 +95,6 @@
                   d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
               </svg>
             </div>
-            <!-- <div class="mt-8">
-              <h3 class="text-lg font-bold text-gray-800">Sizes</h3>
-              <div class="flex flex-wrap gap-4 mt-4">
-                <button type="button" class="w-12 h-12 border-2 hover:border-gray-800 font-bold text-sm rounded-full flex items-center justify-center shrink-0">SM</button>
-                <button type="button" class="w-12 h-12 border-2 hover:border-gray-800 border-gray-800 font-bold text-sm rounded-full flex items-center justify-center shrink-0">MD</button>
-                <button type="button" class="w-12 h-12 border-2 hover:border-gray-800 font-bold text-sm rounded-full flex items-center justify-center shrink-0">LG</button>
-                <button type="button" class="w-12 h-12 border-2 hover:border-gray-800 font-bold text-sm rounded-full flex items-center justify-center shrink-0">XL</button>
-              </div>
-              <button type="button" class="w-full mt-4 px-4 py-3 bg-gray-800 hover:bg-gray-900 text-white font-bold rounded">Add to cart</button>
-            </div> -->
             <div class="mt-8">
               <h3 class="text-lg font-bold text-gray-800">About the item</h3>
               <?php echo $row_of_product["pro_descrip"] ?>
@@ -147,68 +140,19 @@
 
 
             <div class="max-w-md">
-              <h3 class="text-lg font-bold text-gray-800">Reviews(10)</h3>
-              <div class="space-y-3 mt-4">
-                <div class="flex items-center">
-                  <p class="text-sm text-gray-800 font-bold">5.0</p>
-                  <svg class="w-5 fill-gray-800 ml-1" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                  </svg>
-                  <div class="bg-gray-300 rounded w-full h-2 ml-3">
-                    <div class="w-2/3 h-full rounded bg-gray-800"></div>
-                  </div>
-                  <p class="text-sm text-gray-800 font-bold ml-3">66%</p>
-                </div>
-                <div class="flex items-center">
-                  <p class="text-sm text-gray-800 font-bold">4.0</p>
-                  <svg class="w-5 fill-gray-800 ml-1" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                  </svg>
-                  <div class="bg-gray-300 rounded w-full h-2 ml-3">
-                    <div class="w-1/3 h-full rounded bg-gray-800"></div>
-                  </div>
-                  <p class="text-sm text-gray-800 font-bold ml-3">33%</p>
-                </div>
-                <div class="flex items-center">
-                  <p class="text-sm text-gray-800 font-bold">3.0</p>
-                  <svg class="w-5 fill-gray-800 ml-1" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                  </svg>
-                  <div class="bg-gray-300 rounded w-full h-2 ml-3">
-                    <div class="w-1/6 h-full rounded bg-gray-800"></div>
-                  </div>
-                  <p class="text-sm text-gray-800 font-bold ml-3">16%</p>
-                </div>
-                <div class="flex items-center">
-                  <p class="text-sm text-gray-800 font-bold">2.0</p>
-                  <svg class="w-5 fill-gray-800 ml-1" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                  </svg>
-                  <div class="bg-gray-300 rounded w-full h-2 ml-3">
-                    <div class="w-1/12 h-full rounded bg-gray-800"></div>
-                  </div>
-                  <p class="text-sm text-gray-800 font-bold ml-3">8%</p>
-                </div>
-                <div class="flex items-center">
-                  <p class="text-sm text-gray-800 font-bold">1.0</p>
-                  <svg class="w-5 fill-gray-800 ml-1" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                  </svg>
-                  <div class="bg-gray-300 rounded w-full h-2 ml-3">
-                    <div class="w-[6%] h-full rounded bg-gray-800"></div>
-                  </div>
-                  <p class="text-sm text-gray-800 font-bold ml-3">6%</p>
-                </div>
-              </div>
+              <h3 class="text-lg font-bold text-gray-800">Reviews</h3>
+              <?php
+                $review="SELECT * FROM `review`,`customer` WHERE `review`.`review_cus_email`=`customer`.`cus_email` AND `review`.`review_product_id`=$id";
+                $executereviewquery = mysqli_query($con, $review);
+                if (mysqli_num_rows($executereviewquery)) 
+                {
+                    while ($row_of_review = mysqli_fetch_assoc($executereviewquery)) 
+                    {
+                  ?>
               <div class="flex items-start mt-8">
-                <img src="https://readymadeui.com/team-2.webp" class="w-12 h-12 rounded-full border-2 border-white" />
+                <img src="https://cdn.pixabay.com/photo/2017/11/10/05/46/group-2935521_1280.png" class="w-12 h-12 rounded-full border-2 border-white" />
                 <div class="ml-3">
-                  <h4 class="text-sm font-bold">John Doe</h4>
+                  <h4 class="text-sm font-bold"><?php echo($row_of_review["cus_fname"])?> <?php echo($row_of_review["cus_lname"])?></h4>
                   <div class="flex space-x-1 mt-1">
                     <svg class="w-4 fill-gray-800" viewBox="0 0 14 13" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
@@ -235,12 +179,41 @@
                       <path
                         d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
                     </svg>
-                    <p class="text-xs !ml-2 font-semibold">2 mins ago</p>
                   </div>
-                  <p class="text-xs mt-4">The service was amazing. I never had to wait that long for my food. The staff was friendly and attentive, and the delivery was impressively prompt.</p>
+                  <p class="text-xs mt-4"> <?php echo($row_of_review["review_text"])?></p>
                 </div>
               </div>
-              <button type="button" class="w-full mt-8 px-4 py-2 bg-transparent border-2 border-gray-800 text-gray-800 font-bold rounded">Read all reviews</button>
+              <?php
+                    }
+                  }
+                ?>
+
+              <hr class="w-48 h-1 mx-auto  bg-gray-100 border-0 rounded md:my-6 dark:bg-gray-700">
+              <!-- component -->
+                <!-- comment form -->
+                <input type="text" name="text" placeholder="Enter..." id="user_email" value="<?php echo $email ;?>">
+                <input type="text" name="text" placeholder="Enter..." id="pro_id" value="<?php echo $id ;?>">
+
+
+                <div class="max-w-md">
+                  <form id="reviewForm" class="w-full max-w-xl bg-white rounded-lg px-4 pt-2">
+                      <div class="flex flex-wrap -mx-3 mb-6">
+                          <h2 class="text-lg font-bold text-gray-800">Add a new Review</h2>
+                          <div class="w-full md:w-full px-3 mb-2 mt-2">
+                              <textarea id="comment" class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white" name="body" placeholder='Type Your Comment' ></textarea>
+                              <p id="commentError" class="text-red-500 hidden">Please enter your review.</p>
+                          </div>
+                          <div class="w-full md:w-full flex items-start md:w-full px-3">
+                              <div class="-mr-1">
+                                  <input type='submit' class="submitBtn px-6 py-2.5 text-white text-sm tracking-wider font-semibold border-none outline-none bg-gray-600 hover:bg-gray-700 active:bg-gray-600 " value='Post Comment'>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div> 
+
+
+              </div>
             </div>
           </div>
         </div>
@@ -292,6 +265,9 @@
             });
         });
     });
+</script>
+
+<script src="../../js/singlereview.js">
 </script>
 
     <?php

@@ -22,7 +22,10 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"  rel="stylesheet" />
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    
 
 </head>
 <body onload="getcartdetails()">
@@ -64,20 +67,20 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
                     </div>
                   </td>
                   <td class="py-6 px-4">
-                    <div class="flex divide-x border w-max">
-                      <button type="button" class="bg-gray-100 px-4 py-2 font-semibold">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-current" viewBox="0 0 124 124">
-                          <path d="M112 50H12C5.4 50 0 55.4 0 62s5.4 12 12 12h100c6.6 0 12-5.4 12-12s-5.4-12-12-12z" data-original="#000000"></path>
-                        </svg>
-                      </button>
-                      <button type="button" class="bg-transparent px-4 py-2 font-semibold text-[#333] text-md">
-                        1
-                      </button>
-                      <button type="button" class="bg-gray-800 text-white px-4 py-2 font-semibold">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-current" viewBox="0 0 42 42">
-                          <path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z" data-original="#000000"></path>
-                        </svg>
-                      </button>
+                         <!-- component -->
+                      <div class="flex items-center justify-center">
+                        <select id="quantity" name="quantity" class="border border-amber-500 rounded-md px-3 py-1 bg-amber-700 text-white">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
                     </div>
                   </td>
                   <td class="py-6 px-4">
@@ -91,6 +94,8 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
         <div>
         <div class="bg-gray-50 p-10">
           <h3 class="text-xl font-extrabold text-[#333] border-b pb-4">Select Address</h3>
+          <p id="floating_helper_text" class="mt-2 mb-2 text-xs text-gray-500 dark:text-gray-400">Remember, contributions to this topic should follow our 
+            <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</p>
           <select id="add_id" class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none"  placeholder="">
             <option value="" disabled selected>Select Address</option>
           <?php
@@ -128,6 +133,7 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
     ?>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 
+ 
 
 </body>
 </html>

@@ -16,7 +16,7 @@ function addtocart(pro_id, ) {
 
     if (!itemExists) {
         // If not present, push the new data onto the array
-        a.push({ pro_id: pro_id, user_email: $email,  });
+        a.push({ pro_id: pro_id, user_email: $email,pieces:1  });
 
         // Re-serialize the array back into a string and store it in localStorage
         localStorage.setItem('cart', JSON.stringify(a));
@@ -68,6 +68,38 @@ function getcartdetails() {
         },
       });
 }
+
+function addpeice(id, event) {
+  var a = JSON.parse(localStorage.getItem('cart')) || [];
+  var updated = false;
+
+  // Iterate over the items in the array
+  for (var i = 0; i < a.length; i++) {
+      // If the item's pro_id matches the id passed to the function
+      if (a[i].pro_id === id) {
+          // Update the number of pieces for that item
+          a[i].pieces = parseInt(event.target.value);
+          updated = true;
+          break;
+      }
+  }
+
+  // If the item is not found in the cart, you can add it with default pieces value
+  if (!updated) {
+      a.push({ pro_id: id, user_email: $email, pieces: parseInt(event.target.value) });
+      
+  }
+
+  // Store the updated cart back into localStorage
+  localStorage.setItem('cart', JSON.stringify(a));
+  getcartdetails();
+  getcartbadge();
+}
+
+// Example of calling addpeice function
+// addpeice('product_id_here', { target: { value: 'new_pieces_value_here' } });
+
+
 
 function cartprice() {
 

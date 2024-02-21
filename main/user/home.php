@@ -40,24 +40,11 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
     ?>
 
 
-    <div class="mt-20 p-2">
-    <form>   
-    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-    <div class="relative">
-        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-            </svg>
-        </div>
-        <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-yellow-100 border border-white-300 rounded-lg bg-white-50 focus:ring-amber-500 focus:border-amber-500 dark:bg-orange-950 dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Search Products, Categories ..." required>
-        <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-amber-700 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-amber-700 dark:hover:bg-amber-600 dark:focus:ring-amber-800">Search</button>
-    </div>
-    </form>
-    </div>    
+        
 
-<div id="gallery" class="relative w-full m-2 z-0" data-carousel="slide" >
+<div id="gallery" class="relative w-full m-2  z-0" data-carousel="slide" >
     <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96 mt-14">
          <!-- Item 1 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item style="z-index: 1">
             <img src="https://media.istockphoto.com/id/1198714412/photo/bangles-made-of-gold.jpg?s=612x612&w=0&k=20&c=fvlLFQegczkC87aBXXuJli0XszW5O0DG_VBOKVXB2Lg=" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 " alt="">

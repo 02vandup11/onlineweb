@@ -17,6 +17,7 @@ $decodedData = json_decode($data, true);
         foreach ($cart as $item) {
 
             $pro_id = $item['pro_id'];
+            $addpiece = $item['pieces'];
 
             $get_product = "SELECT * FROM `product` WHERE pro_id = '$pro_id' ";
             $execute_get_product = mysqli_query($con,$get_product);
@@ -58,24 +59,18 @@ $decodedData = json_decode($data, true);
                     </div>
                   </td>
                   <td class="py-6 px-4">
-                    <div class="flex divide-x border w-max">
-                      <button type="button" class="bg-gray-100 px-4 py-2 font-semibold">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-current" viewBox="0 0 124 124">
-                          <path d="M112 50H12C5.4 50 0 55.4 0 62s5.4 12 12 12h100c6.6 0 12-5.4 12-12s-5.4-12-12-12z" data-original="#000000"></path>
-                        </svg>
-                      </button>
-                      <button type="button" class="bg-transparent px-4 py-2 font-semibold text-[#333] text-md">
-                        1
-                      </button>
-                      <button type="button" class="bg-gray-800 text-white px-4 py-2 font-semibold">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-current" viewBox="0 0 42 42">
-                          <path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z" data-original="#000000"></path>
-                        </svg>
-                      </button>
+                    <div class="flex items-center justify-center">
+                        
+                    <select id="quantity" name="quantity" onchange="addpeice(<?php echo $row['pro_id']; ?>, event)" class="border border-amber-500 rounded-md px-3 py-1 bg-amber-700 text-white">
+                        <?php for ($i = 1; $i <= 10; $i++) : ?>
+                            <option value="<?php echo $i; ?>" <?php if ($pro_id == $row['pro_id'] && $addpiece == $i) echo 'selected'; ?>><?php echo $i; ?></option>
+                        <?php endfor; ?>
+                    </select>
+
                     </div>
                   </td>
                   <td class="py-6 px-4">
-                    <h4 class="text-md font-bold text-[#333]">Rs.<span class="item_price"><?php echo($row["pro_price"]); ?> </span></h4>
+                    <h4 class="text-md font-bold text-[#333]">Rs.<span class="item_price"><?php echo($addpiece*$row["pro_price"]); ?> </span></h4>
                   </td>
                 </tr>
 
