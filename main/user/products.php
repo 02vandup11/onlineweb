@@ -56,9 +56,8 @@
             <!-- Filters title -->
             <div class="mb-6 flex items-center justify-between py-4 [border-bottom:1px_solid_rgb(217,_217,_217)]">
               <h5 class="text-xl font-bold">Filters</h5>
-              <a href="#" class="text-sm">
-                <p>Clear all</p>
-              </a>
+              <button type="button" class="clear-all-filters bg-amber-700 text-white px-4 py-2 rounded-md mt-6">Clear All</button>
+
             </div>
             <!-- Search input -->
             <input type="text" id="productNameFilter" class="mb-10 block h-9 min-h-[44px] w-full rounded-md border border-solid border-[#cccccc] bg-[#f2f2f7] bg-[16px_center] bg-no-repeat py-3 pl-11 pr-4 text-sm font-bold text-[#333333] [background-size:18px] [border-bottom:1px_solid_rgb(215,_215,_221)]" placeholder="Search" style="background-image: url('https://assets.website-files.com/6458c625291a94a195e6cf3a/64b7a3a33cd5dc368f46daaa_MagnifyingGlass.svg');" />
@@ -71,32 +70,19 @@
                 <div class="flex flex-col gap-6">
                     <div class="flex cursor-pointer items-center justify-between py-4 [border-top:1px_solid_rgba(0,_0,_0,_0)] md:py-0">
                         <p class="font-semibold">Color</p>
-                        <a href="#" class="inline-block text-sm text-black" onclick="clearColorFilter()">
-                          <p>Clear</p>
+                        <a href="#" class="clear-color-filter inline-block text-sm text-black" onclick="clearColorFilter()">
+                            <p>Clear</p>
                         </a>
 
                     </div>
                     <div class="flex flex-col gap-3">
-                        <label class="flex items-center text-sm font-medium">
-                            <input type="checkbox" name="color[]" value="Black" class="mr-3 h-5 w-5 cursor-pointer rounded-sm border border-solid bg-[#f2f2f7]">
-                            <span class="inline-block cursor-pointer">Black</span>
-                        </label>
-                        <label class="flex items-center text-sm font-medium">
-                            <input type="checkbox" name="color[]" value="White" class="mr-3 h-5 w-5 cursor-pointer rounded-sm border border-solid bg-[#f2f2f7]">
-                            <span class="inline-block cursor-pointer">White</span>
-                        </label>
-                        <label class="flex items-center text-sm font-medium">
-                            <input type="checkbox" name="color[]" value="Silver" class="mr-3 h-5 w-5 cursor-pointer rounded-sm border border-solid bg-[#f2f2f7]">
-                            <span class="inline-block cursor-pointer">Silver</span>
-                        </label>
-                        <label class="flex items-center text-sm font-medium">
-                            <input type="checkbox" name="color[]" value="Gold" class="mr-3 h-5 w-5 cursor-pointer rounded-sm border border-solid bg-[#f2f2f7]">
-                            <span class="inline-block cursor-pointer">Gold</span>
-                        </label>
-                        <label class="flex items-center text-sm font-medium">
-                            <input type="checkbox" name="color[]" value="Bronze" class="mr-3 h-5 w-5 cursor-pointer rounded-sm border border-solid bg-[#f2f2f7]">
-                            <span class="inline-block cursor-pointer">Bronze</span>
-                        </label>
+
+                      <label><input type="checkbox" value="Black" class="color-filter">Black</label>
+                      <label><input type="checkbox" value="White" class="color-filter">White</label>
+                      <label><input type="checkbox" value="Silver" class="color-filter">Silver</label>
+                      <label><input type="checkbox" value="Gold" class="color-filter">Gold</label>
+                      <label><input type="checkbox" value="Bronze" class="color-filter">Bronze</label>
+
                     </div>
                 </div>
 
@@ -107,40 +93,40 @@
               <div class="flex flex-col gap-6">
                 <div class="flex cursor-pointer items-center justify-between py-4 [border-top:1px_solid_rgba(0,_0,_0,_0)] md:py-0">
                   <p class="font-semibold">Material</p>
-                  <a href="#" class="inline-block text-sm text-black">
+                  <a href="#" class="clear-material-filter inline-block text-sm text-black" onclick="clearMaterialFilter()">
                     <p>Clear</p>
                   </a>
                 </div>
                 <div class="flex flex-col gap-3">
-                  <label class="flex items-center font-medium">
-                    <input type="checkbox" class="mr-3 mt-1 h-5 w-5 rounded-full border border-solid border-[#cccccc] bg-[#f2f2f7]">
-                    <span class="inline-block cursor-pointer">All</span>
-                  </label>
-                  <label class="flex items-center font-medium">
-                    <input type="checkbox" class="mr-3 mt-1 h-5 w-5 rounded-full border border-solid border-[#cccccc] bg-[#f2f2f7]">
-                    <span class="inline-block cursor-pointer">Pearl</span>
-                  </label>
-                  <label class="flex items-center font-medium">
-                    <input type="checkbox" class="mr-3 mt-1 h-5 w-5 rounded-full border border-solid border-[#cccccc] bg-[#f2f2f7]">
-                    <span class="inline-block cursor-pointer">Silver-plated</span>
-                  </label>
-                  <label class="flex items-center font-medium">
-                    <input type="checkbox" class="mr-3 mt-1 h-5 w-5 rounded-full border border-solid border-[#cccccc] bg-[#f2f2f7]">
-                    <span class="inline-block cursor-pointer">Glass beads</span>
-                  </label>
-                  <label class="flex items-center font-medium">
-                    <input type="checkbox" class="mr-3 mt-1 h-5 w-5 rounded-full border border-solid border-[#cccccc] bg-[#f2f2f7]">
-                    <span class="inline-block cursor-pointer">Resin</span>
-                  </label>
-                  <label class="flex items-center font-medium">
-                    <input type="checkbox" class="mr-3 mt-1 h-5 w-5 rounded-full border border-solid border-[#cccccc] bg-[#f2f2f7]">
-                    <span class="inline-block cursor-pointer">Gold-plated</span>
-                  </label>
+                <label class="flex items-center font-medium">
+                  <input type="checkbox" value="All" class="material-filter">
+                  <span class="inline-block cursor-pointer">All</span>
+                </label>
+                <label class="flex items-center font-medium">
+                  <input type="checkbox" value="Pearl" class="material-filter">
+                  <span class="inline-block cursor-pointer">Pearl</span>
+                </label>
+                <label class="flex items-center font-medium">
+                  <input type="checkbox" value="Silver-plated" class="material-filter">
+                  <span class="inline-block cursor-pointer">Silver-plated</span>
+                </label>
+                <label class="flex items-center font-medium">
+                  <input type="checkbox" value="Glass beads" class="material-filter">
+                  <span class="inline-block cursor-pointer">Glass beads</span>
+                </label>
+                <label class="flex items-center font-medium">
+                  <input type="checkbox" value="Resin" class="material-filter">
+                  <span class="inline-block cursor-pointer">Resin</span>
+                </label>
+                <label class="flex items-center font-medium">
+                  <input type="checkbox" value="Gold-plated" class="material-filter">
+                  <span class="inline-block cursor-pointer">Gold-plated</span>
+                </label>
                 </div>
               </div>
 
               <!-- Divider -->
-              <div class="mb-6 mt-6 h-px w-full bg-[#d9d9d9]"></div>
+              <div class="mb-6 mt-6 h-px w-full bg-amber"></div>
               <!-- Filter Two -->
               <div class="flex flex-col gap-6">
                 <div class="flex cursor-pointer items-center justify-between py-4 [border-top:1px_solid_rgba(0,_0,_0,_0)] md:py-0">
@@ -181,7 +167,33 @@
            
               
              
-              <div class="bg-white rounded-2xl p-6 cursor-pointer hover:-translate-y-2 transition-all relative">
+              <div class="product bg-white rounded-2xl p-6 cursor-pointer hover:-translate-y-2 transition-all relative" data-colors="<?php
+                      $getcolors="SELECT * FROM `colors` ,`pcolors` WHERE `colors`.`color_id`=`pcolors`.`pcolor_color_id` AND `pcolors`.`pcolor_product_id`='$product_id'";
+                        $execute_color = mysqli_query($con,$getcolors);
+                        if(mysqli_num_rows($execute_color))
+                        {
+                          while($row_of_color=mysqli_fetch_assoc($execute_color))
+                          {
+                         
+                              echo($row_of_color["color_name"].",");
+                              
+                          }
+                        }
+                        ?>" 
+                        data-materials="<?php 
+                          $getmaterial="SELECT * FROM `materials` ,`pmaterialsl` WHERE `materials`.`material_id`=`pmaterialsl`.`pmaterial_material_id` AND `pmaterialsl`.`pmaterial_product_id`='$product_id'";
+                          $execute_material = mysqli_query($con,$getmaterial);
+                          if(mysqli_num_rows($execute_material))
+                          {
+                            while($row_of_material=mysqli_fetch_assoc($execute_material))
+                            {
+                           
+                                echo($row_of_material["material_name"].",");
+                                
+                            }
+                          }
+                        ?>">
+
                 <div class="bg-gray-100 w-10 h-10 flex items-center justify-center rounded-full cursor-pointer absolute top-4 right-4">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18px" class="fill-gray-800 inline-block" viewBox="0 0 64 64">
                     <path
@@ -215,25 +227,7 @@
                       <h3 class="text-lg font-bold text-gray-800"><?php echo $row_of_product["pro_name"]; ?></h3>
                      
                       <h4 class="text-lg text-gray-700 font-bold mt-4">Rs.<?php echo $row_of_product["pro_price"]; ?></h4>
-                      <ul>
-                      <?php
-                      $getcolors="SELECT * FROM `colors` ,`pcolors` WHERE `colors`.`color_id`=`pcolors`.`pcolor_color_id` AND `pcolors`.`pcolor_product_id`='$product_id'";
-                        $execute_color = mysqli_query($con,$getcolors);
-                        if(mysqli_num_rows($execute_color))
-                        {
-                          while($row_of_color=mysqli_fetch_assoc($execute_color))
-                          {
-                            ?>
-                            <li>
-                              <?php
-                              echo($row_of_color["color_name"]);
-                              ?>
-                            </li>
-                            <?php
-                          }
-                        }
-                        ?>
-                        </ul>
+
                 </div>
                 </a>
               </div>
