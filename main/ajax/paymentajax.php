@@ -25,7 +25,7 @@ if (
     $formattedDateTime = $datetime->format('Y-m-d H:i:s');
 
 
-    $setorder = "INSERT INTO `orders` (`order_datee`, `order_statuss`, `order_add_idd`, `order_cus_emaill`) VALUES ('$formattedDateTime', 'confirm', '$address', '$cus_id')";
+    $setorder = "INSERT INTO `orders` (`order_datee`, `order_statuss`, `order_add_idd`, `order_cus_emaill`) VALUES ('$formattedDateTime', 'pending', '$address', '$cus_id')";
     $executeorderquerry = mysqli_query($con, $setorder);
     if ($executeorderquerry) {
         $pay_order_id = mysqli_insert_id($con);

@@ -11,10 +11,6 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
 }
 
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
