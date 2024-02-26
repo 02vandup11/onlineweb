@@ -10,20 +10,11 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
 </head>
 <body>
-    <!-- <script>
-        Email.send({
-    SecureToken : "4e1d1045-9f75-45bd-9fef-297a69bc3e72",
-    To : 'sameekshakadam23@gmail.com',
-    From : "sameekshakadam23@gmail.com",
-    Subject : "This is the subject",
-    Body : "And this is the body"
-}).then(
-  message => alert(message)
-);
-    </script> -->
-    <!-- component -->
+   
     <div class="font-sans mt-20">
         <div class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100">
             <div class="relative sm:max-w-sm w-full">
@@ -169,7 +160,7 @@
 	</div>
 </div>
 
-<script src="../../js/forgot password.js"> </script>
+<script src="../../js/forpass.js"> </script>
 	
 
 </body>

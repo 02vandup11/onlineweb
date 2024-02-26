@@ -94,8 +94,8 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
         <div>
         <div class="bg-gray-50 p-10">
           <h3 class="text-xl font-extrabold text-[#333] border-b pb-4">Select Address</h3>
-          <p id="floating_helper_text" class="mt-2 mb-2 text-xs text-gray-500 dark:text-gray-400">Remember, contributions to this topic should follow our 
-            <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</p>
+          <p id="floating_helper_text" class="mt-2 mb-2 text-xs text-gray-500 dark:text-gray-400">If you have not filled your address, please click below to fill it: 
+            <a href="userprofile.php" class="text-blue-600 dark:text-blue-500 hover:underline">Fill Address</a>.</p>
           <select id="add_id" class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none"  placeholder="">
             <option value="" disabled selected>Select Address</option>
           <?php

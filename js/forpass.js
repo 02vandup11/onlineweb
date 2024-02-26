@@ -1,60 +1,48 @@
-<script>
-    $(document).ready(function() {
-        $("#resetButton").click(function() {
-            var email = $("#email").val();
-            
-            // Email Validation
-            if(email === "") {
-                $("#emailError").text("Please enter your email address.");
-                return false;
-            } else if (!isValidEmail(email)) {
-                $("#emailError").text("Please enter a valid email address.");
-                return false;
-            } else {
-                $("#emailError").text(""); // Clear error message if email is valid
+
+$(document).ready(function() {
+    // Add validation rules to the form
+    $("#resetForm").validate({
+        rules: {
+            email: {
+                required: true,
+                email: true
             }
-            
-            // Other validations...
-        });
-
-        $("#changepass").click(function() {
-            var password = $("#password").val();
-            var confirmPassword = $("#confirm-password").val();
-
-            // Password Validation
-            if(password === "") {
-                $("#passwordError").text("Please enter a new password.");
-                return false;
-            } else if(password.length < 8) {
-                $("#passwordError").text("Password must be at least 8 characters long.");
-                return false;
-            } else {
-                $("#passwordError").text(""); // Clear error message if password is valid
+        },
+        messages: {
+            email: {
+                required: "Please enter your email address",
+                email: "Please enter a valid email address"
             }
-
-            // Confirm Password Validation
-            if(confirmPassword === "") {
-                $("#confirmPasswordError").text("Please confirm your new password.");
-                return false;
-            } else if(confirmPassword !== password) {
-                $("#confirmPasswordError").text("Passwords do not match.");
-                return false;
-            } else {
-                $("#confirmPasswordError").text(""); // Clear error message if passwords match
-            }
-
-            // Other validations...
-        });
-
-        // Function to validate email format
-        function isValidEmail(email) {
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
+        },
+        submitHandler: function(form) {
+            // Your form submission code here, e.g., sending the email for password reset
+            form.submit();
         }
     });
-</script>
 
-<!-- Validation Error Messages -->
-<span id="emailError" class="text-red-500"></span>
-<span id="passwordError" class="text-red-500"></span>
-<span id="confirmPasswordError" class="text-red-500"></span>
+    // Validate OTP
+    $("#verifyOtp").click(function() {
+        var otp = $("#first").val() + $("#second").val() + $("#third").val() + $("#fourth").val();
+        if (otp.length != 4 || !/^\d+$/.test(otp)) {
+            $("#invalidotp").show();
+        } else {
+            $("#invalidotp").hide();
+            // Code to verify OTP
+        }
+    });
+
+    // Add validation rules for password change form
+    $("#changepass").click(function() {
+        var password = $("#password").val();
+        var confirm_password = $("#confirm-password").val();
+        if (password != confirm_password) {
+            $("#password-error").text("Passwords do not match");
+            return false;
+        } else {
+            $("#password-error").text("");
+            // Your password change submission code here
+            return true;
+        }
+    });
+});
+

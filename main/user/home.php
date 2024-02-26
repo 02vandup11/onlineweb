@@ -95,12 +95,25 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
                 if(mysqli_num_rows($result_get_category)){
                     while($row=mysqli_fetch_assoc($result_get_category))
                     {
+                        $category_id = $row["category_id"];
                         ?>
                         <div class="max-w-sm bg-cover bg-center bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
                 style="background-image: url('https://images.pexels.com/photos/1323712/pexels-photo-1323712.jpeg?auto=compress&cs=tinysrgb&w=600');">
-                <a href="#">
-                    <img class="rounded-t-lg" src="https://media.istockphoto.com/id/1132212338/photo/artificial-golden-necklace-on-a-black-background.jpg?s=612x612&w=0&k=20&c=KVPn6T6-U0dV7ZWC2Wa9SdAkV88f_KZdh_2gwG5N3_A=" alt="" />
-                </a>
+                <?php
+                    $get_category_img="SELECT * FROM `product`,`image` WHERE `product`.`pro_category_id`='$category_id' AND `product`.`pro_id`=`image`.`image_product_id` LIMIT 1";
+                    $result_get_category_img=mysqli_query($con,$get_category_img);
+                    if(mysqli_num_rows($result_get_category_img)){
+                        while($row_image=mysqli_fetch_assoc($result_get_category_img))
+                        {
+                            ?>
+                            <a href="#">
+                                <img class="rounded-t-lg h-64 w-full object-cover" src="<?php echo($row_image["image_name"]); ?>" alt="" />
+                            </a>
+                           <?php 
+                        }
+                    }
+                ?>
+                
                 <div class="p-5">
                     <a href="#">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><?php echo($row["category_name"]); ?></h5>

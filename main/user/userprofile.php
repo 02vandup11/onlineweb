@@ -18,17 +18,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Jewelry Shop</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://jsuites.net/v4/jsuites.js"></script>
     <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+
+    <title>Jewelry Shop</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"  rel="stylesheet" />
     <link rel="stylesheet" href="https://horizon-tailwind-react-git-tailwind-components-horizon-ui.vercel.app/static/css/main.ad49aa9b.css" />
-
+    
 
 </head>
 
-<body class="">
-
+<body class="bg-gray-100">
     <!-- Navigation Bar -->
     <?php
     include("./layout/header/header.php");
@@ -37,7 +38,7 @@
 
 <div class="flex flex-grow ">
 
-<aside class="w-64 h-screen px-4 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700 mt-20">
+<!-- <aside class="w-64 h-screen px-4 py-8 overflow-y-auto bg-white border-r rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700 mt-20">
     <a href="#" class="mx-auto">
         <img class="w-auto h-6 sm:h-7" src="https://merakiui.com/images/full-logo.svg" alt="">
     </a>
@@ -72,67 +73,90 @@
 
         </nav>
     </div>
-</aside>
+</aside> -->
 
-    <div class="flex-grow p-8 mt-20">
-        <h2 class="text-2xl font-bold text-[#333]">Update Details</h2>
-          <form class="mt-10">
+          <div class="container mx-auto px-4 py-8 mt-20">
+                  <h2 class="text-2xl font-bold text-gray-800">Update Details</h2>
+                  <form class="mt-10" id="your-form-id">
             <div>
-              <h3 class="text-lg font-bold text-[#333] mb-6">Personal Details</h3>
-              <div class="grid sm:grid-cols-2 gap-6">
-                <div class="relative flex items-center">
-                  <input type="text" placeholder="First Name"
-                    class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-[18px] h-[18px] absolute right-4"
-                    viewBox="0 0 24 24">
-                    <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
-                    <path
-                      d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z"
-                      data-original="#000000"></path>
-                  </svg>
+            <h3 class="text-lg font-bold text-gray-800 mb-6">Personal Details</h3>
+
+            <?php
+              $cust_details="SELECT `cus_email`,`cus_fname`,`cus_lname`,`cus_phone` FROM `customer` WHERE `cus_email`='$email'";
+              $get_details=mysqli_query($con,$cust_details);
+              if(mysqli_num_rows($get_details)){
+                  while($row_cus=mysqli_fetch_assoc($get_details))
+                  {
+                    ?>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="relative flex items-center">
+                        <input type="text" placeholder="First Name" value="<?php echo($row_cus["cus_fname"]); ?>"
+                            class="px-4 py-3.5 bg-white text-amber w-full text-sm border-b-2 focus:border-amber outline-none"
+                            id="first_name" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb"
+                            class="w-[18px] h-[18px] absolute right-4" viewBox="0 0 24 24">
+                            <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
+                            <path
+                                d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z"
+                                data-original="#000000"></path>
+                        </svg>
+                    </div>
+                    <div class="relative flex items-center">
+                        <input type="text" placeholder="Last Name" value="<?php echo($row_cus["cus_lname"]); ?>"
+                            class="px-4 py-3.5 bg-white text-amber w-full text-sm border-b-2 focus:border-amber outline-none"
+                            id="last_name" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb"
+                            class="w-[18px] h-[18px] absolute right-4" viewBox="0 0 24 24">
+                            <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
+                            <path
+                                d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z"
+                                data-original="#000000"></path>
+                        </svg>
+                    </div>
+                    <div class="relative flex items-center">
+                        <input type="email" placeholder="Email" readonly value="<?php echo($row_cus["cus_email"]); ?>"
+                            class="px-4 py-3.5 bg-white text-gray-600 w-full text-sm border-b-2 focus:border-amber outline-none"
+                            id="email" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb"
+                            class="w-[18px] h-[18px] absolute right-4" viewBox="0 0 682.667 682.667">
+                            <defs>
+                                <clipPath id="a" clipPathUnits="userSpaceOnUse">
+                                    <path d="M0 512h512V0H0Z" data-original="#000000"></path>
+                                </clipPath>
+                            </defs>
+                            <g clip-path="url(#a)" transform="matrix(1.33 0 0 -1.33 0 682.667)">
+                                <path fill="none" stroke-miterlimit="10" stroke-width="40"
+                                    d="M452 444H60c-22.091 0-40-17.909-40-40v-39.446l212.127-157.782c14.17-10.54 33.576-10.54 47.746 0L492 364.554V404c0 22.091-17.909 40-40 40Z"
+                                    data-original="#000000"></path>
+                                <path
+                                    d="M472 274.9V107.999c0-11.027-8.972-20-20-20H60c-11.028 0-20 8.973-20 20V274.9L0 304.652V107.999c0-33.084 26.916-60 60-60h392c33.084 0 60 26.916 60 60v196.653Z"
+                                    data-original="#000000"></path>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="relative flex items-center">
+                        <input type="tel" placeholder="Phone No." value="<?php echo($row_cus["cus_phone"]); ?>" maxlength="10"
+                            class="px-4 py-3.5 bg-white text-amber w-full text-sm border-b-2 focus:border-amber outline-none"
+                            id="phone" />
+                        <svg fill="#bbb" class="w-[18px] h-[18px] absolute right-4" viewBox="0 0 64 64">
+                            <path
+                                d="m52.148 42.678-6.479-4.527a5 5 0 0 0-6.963 1.238l-1.504 2.156c-2.52-1.69-5.333-4.05-8.014-6.732-2.68-2.68-5.04-5.493-6.73-8.013l2.154-1.504a4.96 4.96 0 0 0 2.064-3.225 4.98 4.98 0 0 0-.826-3.739l-4.525-6.478C20.378 10.5 18.85 9.69 17.24 9.69a4.69 4.69 0 0 0-1.628.291 8.97 8.97 0 0 0-1.685.828l-.895.63a6.782 6.782 0 0 0-.63.563c-1.092 1.09-1.866 2.472-2.303 4.104-1.865 6.99 2.754 17.561 11.495 26.301 7.34 7.34 16.157 11.9 23.011 11.9 1.175 0 2.281-.136 3.29-.406 1.633-.436 3.014-1.21 4.105-2.302.199-.199.388-.407.591-.67l.63-.899a9.007 9.007 0 0 0 .798-1.64c.763-2.06-.007-4.41-1.871-5.713z"
+                                data-original="#000000"></path>
+                        </svg>
+                    </div>
                 </div>
-                <div class="relative flex items-center">
-                  <input type="text" placeholder="Last Name"
-                    class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-[18px] h-[18px] absolute right-4"
-                    viewBox="0 0 24 24">
-                    <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
-                    <path
-                      d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z"
-                      data-original="#000000"></path>
-                  </svg>
-                </div>
-                <div class="relative flex items-center">
-                  <input type="email" placeholder="Email" readonly
-                    class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-[18px] h-[18px] absolute right-4"
-                    viewBox="0 0 682.667 682.667">
-                    <defs>
-                      <clipPath id="a" clipPathUnits="userSpaceOnUse">
-                        <path d="M0 512h512V0H0Z" data-original="#000000"></path>
-                      </clipPath>
-                    </defs>
-                    <g clip-path="url(#a)" transform="matrix(1.33 0 0 -1.33 0 682.667)">
-                      <path fill="none" stroke-miterlimit="10" stroke-width="40"
-                        d="M452 444H60c-22.091 0-40-17.909-40-40v-39.446l212.127-157.782c14.17-10.54 33.576-10.54 47.746 0L492 364.554V404c0 22.091-17.909 40-40 40Z"
-                        data-original="#000000"></path>
-                      <path
-                        d="M472 274.9V107.999c0-11.027-8.972-20-20-20H60c-11.028 0-20 8.973-20 20V274.9L0 304.652V107.999c0-33.084 26.916-60 60-60h392c33.084 0 60 26.916 60 60v196.653Z"
-                        data-original="#000000"></path>
-                    </g>
-                  </svg>
-                </div>
-                <div class="relative flex items-center">
-                  <input type="number" placeholder="Phone No."
-                    class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
-                  <svg fill="#bbb" class="w-[18px] h-[18px] absolute right-4" viewBox="0 0 64 64">
-                    <path
-                      d="m52.148 42.678-6.479-4.527a5 5 0 0 0-6.963 1.238l-1.504 2.156c-2.52-1.69-5.333-4.05-8.014-6.732-2.68-2.68-5.04-5.493-6.73-8.013l2.154-1.504a4.96 4.96 0 0 0 2.064-3.225 4.98 4.98 0 0 0-.826-3.739l-4.525-6.478C20.378 10.5 18.85 9.69 17.24 9.69a4.69 4.69 0 0 0-1.628.291 8.97 8.97 0 0 0-1.685.828l-.895.63a6.782 6.782 0 0 0-.63.563c-1.092 1.09-1.866 2.472-2.303 4.104-1.865 6.99 2.754 17.561 11.495 26.301 7.34 7.34 16.157 11.9 23.011 11.9 1.175 0 2.281-.136 3.29-.406 1.633-.436 3.014-1.21 4.105-2.302.199-.199.388-.407.591-.67l.63-.899a9.007 9.007 0 0 0 .798-1.64c.763-2.06-.007-4.41-1.871-5.713z"
-                      data-original="#000000"></path>
-                  </svg>
-                </div>
-              </div>
-              <button type="button" class="rounded-md my-6 px-6 py-3 w-full text-sm font-semibold bg-[#333] text-white hover:bg-[#222]">Confirm</button>
+
+                <button type="button" class="rounded-md my-6 px-6 py-3 w-full text-sm font-semibold bg-gray-800 text-white hover:bg-gray-700" id="confirm">Confirm</button>
+
+               
+
+
+                    <?php
+
+                  }
+                }
+            ?>
             </div>
             <div class="mt-6">
 
@@ -159,7 +183,7 @@
                         <form class="mt-10" id="myForm">
                             <div class="grid sm:grid-cols-2 gap-6">
                         <div>
-                            <select id="type" class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" placeholder="">
+                            <select id="type" class="px-4 py-3.5 bg-white text-amber w-full text-sm border-b-2 focus:border-amber outline-none" placeholder="">
                                 <option value="" disabled selected>Select Type</option>
                                 <option value="Home">Home</option>
                                 <option value="Work">Work</option>
@@ -167,34 +191,34 @@
                         </div>
                         <div>
                             <input type="text" id="Room" placeholder="Room No" maxlength="10"
-                            class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                            class="px-4 py-3.5 bg-white text-amber w-full text-sm border-b-2 focus:border-amber outline-none" />
                         </div>
                         <div>
                             <input type="text" id="Building" placeholder="Building No" maxlength="10"
-                            class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                            class="px-4 py-3.5 bg-white text-amber w-full text-sm border-b-2 focus:border-amber outline-none" />
                         </div>
                         <div>
                             <input type="text" id="Landmark" placeholder="Landmark" maxlength="40"
-                            class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                            class="px-4 py-3.5 bg-white text-amber w-full text-sm border-b-2 focus:border-amber outline-none" />
                         </div>
                         <div>
                             <input type="text" id="Street" placeholder="Street" maxlength="40"
-                            class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                            class="px-4 py-3.5 bg-white text-amber w-full text-sm border-b-2 focus:border-amber outline-none" />
                         </div>
                         <div>
                             <input type="text" id="City" placeholder="City" maxlength="20"
-                            class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                            class="px-4 py-3.5 bg-white text-amber w-full text-sm border-b-2 focus:border-amber outline-none" />
                         </div>
                         <div>
                             <input type="number" id="pincode" placeholder="Pincode" maxlength="6"
-                            class="px-4 py-3.5 bg-white text-[#333] w-full text-sm border-b-2 focus:border-[#333] outline-none" />
+                            class="px-4 py-3.5 bg-white text-amber w-full text-sm border-b-2 focus:border-amber outline-none" />
                         </div>
 
                             </div>
 
                             <div id="error-msg"></div>
 
-                            <button type="button" id="submit" class="rounded-md my-6 px-6 py-3 w-full text-sm font-semibold bg-[#333] text-white hover:bg-[#222]">Confirm</button>
+                            <button type="button" id="submit" class="rounded-md my-6 px-6 py-3 w-full text-sm font-semibold bg-amber text-white hover:bg-[#222]">Confirm</button>
 
                         </form>
                     </div>
@@ -203,9 +227,9 @@
 
               
               <div class="flex gap-6 max-sm:flex-col items-center justify-between">
-                <h3 class="text-lg font-bold text-[#333] mb-6">Shipping Address</h3>
+                <h3 class="text-lg font-bold text-amber mb-6">Shipping Address</h3>
                 
-                    <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" type="button" class="flex rounded-md px-6 py-3 w-50 mb-4 text-sm font-semibold bg-transparent hover:bg-gray-100 border-2 text-[#333]">
+                    <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" type="button" class="flex rounded-md px-6 py-3 w-50 mb-4 text-sm font-semibold bg-transparent hover:bg-gray-100 border-2 text-amber">
                     <svg class="mr-2" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 12H20M12 4V20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                     Add Address</button>
               </div>
@@ -221,7 +245,8 @@
 
            <div class="flex flex-col justify-center items-center mb-2">
              <div class="relative flex flex-col items-center rounded-[20px] w-[700px] max-w-[95%] mx-auto bg-white bg-clip-border shadow-3xl shadow-shadow-500 dark:!bg-navy-800 dark:text-white dark:!shadow-none p-3 border-solid border-2 border-gray-600">
-                <div class=" w-full">
+             
+            <div class=" w-full">
                     <h4 class="px-2 text-xl font-bold text-navy-700 dark:text-white">
                     Address Information
                     </h4>
@@ -276,7 +301,7 @@
                     </p>
                   </div>
                 </div>
-             </div>          
+             </div>
            </div>
            <?php
       }
@@ -300,7 +325,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 
 <script src="../../js/addaddress.js"></script>
+<script src="../../js/customerdetails.js"></script>
+
 
 </body>
+
 
 </html>
