@@ -1,3 +1,23 @@
+<?php 
+session_start(); 
+if(isset($_SESSION["email"]) && isset($_SESSION["type"])  )
+{
+  if($_SESSION["type"]=="a")
+  {
+    $email = $_SESSION["email"];
+  }
+  else
+  {
+    echo ("<script>location.href='adminlogin.php'</script>");
+  }
+
+}
+else{
+    echo ("<script>location.href='adminlogin.php'</script>");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -139,7 +159,7 @@
             </a>
           </li>
           <li>
-            <a href="javascript:void(0)"
+            <a href="../../config/logout.php"
               class="text-black hover:text-amber-600 text-sm flex items-center hover:bg-amber-50 rounded px-4 py-3 transition-all">
               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
                 viewBox="0 0 6.35 6.35">

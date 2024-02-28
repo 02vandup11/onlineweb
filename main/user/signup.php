@@ -17,9 +17,7 @@
 </head>
 <body class="">
  <!-- Navigation Bar -->
- <?php
-    include("./layout/header/header.php");
-   ?>
+ 
 
 <!-- component -->
 <div class="font-sans mt-20  ">

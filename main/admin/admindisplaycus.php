@@ -1,3 +1,23 @@
+<?php 
+session_start(); 
+if(isset($_SESSION["email"]) && isset($_SESSION["type"])  )
+{
+  if($_SESSION["type"]=="a")
+  {
+    $email = $_SESSION["email"];
+  }
+  else
+  {
+    echo ("<script>location.href='adminlogin.php'</script>");
+  }
+
+}
+else{
+    echo ("<script>location.href='adminlogin.php'</script>");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

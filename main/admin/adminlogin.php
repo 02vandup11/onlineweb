@@ -16,9 +16,7 @@
 <body class="">
 
     <!-- Navigation Bar -->
-    <?php
-    include("../user/layout/header/header.php");
-    ?>
+   
 
     <!-- Login Form -->
     <div class="font-sans mt-16">

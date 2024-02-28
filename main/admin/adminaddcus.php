@@ -1,3 +1,23 @@
+<?php 
+session_start(); 
+if(isset($_SESSION["email"]) && isset($_SESSION["type"])  )
+{
+  if($_SESSION["type"]=="a")
+  {
+    $email = $_SESSION["email"];
+  }
+  else
+  {
+    echo ("<script>location.href='adminlogin.php'</script>");
+  }
+
+}
+else{
+    echo ("<script>location.href='adminlogin.php'</script>");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,13 +45,13 @@
     include("../../config/connect.php");
 ?>
 
+
+
 <!-- button to add product -->
     <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="flex m-4 block text-white bg-amber-700 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800" type="button">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 me-2" aria-hidden="true"  viewBox="0 0 24 24"><path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm4,11H13v3a1,1,0,0,1-2,0V13H8a1,1,0,0,1,0-2h3V8a1,1,0,0,1,2,0v3h3a1,1,0,0,1,0,2Z"/></svg>
         Add Product  
     </button>
-
-
 
 <!-- table -->
 
@@ -241,7 +261,7 @@
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                     Edit Product Details
                 </h3>
-                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="crud-modal1">
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" >
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                     </svg>
@@ -322,44 +342,45 @@
                     </div>
                     
                     <div class="col-span-2">
-                            <h2 class="text-lg font-semibold mb-4">Upload Images</h2>
-                            <form action="#" method="POST" enctype="multipart/form-data">
-                                <div class="mb-4">
-                                    <label for="image1" class="block text-sm font-medium text-gray-700">Image 1:</label>
-                                    <input type="file" id="image1" name="image1" accept="image/*" class="mt-1">
-                                </div>
-                                <div class="mb-4">
-                                    <label for="image2" class="block text-sm font-medium text-gray-700">Image 2:</label>
-                                    <input type="file" id="image2" name="image2" accept="image/*" class="mt-1">
-                                </div>
-                                <div class="mb-4">
-                                    <label for="image3" class="block text-sm font-medium text-gray-700">Image 3:</label>
-                                    <input type="file" id="image3" name="image3" accept="image/*" class="mt-1">
-                                </div>
-                                <div class="mb-4">
-                                    <label for="image4" class="block text-sm font-medium text-gray-700">Image 4:</label>
-                                    <input type="file" id="image4" name="image4" accept="image/*" class="mt-1">
-                                </div>
-                                <div class="mb-4">
-                                    <label for="image5" class="block text-sm font-medium text-gray-700">Image 5:</label>
-                                    <input type="file" id="image5" name="image5" accept="image/*" class="mt-1">
-                                </div>
-                                <div class="flex justify-end">
-                                    <button type="submit"
-                                            class="bg-amber-800 text-white py-2 px-4 rounded-md hover:bg-amber-600">Upload Images</button>
-                                </div>
+                        <div class="mt-4">
+                            <label for="images" class="block text-sm font-medium text-gray-700">Select Image Files (Max 5)</label>
+                            <input id="images" name="images[]" type="file" accept="image/*" multiple class="mt-1 bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            <div id="selectedImages" class="mt-2 flex flex-col space-y-2"></div>
+                        </div>
 
-                            </form>
-                    
-                        <hr class="border-t border-amber-800 my-2 w-full">
-                        <hr class="border-t border-amber-800 my-2 w-full">
+                        <script>
+                            // Stop click event propagation on the images input
+                            document.getElementById('images').addEventListener('click', function(event) {
+                                event.stopPropagation();
+                            });
 
+                            document.getElementById('images').addEventListener('change', function(event) {
+                                const fileList = event.target.files;
+                                const selectedImagesContainer = document.getElementById('selectedImages');
+                                selectedImagesContainer.innerHTML = ''; // Clear previous selection
+
+                                if (fileList.length > 5) {
+                                    alert('Maximum 5 images allowed');
+                                    event.target.value = ''; // Clear the selected files
+                                    return;
+                                }
+
+                                for (let i = 0; i < fileList.length; i++) {
+                                    const fileName = fileList[i].name;
+                                    const fileItem = document.createElement('div');
+                                    fileItem.textContent = fileName;
+                                    fileItem.classList.add('text-sm', 'text-gray-700');
+                                    selectedImagesContainer.appendChild(fileItem);
+                                }
+                            });
+                        </script>
 
                     </div>
+
                     <div class="col-span-2">  
                         <button type="submit" class="w-full text-white flex items-center bg-amber-700 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800">
                             <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
-                            Add new product
+                            Edit product
                         </button>
                     </div>
                 </div>
@@ -381,7 +402,7 @@
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                     Create New Product
                 </h3>
-                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="crud-modal">
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" >
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                     </svg>
@@ -462,40 +483,47 @@
                     </div>
                     
                     <div class="col-span-2">
-                        <h2 class="text-lg font-semibold mb-4">Upload Images</h2>
-                            <form action="#" method="POST" enctype="multipart/form-data">
-                                <div class="mb-4">
-                                    <label for="image1" class="block text-sm font-medium text-gray-700">Image 1:</label>
-                                    <input type="file" id="image1" name="image1" accept="image/*" class="mt-1">
-                                </div>
-                                <div class="mb-4">
-                                    <label for="image2" class="block text-sm font-medium text-gray-700">Image 2:</label>
-                                    <input type="file" id="image2" name="image2" accept="image/*" class="mt-1">
-                                </div>
-                                <div class="mb-4">
-                                    <label for="image3" class="block text-sm font-medium text-gray-700">Image 3:</label>
-                                    <input type="file" id="image3" name="image3" accept="image/*" class="mt-1">
-                                </div>
-                                <div class="mb-4">
-                                    <label for="image4" class="block text-sm font-medium text-gray-700">Image 4:</label>
-                                    <input type="file" id="image4" name="image4" accept="image/*" class="mt-1">
-                                </div>
-                                <div class="mb-4">
-                                    <label for="image5" class="block text-sm font-medium text-gray-700">Image 5:</label>
-                                    <input type="file" id="image5" name="image5" accept="image/*" class="mt-1">
-                                </div>
-                                <div class="flex justify-end">
-                                    <button type="submit"
-                                            class="bg-amber-800 text-white py-2 px-4 rounded-md hover:bg-amber-600">Upload Images</button>
-                                </div>
+                        <div class="mt-4">
+                            <label for="images" class="block text-sm font-medium text-gray-700">Select Image Files (Max 5)</label>
+                            <input id="images" name="images[]" type="file" accept="image/*" multiple class="mt-1 bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            <div id="selectedImages" class="mt-2 flex flex-col space-y-2"></div>
+                        </div>
 
-                            </form>
-                    
-                        <hr class="border-t border-amber-800 my-2 w-full">
-                        <hr class="border-t border-amber-800 my-2 w-full">
+                        <script>
+                            // Stop click event propagation on the images input
+                            document.getElementById('images').addEventListener('click', function(event) {
+                                event.stopPropagation();
+                            });
+
+                            document.getElementById('images').addEventListener('change', function(event) {
+                                const fileList = event.target.files;
+                                const selectedImagesContainer = document.getElementById('selectedImages');
+                                selectedImagesContainer.innerHTML = ''; // Clear previous selection
+
+                                if (fileList.length > 5) {
+                                    alert('Maximum 5 images allowed');
+                                    event.target.value = ''; // Clear the selected files
+                                    return;
+                                }
+
+                                for (let i = 0; i < fileList.length; i++) {
+                                    const fileName = fileList[i].name;
+                                    const fileItem = document.createElement('div');
+                                    fileItem.textContent = fileName;
+                                    fileItem.classList.add('text-sm', 'text-gray-700');
+                                    selectedImagesContainer.appendChild(fileItem);
+                                }
+                            });
+                        </script>
+
 
 
                     </div>
+
+
+
+
+
                     <div class="col-span-2">  
                         <button type="submit" class="w-full text-white flex items-center bg-amber-700 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800">
                             <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>

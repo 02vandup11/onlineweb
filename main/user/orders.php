@@ -1,12 +1,16 @@
-<?php
-session_start();
-if (isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION["lastname"])) {
+<?php 
+session_start(); 
+if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION["lastname"]) && isset($_SESSION["type"])  )
+{
     $email = $_SESSION["email"];
-    $firstname = $_SESSION["firstname"];
-    $lastname = $_SESSION["lastname"];
-} else {
+    $firstname=$_SESSION["firstname"];
+    $lastname=$_SESSION["lastname"];
+    $_SESSION["type"] = "c";
+}else{
     echo ("<script>location.href='login.php'</script>");
+
 }
+
 ?>
 
 <!DOCTYPE html>
