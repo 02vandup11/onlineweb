@@ -11,7 +11,19 @@ $decodedData = json_decode($data, true);
         $cart = $decodedData['cart'];
         if (empty($cart)) {
             // If the cart is empty, display a message
-            echo "Your cart is empty!!";
+            ?>
+
+              <!--Graphic from https://www.opendoodles.com/-->
+              <div class="grid  place-content-center bg-white">
+                <div class="text-center">
+                    <img src="https://elements-cover-images-0.imgix.net/81a21290-d463-45ed-b2fc-968f275dd90b?auto=compress%2Cformat&w=1370&fit=max&s=e797f85ee2731c4d967f4efd40a134d6" alt="Explore More Products" class="h-64">
+                    <h1 class="mt-6 text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Explore More Products</h1>
+                    <p class="mt-4 text-gray-500">Your cart is empty!!</p>
+                </div>
+            </div>
+
+
+            <?php
         } else {
         // Loop through the cart items
         foreach ($cart as $item) {

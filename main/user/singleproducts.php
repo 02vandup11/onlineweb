@@ -206,8 +206,8 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
               <hr class="w-48 h-1 mx-auto  bg-gray-100 border-0 rounded md:my-6 dark:bg-gray-700">
               <!-- component -->
                 <!-- comment form -->
-                <input type="text" name="text" placeholder="Enter..." id="user_email" value="<?php echo $email ;?>">
-                <input type="text" name="text" placeholder="Enter..." id="pro_id" value="<?php echo $id ;?>">
+                <input type="text" name="text" class="hidden" placeholder="Enter..." id="user_email" value="<?php echo $email ;?>">
+                <input type="text" name="text" class="hidden" placeholder="Enter..." id="pro_id" value="<?php echo $id ;?>">
 
 
                 <div class="max-w-md">
@@ -232,7 +232,7 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
                     <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
                       <h2 id="accordion-flush-heading-1">
                         <button type="button" class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-1" aria-expanded="false" aria-controls="accordion-flush-body-1">
-                          <span>What is Flowbite?</span>
+                          <span>A Note on Shipping and Returns</span>
                           <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
                           </svg>
@@ -240,11 +240,11 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
                       </h2>
                       <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
                         <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                          <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
-                          <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
+                          <p class="mb-2 text-gray-500 dark:text-gray-400">Please consider your purchase carefully, as there is no return or exchange policy after you have bought a product. We recommend reviewing the product details and ensuring it meets your requirements before placing your order. Your understanding and cooperation are greatly appreciated.</p>
+                          <!-- <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p> -->
                         </div>
                       </div>
-                      <h2 id="accordion-flush-heading-2">
+                      <!-- <h2 id="accordion-flush-heading-2">
                         <button type="button" class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
                           <span>Is there a Figma file available?</span>
                           <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -257,8 +257,8 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
                           <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
                           <p class="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
                         </div>
-                      </div>
-                      <h2 id="accordion-flush-heading-3">
+                      </div> -->
+                      <!-- <h2 id="accordion-flush-heading-3">
                         <button type="button" class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
                           <span>What are the differences between Flowbite and Tailwind UI?</span>
                           <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -276,7 +276,7 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
                             <li><a href="https://tailwindui.com/" rel="nofollow" class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
                           </ul>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
 
 

@@ -169,9 +169,13 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
         } else {
             ?>
 
-    <div class="min-h-screen">
-        No Orders Yet !!!!!
-    </div>
+            <div class="grid h-screen place-content-center bg-white">
+                <div class="text-center">
+                    <img src="https://elements-cover-images-0.imgix.net/81a21290-d463-45ed-b2fc-968f275dd90b?auto=compress%2Cformat&w=1370&fit=max&s=e797f85ee2731c4d967f4efd40a134d6" alt="Explore More Products" class="h-64">
+                    <h1 class="mt-6 text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">Explore More Products</h1>
+                    <p class="mt-4 text-gray-500">Your Order is empty!!</p>
+                </div>
+            </div>
 
 <?php
 }

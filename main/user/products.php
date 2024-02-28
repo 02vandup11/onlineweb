@@ -59,7 +59,6 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
     <div class="flex flex-col gap-12">
       <!-- Title -->
       <div class="flex flex-col gap-5">
-        <h3 class="text-2xl font-bold md:text-5xl">Filter products</h3>
         <p class="text-sm text-[#808080] sm:text-base"></p>
       </div>
       <!-- Content -->

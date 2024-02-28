@@ -91,7 +91,7 @@ include("../../config/connect.php");
   </a>
 </li>
 
-<input type="text" name="text" placeholder="Enter..." id="user_email" value="<?php echo $email ;?>">
+<input type="text" name="text" class="hidden" placeholder="Enter..." id="user_email" value="<?php echo $email ;?>">
 
   </ul>
 

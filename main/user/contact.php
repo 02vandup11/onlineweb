@@ -28,153 +28,646 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
 
 </head>
 
-<body class="">
+<body>
 
     <!-- Navigation Bar -->
     <?php
     include("./layout/header/header.php");
     ?>
 
-    <!-- component -->
-<!--
-  Welcome to Tailwind Play, the official Tailwind CSS playground!
-
-  Everything here works just like it does when you're running Tailwind locally
-  with a real build pipeline. You can customize your config file, use features
-  like `@apply`, or even add third-party plugins.
-
-  Feel free to play with this example if you're just learning, or trash it and
-  start from scratch if you know enough to be dangerous. Have fun!
--->
-<div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12 mt-16">
-  <div class="w-full items-center mx-auto max-w-screen-lg">
-    <div class="group grid w-full grid-cols-2 ">
-      <div class="relative flex before:block before:absolute before:h-1/6 before:w-2 before:bg-stone-200 before:top-0 before:right-0 before:rounded-lg  before:transition-all group-hover:before:bg-orange-300 overflow-hidden">
-        <div class="absolute bottom-0 right-0 bg-amber-500 w-4/6 overflow-hidden flex flex-col justify-center rounded-xl group-hover:bg-sky-600 transition-all shadow-2xl">
-          <img src="https://picsum.photos/800/800" alt="">
-        </div>
-        
-        <div class="h-2/3 rounded-xl overflow-hidden">
-          <img src="https://picsum.photos/800/800" class="h-full" alt="">
-        </div>
-        <a class="-rotate-90 font-bold mt-2 mb-8 r gap-2 h-16 text-2xl leading-7" href="">
-          <span>Ethnic <br> Jewels</span>
-        </a>
-        <a class="absolute h-20 bg-amber-500 w-20 flex items-center justify-center rounded-full bottom-10 left-10 text-white before:block before:absolute before:h-20 before:w-20 before:bg-sky-100 before:rounded-full group-hover:before:animate-ping before:-z-10 hover:bg-sky-600" href="">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
-        </svg>
-        </a>
-      </div>
-      <div>
-        <div class="pl-12">
-          <h2 class="text-5xl font-medium mb-6">Embark on a Journey of Elegance with Our Regal Jewelry Accessories</h2>
-          <h3 class="text-2xl font-medium mb-6">Experience the Luxury of Ethereal Ornaments</h3>
-          <p class="mb-6 text-gray-400">At Ethereal Ornaments & Adornments, we invite you to explore a realm where every piece tells a story of timeless beauty and sophistication. From enchanting earrings to exquisite necklaces and captivating bracelets, our collection is meticulously crafted to elevate your style with unparalleled grace.
-          </p>
-          <h3 class="mb-4 font-semibold text-xl text-gray-400">Indulge in the Opulence of Our Collections</h3>
-          <div class="grid grid-cols-2 gap-6 justify-between mb-3">
-            <a href="" class="flex items-center gap-3 hover:text-amber-300">
-              <span class="h-10 w-10 rounded-full bg-amber-300 flex items-center justify-center text-white shadow-lg shadow-amber-500/30">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
-              </span>
-              <span class="font-semibold">Bridal Collection</span>
-            </a>
-            <a href="" class="flex items-center gap-3 hover:text-amber-300">
-              <span class="h-10 w-10 rounded-full bg-amber-300 flex items-center justify-center text-white shadow-lg shadow-amber-500/30">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
-              </span>
-              <span class="font-semibold">Ethnic Inspired</span>
-            </a>
-          </div>
-          <div class="grid grid-cols-2 gap-6 justify-between mb-3">
-            <a href="" class="flex items-center gap-3 hover:text-amber-300">
-              <span class="h-10 w-10 rounded-full bg-amber-300 flex items-center justify-center text-white shadow-lg shadow-amber-500/30">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
-              </span>
-              <span class="font-semibold">Custom Creations</span>
-            </a>
-            <a href="" class="flex items-center gap-3 hover:text-amber-300">
-              <span class="h-10 w-10 rounded-full bg-amber-300 flex items-center justify-center text-white shadow-lg shadow-amber-500/30">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
-              </span>
-              <span class="font-semibold">Royal Culture</span>
-            </a>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- component -->
-<!--
-  Welcome to Tailwind Play, the official Tailwind CSS playground!
-
-  Everything here works just like it does when you're running Tailwind locally
-  with a real build pipeline. You can customize your config file, use features
-  like `@apply`, or even add third-party plugins.
-
-  Feel free to play with this example if you're just learning, or trash it and
-  start from scratch if you know enough to be dangerous. Have fun!
--->
-<div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-8">
-  <div class="w-full items-center mx-auto max-w-screen-lg">
-    <div class="group grid w-full grid-cols-2">
-       <div>
-        <div class="pr-12">
-          <p class="peer mb-6 text-gray-400">
-
-          Welcome to Ethnic Jewelry, where tradition meets elegance in every piece of ethnic jewelry. Founded by a seasoned artisan, Shreedhar Padhi, our brand embodies the rich heritage and cultural essence of traditional jewelry craftsmanship.
-
-With a lifetime of experience and a passion for preserving the legacy of ethnic adornments, Shreedhar Padhi embarked on a journey to share his expertise with the world. Each creation is a testament to his dedication to honoring age-old techniques and incorporating them into contemporary designs, ensuring that every piece tells a story of craftsmanship and authenticity.</p>
-          <p class="mb-6 text-gray-400">
-          At Ethnic Jewelry, we take pride in offering a curated collection of exquisite ethnic jewelry, meticulously handcrafted using only the finest materials. From intricately designed necklaces to ornate bracelets and statement earrings, each piece is a masterpiece that reflects the diversity and beauty of different cultures around the world.
-
-Whether you're looking for a unique piece to complement your everyday attire or searching for a special gift that celebrates heritage and tradition, we invite you to explore our collection and discover the timeless elegance of ethnic jewelry at Ethnic Jewelry</p>
-          <h3 class="mb-4 font-semibold text-xl text-gray-400">Co-Founders Names</h3>
-          <ul role="list" class="marker:text-orange-400 list-disc pl-5 space-y-3 text-slate-500">
-            <li>Manjushree Padhi</li>
-            <li>Ramkrishna Padhi</li>
-            <li>Komal Padhi</li>
-          </ul>
-        </div>
+<!-- ====== About Section Start -->
+<section
+   class="overflow-hidden pt-2 pb-2 lg:pt-[120px] lg:pb-[90px] bg-white dark:bg-dark"
+   >
+   <div class="container ">
+      <div class="flex flex-wrap items-center justify-between -mx-4">
+         <div class="w-full  lg:w-6/12">
+            <div class="flex items-center  sm:-mx-4">
+               <div class="w-full px-3 sm:px-4 xl:w-1/2">
+                  <div class="sm:py-4">
+                     <img
+                        src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGpld2Vscnl8ZW58MHwxfDB8fHwy"
+                        alt=""
+                        class="w-full rounded-2xl"
+                        />
+                  </div>
+                  <div class="py-3 sm:py-4">
+                     <img
+                        src="https://images.unsplash.com/photo-1619893454156-26a705ac9eb5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njh8fGpld2Vscnl8ZW58MHwxfDB8fHwy"
+                        alt=""
+                        class="w-full rounded-2xl"
+                        />
+                  </div>
+               </div>
+               <div class="w-full px-3 sm:px-4 xl:w-1/2">
+                  <div class="relative z-10 my-4">
+                     <img
+                        src="https://images.unsplash.com/photo-1517424401253-3db93d0d6c93?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTUyfHxqZXdlbGxlcnl8ZW58MHwxfDB8fHwy"
+                        alt=""
+                        class="w-full rounded-2xl"
+                        />
+                     <span class="absolute -right-7 -bottom-7 z-[-1]">
+                        <svg
+                           width="134"
+                           height="106"
+                           viewBox="0 0 134 106"
+                           fill="none"
+                           xmlns="http://www.w3.org/2000/svg"
+                           >
+                           <circle
+                              cx="1.66667"
+                              cy="104"
+                              r="1.66667"
+                              transform="rotate(-90 1.66667 104)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="16.3333"
+                              cy="104"
+                              r="1.66667"
+                              transform="rotate(-90 16.3333 104)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="31"
+                              cy="104"
+                              r="1.66667"
+                              transform="rotate(-90 31 104)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="45.6667"
+                              cy="104"
+                              r="1.66667"
+                              transform="rotate(-90 45.6667 104)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="60.3334"
+                              cy="104"
+                              r="1.66667"
+                              transform="rotate(-90 60.3334 104)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="88.6667"
+                              cy="104"
+                              r="1.66667"
+                              transform="rotate(-90 88.6667 104)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="117.667"
+                              cy="104"
+                              r="1.66667"
+                              transform="rotate(-90 117.667 104)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="74.6667"
+                              cy="104"
+                              r="1.66667"
+                              transform="rotate(-90 74.6667 104)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="103"
+                              cy="104"
+                              r="1.66667"
+                              transform="rotate(-90 103 104)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="132"
+                              cy="104"
+                              r="1.66667"
+                              transform="rotate(-90 132 104)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="1.66667"
+                              cy="89.3333"
+                              r="1.66667"
+                              transform="rotate(-90 1.66667 89.3333)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="16.3333"
+                              cy="89.3333"
+                              r="1.66667"
+                              transform="rotate(-90 16.3333 89.3333)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="31"
+                              cy="89.3333"
+                              r="1.66667"
+                              transform="rotate(-90 31 89.3333)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="45.6667"
+                              cy="89.3333"
+                              r="1.66667"
+                              transform="rotate(-90 45.6667 89.3333)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="60.3333"
+                              cy="89.3338"
+                              r="1.66667"
+                              transform="rotate(-90 60.3333 89.3338)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="88.6667"
+                              cy="89.3338"
+                              r="1.66667"
+                              transform="rotate(-90 88.6667 89.3338)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="117.667"
+                              cy="89.3338"
+                              r="1.66667"
+                              transform="rotate(-90 117.667 89.3338)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="74.6667"
+                              cy="89.3338"
+                              r="1.66667"
+                              transform="rotate(-90 74.6667 89.3338)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="103"
+                              cy="89.3338"
+                              r="1.66667"
+                              transform="rotate(-90 103 89.3338)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="132"
+                              cy="89.3338"
+                              r="1.66667"
+                              transform="rotate(-90 132 89.3338)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="1.66667"
+                              cy="74.6673"
+                              r="1.66667"
+                              transform="rotate(-90 1.66667 74.6673)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="1.66667"
+                              cy="31.0003"
+                              r="1.66667"
+                              transform="rotate(-90 1.66667 31.0003)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="16.3333"
+                              cy="74.6668"
+                              r="1.66667"
+                              transform="rotate(-90 16.3333 74.6668)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="16.3333"
+                              cy="31.0003"
+                              r="1.66667"
+                              transform="rotate(-90 16.3333 31.0003)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="31"
+                              cy="74.6668"
+                              r="1.66667"
+                              transform="rotate(-90 31 74.6668)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="31"
+                              cy="31.0003"
+                              r="1.66667"
+                              transform="rotate(-90 31 31.0003)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="45.6667"
+                              cy="74.6668"
+                              r="1.66667"
+                              transform="rotate(-90 45.6667 74.6668)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="45.6667"
+                              cy="31.0003"
+                              r="1.66667"
+                              transform="rotate(-90 45.6667 31.0003)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="60.3333"
+                              cy="74.6668"
+                              r="1.66667"
+                              transform="rotate(-90 60.3333 74.6668)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="60.3333"
+                              cy="30.9998"
+                              r="1.66667"
+                              transform="rotate(-90 60.3333 30.9998)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="88.6667"
+                              cy="74.6668"
+                              r="1.66667"
+                              transform="rotate(-90 88.6667 74.6668)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="88.6667"
+                              cy="30.9998"
+                              r="1.66667"
+                              transform="rotate(-90 88.6667 30.9998)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="117.667"
+                              cy="74.6668"
+                              r="1.66667"
+                              transform="rotate(-90 117.667 74.6668)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="117.667"
+                              cy="30.9998"
+                              r="1.66667"
+                              transform="rotate(-90 117.667 30.9998)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="74.6667"
+                              cy="74.6668"
+                              r="1.66667"
+                              transform="rotate(-90 74.6667 74.6668)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="74.6667"
+                              cy="30.9998"
+                              r="1.66667"
+                              transform="rotate(-90 74.6667 30.9998)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="103"
+                              cy="74.6668"
+                              r="1.66667"
+                              transform="rotate(-90 103 74.6668)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="103"
+                              cy="30.9998"
+                              r="1.66667"
+                              transform="rotate(-90 103 30.9998)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="132"
+                              cy="74.6668"
+                              r="1.66667"
+                              transform="rotate(-90 132 74.6668)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="132"
+                              cy="30.9998"
+                              r="1.66667"
+                              transform="rotate(-90 132 30.9998)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="1.66667"
+                              cy="60.0003"
+                              r="1.66667"
+                              transform="rotate(-90 1.66667 60.0003)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="1.66667"
+                              cy="16.3333"
+                              r="1.66667"
+                              transform="rotate(-90 1.66667 16.3333)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="16.3333"
+                              cy="60.0003"
+                              r="1.66667"
+                              transform="rotate(-90 16.3333 60.0003)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="16.3333"
+                              cy="16.3333"
+                              r="1.66667"
+                              transform="rotate(-90 16.3333 16.3333)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="31"
+                              cy="60.0003"
+                              r="1.66667"
+                              transform="rotate(-90 31 60.0003)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="31"
+                              cy="16.3333"
+                              r="1.66667"
+                              transform="rotate(-90 31 16.3333)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="45.6667"
+                              cy="60.0003"
+                              r="1.66667"
+                              transform="rotate(-90 45.6667 60.0003)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="45.6667"
+                              cy="16.3333"
+                              r="1.66667"
+                              transform="rotate(-90 45.6667 16.3333)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="60.3333"
+                              cy="60.0003"
+                              r="1.66667"
+                              transform="rotate(-90 60.3333 60.0003)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="60.3333"
+                              cy="16.3333"
+                              r="1.66667"
+                              transform="rotate(-90 60.3333 16.3333)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="88.6667"
+                              cy="60.0003"
+                              r="1.66667"
+                              transform="rotate(-90 88.6667 60.0003)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="88.6667"
+                              cy="16.3333"
+                              r="1.66667"
+                              transform="rotate(-90 88.6667 16.3333)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="117.667"
+                              cy="60.0003"
+                              r="1.66667"
+                              transform="rotate(-90 117.667 60.0003)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="117.667"
+                              cy="16.3333"
+                              r="1.66667"
+                              transform="rotate(-90 117.667 16.3333)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="74.6667"
+                              cy="60.0003"
+                              r="1.66667"
+                              transform="rotate(-90 74.6667 60.0003)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="74.6667"
+                              cy="16.3333"
+                              r="1.66667"
+                              transform="rotate(-90 74.6667 16.3333)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="103"
+                              cy="60.0003"
+                              r="1.66667"
+                              transform="rotate(-90 103 60.0003)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="103"
+                              cy="16.3333"
+                              r="1.66667"
+                              transform="rotate(-90 103 16.3333)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="132"
+                              cy="60.0003"
+                              r="1.66667"
+                              transform="rotate(-90 132 60.0003)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="132"
+                              cy="16.3333"
+                              r="1.66667"
+                              transform="rotate(-90 132 16.3333)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="1.66667"
+                              cy="45.3333"
+                              r="1.66667"
+                              transform="rotate(-90 1.66667 45.3333)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="1.66667"
+                              cy="1.66683"
+                              r="1.66667"
+                              transform="rotate(-90 1.66667 1.66683)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="16.3333"
+                              cy="45.3333"
+                              r="1.66667"
+                              transform="rotate(-90 16.3333 45.3333)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="16.3333"
+                              cy="1.66683"
+                              r="1.66667"
+                              transform="rotate(-90 16.3333 1.66683)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="31"
+                              cy="45.3333"
+                              r="1.66667"
+                              transform="rotate(-90 31 45.3333)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="31"
+                              cy="1.66683"
+                              r="1.66667"
+                              transform="rotate(-90 31 1.66683)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="45.6667"
+                              cy="45.3333"
+                              r="1.66667"
+                              transform="rotate(-90 45.6667 45.3333)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="45.6667"
+                              cy="1.66683"
+                              r="1.66667"
+                              transform="rotate(-90 45.6667 1.66683)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="60.3333"
+                              cy="45.3338"
+                              r="1.66667"
+                              transform="rotate(-90 60.3333 45.3338)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="60.3333"
+                              cy="1.66683"
+                              r="1.66667"
+                              transform="rotate(-90 60.3333 1.66683)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="88.6667"
+                              cy="45.3338"
+                              r="1.66667"
+                              transform="rotate(-90 88.6667 45.3338)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="88.6667"
+                              cy="1.66683"
+                              r="1.66667"
+                              transform="rotate(-90 88.6667 1.66683)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="117.667"
+                              cy="45.3338"
+                              r="1.66667"
+                              transform="rotate(-90 117.667 45.3338)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="117.667"
+                              cy="1.66683"
+                              r="1.66667"
+                              transform="rotate(-90 117.667 1.66683)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="74.6667"
+                              cy="45.3338"
+                              r="1.66667"
+                              transform="rotate(-90 74.6667 45.3338)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="74.6667"
+                              cy="1.66683"
+                              r="1.66667"
+                              transform="rotate(-90 74.6667 1.66683)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="103"
+                              cy="45.3338"
+                              r="1.66667"
+                              transform="rotate(-90 103 45.3338)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="103"
+                              cy="1.66683"
+                              r="1.66667"
+                              transform="rotate(-90 103 1.66683)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="132"
+                              cy="45.3338"
+                              r="1.66667"
+                              transform="rotate(-90 132 45.3338)"
+                              fill="#3056D3"
+                              />
+                           <circle
+                              cx="132"
+                              cy="1.66683"
+                              r="1.66667"
+                              transform="rotate(-90 132 1.66683)"
+                              fill="#3056D3"
+                              />
+                        </svg>
+                     </span>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
+            <div class="mt-10 lg:mt-0">
+               <span class="block mb-4 text-lg font-semibold text-primary">
+               Why Choose Us
+               </span>
+               <h2 class="mb-5 text-3xl font-bold text-dark dark:text-white sm:text-[40px]/[48px]">
+                    Find the Perfect Jewel for Every Occasion
+                </h2>
+                <p class="mb-5 text-base text-body-color dark:text-dark-6">
+                    Explore our exquisite collection of jewelry, designed to make your special moments even more memorable. Whether it's a gift for a loved one or a treat for yourself, our jewelry is crafted with care and attention to detail.
+                </p>
+                <p class="text-base text-body-color dark:text-dark-6">
+                    With a focus on quality and craftsmanship, our jewelry pieces are made to last. From classic designs to contemporary styles, we have something for everyone. Discover the perfect piece to complement your style and make a statement.
+                </p>
+            </div>
+         </div>
       </div>
-      <div class="pr-16 relative flex flex-col before:block before:absolute before:h-1/6 before:w-4 before:bg-amber-500 before:bottom-0 before:right-0 before:rounded-lg  before:transition-all group-hover:before:bg-orange-300 overflow-hidden">
-        <div class="absolute top-0 right-0 bg-amber-500 w-4/6 px-12 py-14 flex flex-col justify-center rounded-xl group-hover:bg-orange-600 transition-all ">
-          <span class="block mb-10 font-bold group-hover:text-orange-300">HERE WE ARE</span>
-          <h2 class="text-white font-bold text-3xl">
-          What started as a tiny team mostly dedicated to traditional jewelry has grown.
-          </h2>
-        </div>
-        <a class="font-bold text-sm flex mt-2 mb-8 items-center gap-2" href="">
-          <span>MORE ABOUT US</span>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-          </svg>
-        </a>
-        <div class="rounded-xl overflow-hidden">
-          <img src="https://picsum.photos/800/800" alt="">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-    <!-- component -->
-    <body class="bg-white">    
-        <div class="container flex flex-col mx-auto bg-white">
-            <div class="w-full draggable">
-                <div class="container flex flex-col items-center gap-16 mx-auto my-12">
+   </div>
+</section>
+<!-- ====== About Section End -->
+ 
+ <!-- component -->
+     
+ <div class="container flex flex-col  bg-white">
+            <div class=" draggable">
+                <div class="container flex flex-col items-center gap-16 mx-auto my-8">
                     <div class="grid w-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
                         <div class="flex flex-col items-center gap-3 px-8 py-10 bg-white rounded-3xl shadow-main">
                         <span>

@@ -36,12 +36,12 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
     include("../../config/connect.php");
   ?>
 
-<div class="font-[sans-serif] mt-10">
+<div class="font-[sans-serif] mt-14">
       <div class="grid lg:grid-cols-3">
         <div class="lg:col-span-2 p-10 bg-white overflow-x-auto">
           <div class="flex border-b pb-4">
             <h2 class="text-2xl font-extrabold text-[#333] flex-1">Shopping Cart</h2>
-            <h3 class="text-xl font-extrabold text-[#333]">3 Items</h3>
+            <!-- <h3 class="text-xl font-extrabold text-[#333]">3 Items</h3> -->
           </div>
           <div>
             <table class="mt-6 w-full border-collapse divide-y">
