@@ -85,7 +85,7 @@ else{
                 {
                     while($row_of_order=mysqli_fetch_assoc($executequery))
                     {
-                        $orderid=$row_of_order["order_id"];
+                        $orderid=$row_of_order["order_pk"];
 
                     
                         ?>
@@ -93,32 +93,32 @@ else{
                            
                             <th scope="row" class="px-4 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             <?php
-                            echo $row_of_order["order_id"];
+                            echo $row_of_order["order_pk"];
                             ?>
                             </th>
 
                             <td class="px-4 py-4">
                             <?php
-                            echo $row_of_order["order_date"];
+                            echo $row_of_order["order_datee"];
                             ?>
                             </td>
 
                             <!-- line-clamp-1 hover:line-clamp-none -->
                             <td class="px-6 py-4 ">
                             <?php
-                            echo $row_of_order["order_status"];
+                            echo $row_of_order["order_statuss"];
                             ?>
                             </td>
 
                             <td class="px-4 py-4">
                             <?php
-                            echo $row_of_order["order_add_id"];
+                            echo $row_of_order["order_add_idd"];
                             ?>
                             </td>
 
                             <td class="px-4 py-4">
                             <?php
-                            echo $row_of_order["order_cus_email"];
+                            echo $row_of_order["order_cus_emaill"];
                             ?>
                             </td>
 

@@ -24,6 +24,7 @@ else{
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jewelry Shop</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"  rel="stylesheet" />
 </head>
@@ -183,20 +184,169 @@ else{
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Add Products</h5>
         </a>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Increase your product range by adding new items to your store.Quickly enhance your store's offerings by easily incorporating new products into your inventory.</p>
-        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-amber-700 rounded-lg hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800">
+        <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-amber-700 rounded-lg hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800" onclick="window.location.href='#'">
             ADD
             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
             </svg>
-        </a>
+        </button>
     </div>
 
+
+
+    <!-- Edit products  -->
+                        <!-- Main modal -->
+                        <div id="crud-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full ">
+                            <div class="relative p-4 w-full max-w-md max-h-full">
+                                <!-- Modal content -->
+                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 px-8 py-4 ">
+                                    <!-- Modal header -->
+                                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 ">
+                                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                            Create New Product
+                                        </h3>
+                                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="crud-modal">
+                                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                            </svg>
+                                            <span class="sr-only">Close modal</span>
+                                        </button>
+                                    </div>
+                                    <!-- Modal body -->
+                                    <form id="product-form" class="p-4 md:p-5">
+                                    <div class="grid gap-4 mb-4 grid-cols-2">
+                                            <div class="col-span-2">
+                                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Id</label>
+                                                <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-600 focus:border-amber-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Type product name" required="">
+                                            </div>
+                                            <div class="col-span-2">
+                                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Name</label>
+                                                <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-600 focus:border-amber-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Type product name" required="">
+                                            </div>
+                                            <div class="col-span-2 sm:col-span-1">
+                                                <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Price</label>
+                                                <input type="number" name="price" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-600 focus:border-amber-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Rs.2999" required="">
+                                            </div>
+                                            <div class="col-span-2 sm:col-span-1">
+                                                <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Category</label>
+                                                <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" required="">
+                                                    <option selected="">Select category</option>
+                                                    <option value="Necklace">Necklace</option>
+                                                    <option value="Earnings">Earnings</option>
+                                                    <option value="Ring">Ring</option>
+                                                    <option value="Bracelet">Bracelet</option>
+                                                    <option value="Watch">Watch</option>
+                                                    <option value="Bangle">Bangle</option>
+                                                    <option value="JewelrySet">Jewelry Set</option>
+                                                    <option value="OxidizedSet">Oxidized Set</option>
+                                                    <option value="HairAccessories">Hair Accessories</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-span-2 sm:col-span-1">
+                                                <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Material</label>
+                                                <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" required="">
+                                                    <option selected="">Select material</option>
+                                                    <option value="TV">Gold-Plate</option>
+                                                    <option value="PC">Silver-Plate</option>
+                                                    <option value="GA">Acrylic</option>
+                                                    <option value="PH">Resin</option>
+                                                    <option value="TV">Polymer Clay</option>
+                                                    <option value="PC">Glass Beads</option>
+                                                    <option value="GA">Wood</option>
+                                                    <option value="PH">Plastic</option>
+                                                    <option value="PH">Fabric</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-span-2 sm:col-span-1">
+                                                <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Color</label>
+                                                <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" required="">
+                                                    <option selected="">Select color</option>
+                                                    <option value="TV">Black</option>
+                                                    <option value="PC">White</option>
+                                                    <option value="GA">Brown</option>
+                                                    <option value="PH">Gold</option>
+                                                    <option value="TV">Silver</option>
+                                                    <option value="PC">Gray</option>
+                                                    <option value="GA">Orange</option>
+                                                    <option value="PH">Yellow</option>
+                                                    <option value="PH">Red</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-span-2 sm:col-span-1">
+                                                <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Customization</label>
+                                                <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" required="">
+                                                    <option selected="">Select Customization Option</option>
+                                                    <option value="TV">Yes</option>
+                                                    <option value="PC">No</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-span-2">
+                                                <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Description</label>
+                                                <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-amber-500 focus:border-amber-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Write product description here" required=""></textarea>                    
+                                            </div>
+                                            
+                                            <div class="col-span-2">
+                                                <div class="mt-4">
+                                                    <label for="images" class="block text-sm font-medium text-gray-700">Select Image Files (Max 5)</label>
+                                                    <input id="images" name="images[]" type="file" accept="image/*" multiple class="mt-1 bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm" required="">
+                                                    <div id="selectedImages" class="mt-2 flex flex-col space-y-2"></div>
+                                                </div>
+
+                                                <script>
+                                                    // Stop click event propagation on the images input
+                                                    document.getElementById('images').addEventListener('click', function(event) {
+                                                        event.stopPropagation();
+                                                    });
+
+                                                    document.getElementById('images').addEventListener('change', function(event) {
+                                                        const fileList = event.target.files;
+                                                        const selectedImagesContainer = document.getElementById('selectedImages');
+                                                        selectedImagesContainer.innerHTML = ''; // Clear previous selection
+
+                                                        if (fileList.length > 5) {
+                                                            alert('Maximum 5 images allowed');
+                                                            event.target.value = ''; // Clear the selected files
+                                                            return;
+                                                        }
+
+                                                        for (let i = 0; i < fileList.length; i++) {
+                                                            const fileName = fileList[i].name;
+                                                            const fileItem = document.createElement('div');
+                                                            fileItem.textContent = fileName;
+                                                            fileItem.classList.add('text-sm', 'text-gray-700');
+                                                            selectedImagesContainer.appendChild(fileItem);
+                                                        }
+                                                    });
+                                                </script>
+
+                                            </div>
+
+
+                                            <div class="col-span-2 flex justify-center">
+                                                <button type="submit" class="w-full md:w-auto text-white flex items-center bg-amber-700 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm md:text-base px-5  md:py-1 text-center dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800">
+                                                    <svg class="w-[30px] h-[28px] text-gray-800 dark:text-white m-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="m14.3 4.8 2.9 2.9M7 7H4a1 1 0 0 0-1 1v10c0 .6.4 1 1 1h11c.6 0 1-.4 1-1v-4.5m2.4-10a2 2 0 0 1 0 3l-6.8 6.8L8 14l.7-3.6 6.9-6.8a2 2 0 0 1 2.8 0Z"/>
+                                                    </svg>
+                                                    Add product
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div> 
+                        <!-- Edit product end -->
+
+
+
+
     <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-4 drop-shadow-2xl">
-        <a href="#">
+        <a href="adminaddcus.php">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Update Products</h5>
         </a>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Easily modify product information, including name, description, and price, with just a few clicks.You can effortlessly update product information through this platform.</p>
-        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-amber-700 rounded-lg hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800">
+        <a href="adminaddcus.php" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-amber-700 rounded-lg hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800">
             UPDATE
             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -248,33 +398,79 @@ else{
 </button> -->
 
 <!-- Main modal -->
-    <div id="crud-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-        <div class="relative p-4 w-full max-w-md max-h-full">
-            <!-- Modal content -->
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                <!-- Modal header -->
-                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                            Admin Profile
-                        </h3>
-                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="crud-modal">
-                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                            </svg>
-                            <span class="sr-only">Close modal</span>
-                        </button>
-                    </div>
-            
-                    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <div class="flex flex-col items-center pb-10">
-                            <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie image"/>
-                            <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">jeweladmin@gmail.com</h5>
-                            <span class="text-sm text-gray-500 dark:text-gray-400">..........</span>
+<div id="crud-modal" tabindex="-1" aria-hidden="true" class="hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full inset-0 h-full overflow-y-auto overflow-x-hidden">
+    <div class="relative w-full max-w-md p-4">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                    Admin Profile
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="crud-modal">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="p-4">
+                <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-4 mb-4">
+                <div class="flex flex-col items-center pb-10">
+                    <img class="w-24 h-24 mb-3 rounded-full shadow-lg object-cover" src="https://elements-cover-images-0.imgix.net/e7fafd3e-df25-4026-9336-e7f7b16c3044?auto=compress%2Cformat&w=1370&fit=max&s=03d62df3f9b0448666c3b3ce0504f2c1" alt="Bonnie image"/>
+                    <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">
+                        <span id="username">jeweladmin@gmail.com</span>
+                      </h5>
+                      <div class="relative">
+                        <input
+                          type="password"
+                          id="password"
+                          name="password"
+                          class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                          placeholder="Password"
+                          value="password"
+                          readonly
+                        />
+                        <div
+                          class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
+                          id="password-toggle"
+                          aria-hidden="true"
+                        >
+                        <svg class="w-[32px] h-[32px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="toggle-password">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14v3m-3-6V7a3 3 0 1 1 6 0v4m-8 0h10c.6 0 1 .4 1 1v7c0 .6-.4 1-1 1H7a1 1 0 0 1-1-1v-7c0-.6.4-1 1-1Z"/>
+                          </svg>
                         </div>
-                    </div>
+                      </div>
+
+                     
+
+                </div>
+                </div>
             </div>
         </div>
-    </div> 
+    </div>
+</div>
+
+<script>
+                        const passwordInput = document.getElementById('password');
+                        const passwordToggle = document.getElementById('toggle-password');
+
+                        passwordToggle.addEventListener('mouseenter', () => {
+                          passwordInput.type = 'text';
+                          passwordInput.value = 'jeweladmin';
+                        });
+
+                        passwordToggle.addEventListener('mouseleave', () => {
+                          passwordInput.type = 'password';
+                          passwordInput.value = 'password';
+                        });
+                      </script>
+
+<script src="../../js/addproduct.js">
+
+</script>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
