@@ -207,23 +207,23 @@ else{
                                         </button>
                                     </div>
                                     <!-- Modal body -->
-                                    <form id="product-form" class="p-4 md:p-5">
+                                    <form id="productForm" class="p-4 md:p-5">
                                     <div class="grid gap-4 mb-4 grid-cols-2">
                                             <div class="col-span-2">
-                                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Id</label>
-                                                <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-600 focus:border-amber-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Type product name" required="">
+                                                <label for="product-id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Id</label>
+                                                <input type="text" name="product-id" id="product-id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-600 focus:border-amber-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Type product Id">
                                             </div>
                                             <div class="col-span-2">
-                                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Name</label>
-                                                <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-600 focus:border-amber-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Type product name" required="">
+                                                <label for="product-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Name</label>
+                                                <input type="text" name="product-name" id="product-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-600 focus:border-amber-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Type product name">
                                             </div>
                                             <div class="col-span-2 sm:col-span-1">
-                                                <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Price</label>
-                                                <input type="number" name="price" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-600 focus:border-amber-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Rs.2999" required="">
+                                                <label for="product-price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Price</label>
+                                                <input type="number" name="product-price" id="product-price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-600 focus:border-amber-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Rs.2999">
                                             </div>
                                             <div class="col-span-2 sm:col-span-1">
-                                                <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Category</label>
-                                                <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" required="">
+                                                <label for="product-category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Category</label>
+                                                <select id="product-category" name="product-category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500">
                                                     <option selected="">Select category</option>
                                                     <option value="Necklace">Necklace</option>
                                                     <option value="Earnings">Earnings</option>
@@ -237,8 +237,8 @@ else{
                                                 </select>
                                             </div>
                                             <div class="col-span-2 sm:col-span-1">
-                                                <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Material</label>
-                                                <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" required="">
+                                                <label for="product-material" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Material</label>
+                                                <select id="product-material" name="product-material" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500">
                                                     <option selected="">Select material</option>
                                                     <option value="TV">Gold-Plate</option>
                                                     <option value="PC">Silver-Plate</option>
@@ -252,8 +252,8 @@ else{
                                                 </select>
                                             </div>
                                             <div class="col-span-2 sm:col-span-1">
-                                                <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Color</label>
-                                                <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" required="">
+                                                <label for="product-color" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Color</label>
+                                                <select id="product-color" name="product-color" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500">
                                                     <option selected="">Select color</option>
                                                     <option value="TV">Black</option>
                                                     <option value="PC">White</option>
@@ -267,22 +267,22 @@ else{
                                                 </select>
                                             </div>
                                             <div class="col-span-2 sm:col-span-1">
-                                                <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Customization</label>
-                                                <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" required="">
+                                                <label for="product-customization" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Customization</label>
+                                                <select id="product-customization" name="product-customization" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500">
                                                     <option selected="">Select Customization Option</option>
                                                     <option value="TV">Yes</option>
                                                     <option value="PC">No</option>
                                                 </select>
                                             </div>
                                             <div class="col-span-2">
-                                                <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Description</label>
-                                                <textarea id="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-amber-500 focus:border-amber-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Write product description here" required=""></textarea>                    
+                                                <label for="product-description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Description</label>
+                                                <textarea id="product-description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-amber-500 focus:border-amber-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Write product description here"></textarea>                    
                                             </div>
                                             
                                             <div class="col-span-2">
                                                 <div class="mt-4">
                                                     <label for="images" class="block text-sm font-medium text-gray-700">Select Image Files (Max 5)</label>
-                                                    <input id="images" name="images[]" type="file" accept="image/*" multiple class="mt-1 bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm" required="">
+                                                    <input id="images" name="images[]" type="file" accept="image/*" multiple class="mt-1 bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm">
                                                     <div id="selectedImages" class="mt-2 flex flex-col space-y-2"></div>
                                                 </div>
 
@@ -298,7 +298,6 @@ else{
                                                         selectedImagesContainer.innerHTML = ''; // Clear previous selection
 
                                                         if (fileList.length > 5) {
-                                                            alert('Maximum 5 images allowed');
                                                             event.target.value = ''; // Clear the selected files
                                                             return;
                                                         }
@@ -321,7 +320,7 @@ else{
                                                     <svg class="w-[30px] h-[28px] text-gray-800 dark:text-white m-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="m14.3 4.8 2.9 2.9M7 7H4a1 1 0 0 0-1 1v10c0 .6.4 1 1 1h11c.6 0 1-.4 1-1v-4.5m2.4-10a2 2 0 0 1 0 3l-6.8 6.8L8 14l.7-3.6 6.9-6.8a2 2 0 0 1 2.8 0Z"/>
                                                     </svg>
-                                                    Add product
+                                                    Edit product
                                                 </button>
                                             </div>
 
@@ -462,9 +461,7 @@ else{
                         });
                       </script>
 
-<script src="../../js/addproduct.js">
-
-</script>
+<script src="../../js/addproduct.js"></script>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
