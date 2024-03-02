@@ -223,19 +223,19 @@ else{
 
                             <td class="p-2">
                                 <div class="flex justify-center">
-                                    <button type="button"  onclick="delete_chan(<?php echo $productid; ?>)"  data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="block">
+                                    <button type="button" data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="block">
                                     <svg class="w-[31px] h-[31px] text-gray-800 dark:text-white m-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
                                     </svg>
   
                                         
                                     </button>
-                                    <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="block" 
-                                    type="button" id="editbtn" onclick="update_chan(<?php echo $productid; ?>)">                                    
-                                    <svg class="w-[31px] h-[31px] text-gray-800 dark:text-white m-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="m14.3 4.8 2.9 2.9M7 7H4a1 1 0 0 0-1 1v10c0 .6.4 1 1 1h11c.6 0 1-.4 1-1v-4.5m2.4-10a2 2 0 0 1 0 3l-6.8 6.8L8 14l.7-3.6 6.9-6.8a2 2 0 0 1 2.8 0Z"/>
-                                    </svg>
-                                    </button>
+                                    <a href="editproduct.php?id=<?php echo $row_of_product["pro_id"]; ?>" id="editbtn" class="inline-block">
+                                        <svg class="w-[31px] h-[31px] text-gray-800 dark:text-white m-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="m14.3 4.8 2.9 2.9M7 7H4a1 1 0 0 0-1 1v10c0 .6.4 1 1 1h11c.6 0 1-.4 1-1v-4.5m2.4-10a2 2 0 0 1 0 3l-6.8 6.8L8 14l.7-3.6 6.9-6.8a2 2 0 0 1 2.8 0Z"/>
+                                        </svg>
+                                    </a>
+
                                 </div>
                             </td>
 
@@ -270,148 +270,7 @@ else{
                         <!--End Delete products -->
 
 
-                        <!-- Edit products  -->
-                        <!-- Main modal -->
-                        <div id="crud-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full ">
-                            <div class="relative p-4 w-full max-w-md max-h-full">
-                                <!-- Modal content -->
-                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 px-8 py-4 ">
-                                    <!-- Modal header -->
-                                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 ">
-                                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                                            Edit Product
-                                        </h3>
-                                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="crud-modal">
-                                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                                            </svg>
-                                            <span class="sr-only">Close modal</span>
-                                        </button>
-                                    </div>
-                                    <!-- Modal body -->
-                                    <form id="productForm" class="p-4 md:p-5">
-                                    <div class="grid gap-4 mb-4 grid-cols-2">
-                                            <div class="col-span-2">
-                                                <label for="product-id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Id</label>
-                                                <input type="text" name="product-id" id="product-id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-600 focus:border-amber-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Type product Id">
-                                            </div>
-                                            <div class="col-span-2">
-                                                <label for="product-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Name</label>
-                                                <input type="text" name="product-name" id="product-name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-600 focus:border-amber-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Type product name">
-                                            </div>
-                                            <div class="col-span-2 sm:col-span-1">
-                                                <label for="product-price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Price</label>
-                                                <input type="number" name="product-price" id="product-price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-600 focus:border-amber-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Rs.2999">
-                                            </div>
-                                            <div class="col-span-2 sm:col-span-1">
-                                                <label for="product-category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Category</label>
-                                                <select id="product-category" name="product-category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500">
-                                                    <option selected="">Select category</option>
-                                                    <option value="Necklace">Necklace</option>
-                                                    <option value="Earnings">Earnings</option>
-                                                    <option value="Ring">Ring</option>
-                                                    <option value="Bracelet">Bracelet</option>
-                                                    <option value="Watch">Watch</option>
-                                                    <option value="Bangle">Bangle</option>
-                                                    <option value="JewelrySet">Jewelry Set</option>
-                                                    <option value="OxidizedSet">Oxidized Set</option>
-                                                    <option value="HairAccessories">Hair Accessories</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-span-2 sm:col-span-1">
-                                                <label for="product-material" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Material</label>
-                                                <select id="product-material" name="product-material" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500">
-                                                    <option selected="">Select material</option>
-                                                    <option value="TV">Gold-Plate</option>
-                                                    <option value="PC">Silver-Plate</option>
-                                                    <option value="GA">Acrylic</option>
-                                                    <option value="PH">Resin</option>
-                                                    <option value="TV">Polymer Clay</option>
-                                                    <option value="PC">Glass Beads</option>
-                                                    <option value="GA">Wood</option>
-                                                    <option value="PH">Plastic</option>
-                                                    <option value="PH">Fabric</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-span-2 sm:col-span-1">
-                                                <label for="product-color" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Color</label>
-                                                <select id="product-color" name="product-color" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500">
-                                                    <option selected="">Select color</option>
-                                                    <option value="TV">Black</option>
-                                                    <option value="PC">White</option>
-                                                    <option value="GA">Brown</option>
-                                                    <option value="PH">Gold</option>
-                                                    <option value="TV">Silver</option>
-                                                    <option value="PC">Gray</option>
-                                                    <option value="GA">Orange</option>
-                                                    <option value="PH">Yellow</option>
-                                                    <option value="PH">Red</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-span-2 sm:col-span-1">
-                                                <label for="product-customization" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Customization</label>
-                                                <select id="product-customization" name="product-customization" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500">
-                                                    <option selected="">Select Customization Option</option>
-                                                    <option value="TV">Yes</option>
-                                                    <option value="PC">No</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-span-2">
-                                                <label for="product-description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Description</label>
-                                                <textarea id="product-description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-amber-500 focus:border-amber-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Write product description here"></textarea>                    
-                                            </div>
-                                            
-                                            <div class="col-span-2">
-                                                <div class="mt-4">
-                                                    <label for="images" class="block text-sm font-medium text-gray-700">Select Image Files (Max 5)</label>
-                                                    <input id="images" name="images[]" type="file" accept="image/*" multiple class="mt-1 bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm">
-                                                    <div id="selectedImages" class="mt-2 flex flex-col space-y-2"></div>
-                                                </div>
-
-                                                <script>
-                                                    // Stop click event propagation on the images input
-                                                    document.getElementById('images').addEventListener('click', function(event) {
-                                                        event.stopPropagation();
-                                                    });
-
-                                                    document.getElementById('images').addEventListener('change', function(event) {
-                                                        const fileList = event.target.files;
-                                                        const selectedImagesContainer = document.getElementById('selectedImages');
-                                                        selectedImagesContainer.innerHTML = ''; // Clear previous selection
-
-                                                        if (fileList.length > 5) {
-                                                            event.target.value = ''; // Clear the selected files
-                                                            return;
-                                                        }
-
-                                                        for (let i = 0; i < fileList.length; i++) {
-                                                            const fileName = fileList[i].name;
-                                                            const fileItem = document.createElement('div');
-                                                            fileItem.textContent = fileName;
-                                                            fileItem.classList.add('text-sm', 'text-gray-700');
-                                                            selectedImagesContainer.appendChild(fileItem);
-                                                        }
-                                                    });
-                                                </script>
-
-                                            </div>
-
-
-                                            <div class="col-span-2 flex justify-center">
-                                                <button type="submit" class="w-full md:w-auto text-white flex items-center bg-amber-700 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm md:text-base px-5  md:py-1 text-center dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800">
-                                                    <svg class="w-[30px] h-[28px] text-gray-800 dark:text-white m-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="m14.3 4.8 2.9 2.9M7 7H4a1 1 0 0 0-1 1v10c0 .6.4 1 1 1h11c.6 0 1-.4 1-1v-4.5m2.4-10a2 2 0 0 1 0 3l-6.8 6.8L8 14l.7-3.6 6.9-6.8a2 2 0 0 1 2.8 0Z"/>
-                                                    </svg>
-                                                    Edit product
-                                                </button>
-                                            </div>
-
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div> 
-                        <!-- Edit product end -->
+                        
 
 
 
@@ -427,7 +286,7 @@ else{
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
-<script src="../../js/adminaddcus.js"></script>
+
 
 </body>
 
