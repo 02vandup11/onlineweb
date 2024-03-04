@@ -67,9 +67,12 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
                 $ImageQuery = "SELECT * FROM `image` WHERE `image`.`image_product_id`='$id'";
                 $executeImgquery = mysqli_query($con, $ImageQuery);
                 if (mysqli_num_rows($executeImgquery)) {
-                    while ($row_of_product_img = mysqli_fetch_assoc($executeImgquery)) {
+                    while ($row_of_product_img = mysqli_fetch_assoc($executeImgquery)) 
+                    {
+                            $imageBlob = $row_image["image_name"];
+                            $imageData = base64_encode($imageBlob);
                 ?>
-                        <img src="<?php echo $row_of_product_img["image_name"]; ?>" alt="Product4" class="w-full cursor-pointer product-img" />
+                        <img src="data:image/jpeg;base64,<?php echo($imageData); ?>" alt="Product4" class="w-full cursor-pointer product-img" />
                 <?php
                     }
                 }

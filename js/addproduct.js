@@ -1,14 +1,9 @@
-
 $(document).ready(function() {
     // Function to validate the form
     function validateForm() {
-
-       
         let isValid = true;
-
         // Reset error messages
         $('.error-msg').remove();
-
 
         // Validate Product Name
         if ($('#product-name').val().trim() === '') {
@@ -24,105 +19,88 @@ $(document).ready(function() {
 
         // Validate Product Category
         if ($('#product-category').val() === '' || $('#product-category').val() === 'Select category') {
-          $('#product-category').after('<p class="error-msg text-red-500">Please select a Product Category</p>');
-          isValid = false;
-      }
-
-      // Validate Product Material
-      if ($('#product-material').val() === '' || $('#product-material').val() === 'Select material') {
-          $('#product-material').after('<p class="error-msg text-red-500">Please select a Product Material</p>');
-          isValid = false;
-      }
-
-      // Validate Product Color
-      if ($('#product-color').val() === '' || $('#product-color').val() === 'Select color') {
-          $('#product-color').after('<p class="error-msg text-red-500">Please select a Product Color</p>');
-          isValid = false;
-      }
-
-      // Validate Product Customization
-      if ($('#product-customization').val() === '' || $('#product-customization').val() === 'Select Customization Option') {
-          $('#product-customization').after('<p class="error-msg text-red-500">Please select a Product Customization Option</p>');
-          isValid = false;
-      }
-
-        // Validate Product Description
-        if ($('#product-description').val().trim() === '') {
-            $('#product-description').after('<p class="error-msg text-red-500">Product Description is required</p>');
+            $('#product-category').after('<p class="error-msg text-red-500">Please select a Product Category</p>');
             isValid = false;
         }
 
-
-        // Validate Image
-        const fileList = $('#images')[0].files;
-        if (fileList.length === 0) {
-            $('#images').after('<p class="error-msg text-red-500">Please select at least one image</p>');
+        // Validate material
+        var selectedMaterials = $('#select2').val();
+        if (selectedMaterials == null || selectedMaterials.length === 0) {
+            $('#select2').after('<p class="error-msg text-red-500">Please select at least one option in Material</p>');
             isValid = false;
-        } else if (fileList.length > 5) {
-            $('#images').after('<p class="error-msg text-red-500">Maximum 5 images allowed</p>');
+        }
+
+        // Validate color
+        var selectedColors = $('#select3').val();
+        if (selectedColors == null || selectedColors.length === 0) {
+            $('#select3').after('<p class="error-msg text-red-500">Please select at least one option in color</p>');
             isValid = false;
         }
 
         return isValid;
     }
-    
 
     // Submit event handler for the form
     $('#productForm').submit(function(event) {
         if (!validateForm()) {
             event.preventDefault(); // Prevent form submission if validation fails
-        }
-        else
-        {
+        } else {
             event.preventDefault(); // Prevent form submission if validation fails
 
-            var product_id = $('#product-id').val().trim();
             var product_name = $('#product-name').val().trim();
             var product_price = $('#product-price').val().trim();
             var product_category = $('#product-category').val().trim();
-            var product_material = $('#product-material').val().trim();
-            var product_color = $('#product-color').val().trim();
-            var product_customization = $('#product-customization').val().trim();
+            var product_material = JSON.stringify($('#select2').val()); // Convert to JSON string
+            var product_color = JSON.stringify($('#select3').val()); // Convert to JSON string
             var product_description = $('#product-description').val().trim();
-            var images = $('#images').val().trim();
 
-               
+            // Get the files from the file input
+            var images = $('#images')[0].files;
 
+            // Create a FormData object to send files via AJAX
+            var formData = new FormData();
+            formData.append('product_name', product_name);
+            formData.append('product_price', product_price);
+            formData.append('product_category', product_category);
+            formData.append('product_material', product_material);
+            formData.append('product_color', product_color);
+            formData.append('product_description', product_description);
+
+            // Append each file to the FormData object
+            for (var i = 0; i < images.length; i++) {
+                formData.append('image[]', images[i]);
+            }
+
+            // Send the AJAX request with FormData
             $.ajax({
                 type: 'POST',
-                url: '../ajax/adminaddcusajax.php',
-                data: {
-                    product_id:product_id,
-                    product_name:product_name,
-                    product_price:product_price,
-                    product_category:product_category,
-                    product_material:product_material,
-                    product_color:product_color,
-                    product_customization:product_customization,
-                    product_description:product_description,
-                    images:images
-                },
+                url: '../ajax/adminaddproductajax.php',
+                data: formData,
+                processData: false, // Prevent jQuery from automatically processing the FormData object
+                contentType: false, // Prevent jQuery from automatically setting the content type
+
                 success: function(data) {
-                    if(data==1){
+                    if (data == 1) {
                         jSuites.notification({
                             message: 'Successfully Added a Product',
                         });
                         // Delay reload by 2 seconds
-                    setTimeout(function() {
-                    }, 2000);
-                    }else{
+                        setTimeout(function() {}, 2000);
+                    } else {
                         jSuites.notification({
                             error: 1,
                             message: 'Failed to Add a Product',
-                        })
+                        });
                     }
-                    
+
                     console.log(data);
+                    console.log(product_material);
+                    console.log(product_color);
                 },
-                error: function() {
-                    console.log(response.status);
+                error: function(xhr, textStatus, errorThrown) {
+                    console.error('Error:', textStatus, errorThrown);
                 },
-            })
+            });
         }
     });
 });

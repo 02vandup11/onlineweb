@@ -225,8 +225,10 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
                {
                 while($row_of_image=mysqli_fetch_assoc($execute_image))
                 {
+                            $imageBlob = $row_image["image_name"];
+                            $imageData = base64_encode($imageBlob);
                   ?>
-                     <img src=" <?php echo($row_of_image["image_name"]); ?>" alt="Product 1" class="h-full w-full object-contain" />
+                     <img src="data:image/jpeg;base64,<?php echo($imageData); ?>" alt="Product 1" class="h-full w-full object-contain" />
                   <?php
                   
                 }
