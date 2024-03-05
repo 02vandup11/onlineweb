@@ -101,9 +101,9 @@ else{
                     Price
                 </th>
 
-                <th scope="col" class="px-3 py-3">
+                <!-- <th scope="col" class="px-3 py-3">
                     Customization
-                </th>
+                </th> -->
 
                 <th scope="col" class="px-3 py-3">
                     Category
@@ -165,11 +165,7 @@ else{
                             ?>
                             </td>
 
-                            <td class="px-4 py-4">
-                            <?php
-                            echo $row_of_product["pro_customization"];
-                            ?>
-                            </td>
+                            
 
                             <td class="px-4 py-4">
                             <?php
@@ -179,7 +175,7 @@ else{
 
                             <td class="px-4 py-4">
                             <?php
-                            $getmaterials="SELECT * FROM `pmaterialsl`, `materials`,`product`WHERE `pmaterialsl`.`pmaterial_product_id`=`product`.`pro_id` AND `pmaterialsl`.`pmaterial_material_id`=`materials`.`material_id` AND `product`.`pro_id`='$productid'";
+                            $getmaterials="SELECT * FROM `pmaterials`, `materials`,`product`WHERE `pmaterials`.`pmaterial_product_id`=`product`.`pro_id` AND `pmaterials`.`pmaterial_material_id`=`materials`.`material_id` AND `product`.`pro_id`='$productid'";
                             $executegetmaterial = mysqli_query($con,$getmaterials);
                             if(mysqli_num_rows($executegetmaterial))
                             {

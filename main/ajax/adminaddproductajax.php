@@ -60,15 +60,17 @@ if (
         $upload_success = true;
         foreach ($_FILES['image']['name'] as $key => $image_name) {
             $image_tmp = $_FILES['image']['tmp_name'][$key];
-            $target_file = $target_dir . basename($image_name);
+            $image_name = $_FILES['image']['name'][$key];
+            $image_extension = pathinfo($image_name, PATHINFO_EXTENSION);
+            $unique_filename = uniqid() . '.' . $image_extension;
+            $target_file = $target_dir . $unique_filename;
+            
         
             // Insert image data into images table
             $insert_image_query = "INSERT INTO `image` (`image_name`, `image_product_id`) 
-                                   VALUES (?, ?)";
-            $stmt = mysqli_prepare($con, $insert_image_query);
-            mysqli_stmt_bind_param($stmt, 'si', $image_name, $product_id);
-            mysqli_stmt_execute($stmt);
-            mysqli_stmt_close($stmt);
+                                   VALUES ('$target_file', '$product_id')";
+            $stmt = mysqli_query($con, $insert_image_query);
+            
         
             // Move uploaded file to target directory (optional)
             if (!move_uploaded_file($image_tmp, $target_file)) {

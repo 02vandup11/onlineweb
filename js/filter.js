@@ -52,11 +52,14 @@ $(document).ready(function() {
                 var showProduct = false;
                 for(var i = 0; i < selectedColors.length; i++){
                     if(colors.includes(selectedColors[i])){
+                      console.log("in showww");
                         showProduct = true;
                         break;
                     }
                 }
+                console.log(showProduct);
                 if(showProduct){
+                  console.log(this);
                     $(this).show();
                 } else {
                     $(this).hide();
@@ -92,6 +95,8 @@ $(document).ready(function(){
         var materials = $(this).data("materials").toLowerCase().split(",");
         var showProduct = false;
         for(var i = 0; i < selectedMaterials.length; i++){
+          console.log(selectedMaterials[i]);
+          console.log(materials);
           if(materials.includes(selectedMaterials[i])){
             showProduct = true;
             break;
@@ -171,7 +176,8 @@ $(document).ready(function(){
         if(selectedColors.length > 0 && !colors.some(r => selectedColors.includes(r))){
           showProduct = false;
         }
-  
+        console.log(materials);
+        console.log(selectedMaterials);
         if(selectedMaterials.length > 0 && !materials.some(r => selectedMaterials.includes(r))){
           showProduct = false;
         }

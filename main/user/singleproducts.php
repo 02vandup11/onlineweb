@@ -69,17 +69,16 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
                 if (mysqli_num_rows($executeImgquery)) {
                     while ($row_of_product_img = mysqli_fetch_assoc($executeImgquery)) 
                     {
-                            $imageBlob = $row_image["image_name"];
-                            $imageData = base64_encode($imageBlob);
+                            $imageBlob = $row_of_product_img["image_name"];
                 ?>
-                        <img src="data:image/jpeg;base64,<?php echo($imageData); ?>" alt="Product4" class="w-full cursor-pointer product-img" />
+                        <img src="<?php echo($imageBlob); ?>" alt="Product4" class="w-full cursor-pointer product-img" />
                 <?php
                     }
                 }
                 ?>
             </div>
 
-            <img src="https://readymadeui.com/images/product2.webp" alt="Product" class="w-4/5 rounded object-cover" id="main-image" />
+            <img src="" alt="Product" class="w-4/5 rounded object-cover" id="main-image" />
         </div>
         <div>
             <h2 class="text-2xl font-extrabold text-gray-800"><?php echo $row_of_product["pro_name"] ?></h2>

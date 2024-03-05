@@ -107,11 +107,10 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
                         while($row_image=mysqli_fetch_assoc($result_get_category_img))
                         {
                             $imageBlob = $row_image["image_name"];
-                            $imageData = base64_encode($imageBlob);
-
+                            
                             ?>
                             <a href="#">
-                                <img class="rounded-t-lg h-64 w-full object-cover" src="data:image/jpeg;base64,<?php echo($imageData); ?>" alt="" />
+                                <img class="rounded-t-lg h-64 w-full object-cover" src="<?php echo($imageBlob); ?>" alt="" />
                             </a>
                            <?php 
                         }

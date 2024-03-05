@@ -85,7 +85,9 @@ $(document).ready(function() {
                             message: 'Successfully Added a Product',
                         });
                         // Delay reload by 2 seconds
-                        setTimeout(function() {}, 2000);
+                        setTimeout(function(){
+                            window.location.reload();
+                         }, 1000);
                     } else {
                         jSuites.notification({
                             error: 1,
