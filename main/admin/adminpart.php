@@ -496,7 +496,7 @@
                                     <div class="col-span-2 sm:col-span-1">
                                        <label for="product-category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Category</label>
                                        <select id="product-category" name="product-category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500">
-                                       <option value="Select Option">Select option</option>
+                                       <option value="">Select option</option>
 
                                        <?php
                                                      $category = "SELECT * FROM `category`";
@@ -518,6 +518,8 @@
                                     </div>
 
                                     <div class="col-span-3 sm:col-span-2">
+                                    <label for="product-material" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Material</label>
+
                                         <select id="select2" name="select2[]" class="hidden" multiple>
                                                 
                                                     <?php
@@ -634,6 +636,8 @@
                                     </div>
                                     
                                     <div class="col-span-3 sm:col-span-2">
+                                    <label for="product-color" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Color</label>
+
                                         <select id="select3" name="select3[]" class="hidden" multiple>
 
                                         <?php
@@ -749,14 +753,7 @@
                                     </div>
 
 
-                                    <!-- <div class="col-span-2 sm:col-span-1">
-                                       <label for="product-customization" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Customization</label>
-                                       <select id="product-customization" name="product-customization" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500">
-                                          <option selected="">Select Customization Option</option>
-                                          <option value="TV">Yes</option>
-                                          <option value="PC">No</option>
-                                       </select>
-                                    </div> -->
+                        
                                     <div class="col-span-2">
                                        <label for="product-description" class="block text-sm font-medium text-gray-900 dark:text-white">Product Description</label>
                                        <textarea id="product-description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-amber-500 focus:border-amber-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-amber-500 dark:focus:border-amber-500" placeholder="Write product description here"></textarea>                    
