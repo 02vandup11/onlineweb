@@ -201,21 +201,27 @@ else{
                             ?>
                             </td>
                         
-                            
+                           
 
                             <td class="px-4 py-4 ">
                                 <div class="">
-                                <img class="size-6 m-1" src="https://media.istockphoto.com/id/1993984108/photo/religious-necklace-with-christ-on-the-cross.jpg?s=612x612&w=0&k=20&c=vCo0mliMZu9Y2TfztmRVpf0YW9rDO27N9HcjRuzIDhc=" alt="image description">
-
-                                <img class="size-6 m-1" src="https://media.istockphoto.com/id/1993984108/photo/religious-necklace-with-christ-on-the-cross.jpg?s=612x612&w=0&k=20&c=vCo0mliMZu9Y2TfztmRVpf0YW9rDO27N9HcjRuzIDhc=" alt="image description">
-
-                                <img class="size-6 m-1" src="https://media.istockphoto.com/id/1993984108/photo/religious-necklace-with-christ-on-the-cross.jpg?s=612x612&w=0&k=20&c=vCo0mliMZu9Y2TfztmRVpf0YW9rDO27N9HcjRuzIDhc=" alt="image description"> 
-
-                                <img class="size-6 m-1" src="https://media.istockphoto.com/id/1993984108/photo/religious-necklace-with-christ-on-the-cross.jpg?s=612x612&w=0&k=20&c=vCo0mliMZu9Y2TfztmRVpf0YW9rDO27N9HcjRuzIDhc=" alt="image description">
-
-                                <img class="size-6 m-1" src="https://media.istockphoto.com/id/1993984108/photo/religious-necklace-with-christ-on-the-cross.jpg?s=612x612&w=0&k=20&c=vCo0mliMZu9Y2TfztmRVpf0YW9rDO27N9HcjRuzIDhc=" alt="image description">
+                                <?php
+                                            $ImageQuery = "SELECT * FROM `image` WHERE `image`.`image_product_id`='$productid'";
+                                            $executeImgquery = mysqli_query($con, $ImageQuery);
+                                            if (mysqli_num_rows($executeImgquery)) {
+                                                while ($row_of_product_img = mysqli_fetch_assoc($executeImgquery)) 
+                                                {
+                                                        $imageBlob = $row_of_product_img["image_name"];
+                                            ?>
+                                <img class="size-6 m-1" src="<?php echo($imageBlob); ?>" alt="image description">
+                                <?php
+                                                }
+                                            }
+                                            ?>
                                 </div>
                             </td>
+
+                           
 
                             <td class="p-2">
                                 <div class="flex justify-center">

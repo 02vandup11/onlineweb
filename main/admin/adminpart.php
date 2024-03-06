@@ -134,10 +134,12 @@
             <div id="main" class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5">
 
                 <!-- <div class="bg-gray-800 pt-3">
-                    <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white">
+                    <div class="rounded-tl-3xl bg-gradient-to-r from-red-900 to-gray-800 p-4 shadow text-2xl text-white">
                         <h1 class="font-bold pl-2">Analytics</h1>
                     </div>
                 </div> -->
+
+                
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mx-auto md:mx-20 mt-4">
                   <div class="max-w-sm p-6 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-200 border border-gray-800 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-4 drop-shadow-2xl">
@@ -169,21 +171,181 @@
 
 
                 <div class="flex flex-wrap">
-                    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+
+
+                   <div class="w-full md:w-1/2 xl:w-1/3 p-6" onclick="document.getElementById('add-materials-modal').classList.remove('hidden');">
                         <!--Metric Card-->
-                        <div class="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5">
+                        <div class="bg-gradient-to-b from-purple-200 to-purple-100 border-b-4 border-purple-600 rounded-lg shadow-xl p-5">
                             <div class="flex flex-row items-center">
                                 <div class="flex-shrink pr-4">
-                                    <div class="rounded-full p-5 bg-green-600"><i class="fa fa-wallet fa-2x fa-inverse"></i></div>
+                                    <div class="rounded-full p-5 bg-purple-600"><i class="fas fa-plus pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
                                 </div>
                                 <div class="flex-1 text-right md:text-center">
-                                    <h2 class="font-bold uppercase text-gray-600">Total Revenue</h2>
-                                   <p class="font-bold text-3xl">$3249 <span class="text-green-500"><i class="fas fa-caret-up"></i></span></p>
+                                    <h2 class="font-bold uppercase text-gray-600">Add Materials</h2>
                                 </div>
                             </div>
                         </div>
                         <!--/Metric Card-->
                     </div>
+                    <div class="w-full md:w-1/2 xl:w-1/3 p-6" onclick="document.getElementById('add-colors-modal').classList.remove('hidden');">
+                        
+                        <!--Metric Card-->
+                        <div class="bg-gradient-to-b from-orange-200 to-orange-100 border-b-4 border-orange-600 rounded-lg shadow-xl p-5">
+                            <div class="flex flex-row items-center">
+                                <div class="flex-shrink pr-4">
+                                    <div class="rounded-full p-5 bg-orange-600"><i class="fas fa-plus pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
+                                </div>
+                                <div class="flex-1 text-right md:text-center">
+                                    <h2 class="font-bold uppercase text-gray-600">Add Colors</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/Metric Card-->
+                    </div>
+                    <div class="w-full md:w-1/2 xl:w-1/3 p-6" onclick="document.getElementById('add-category-modal').classList.remove('hidden');">
+                        
+                        <!--Metric Card-->
+                        <div class="bg-gradient-to-b from-cyan-200 to-cyan-100 border-b-4 border-cyan-600 rounded-lg shadow-xl p-5">
+                            <div class="flex flex-row items-center">
+                                <div class="flex-shrink pr-4">
+                                    <div class="rounded-full p-5 bg-cyan-600"><i class="fas fa-plus pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
+                                </div>
+                                <div class="flex-1 text-right md:text-center">
+                                    <h2 class="font-bold uppercase text-gray-600">Add Category</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/Metric Card-->
+                    </div>
+
+
+
+
+                    <!-- modalsss -->
+                        <!-- Add Materials Modal -->
+                        <div id="add-materials-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                            <div class="relative p-4 w-full max-w-md max-h-full">
+                                <!-- Modal content -->
+                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                    <!-- Modal header -->
+                                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                            Add New Material
+                                        </h3>
+                                        <button type="button" onclick="document.getElementById('add-materials-modal').classList.add('hidden');" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white">
+                                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                            </svg>
+                                            <span class="sr-only">Close modal</span>
+                                        </button>
+                                    </div>
+                                    <!-- Modal body -->
+                                    <form class="p-4 md:p-5">
+                                        <div class="grid gap-4 mb-4 grid-cols-1">
+                                            <div class="col-span-1">
+                                                <label for="new-material" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">New Material</label>
+                                                <input type="text" name="new-material" id="new-material" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type new material" required="">
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="text-white inline-flex items-center bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                            <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                                            Add new material
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <!-- Add Colors Modal -->
+                        <div id="add-colors-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                            <div class="relative p-4 w-full max-w-md max-h-full">
+                                <!-- Modal content -->
+                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                    <!-- Modal header -->
+                                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                            Add New Color
+                                        </h3>
+                                        <button type="button" onclick="document.getElementById('add-colors-modal').classList.add('hidden');" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white">
+                                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                            </svg>
+                                            <span class="sr-only">Close modal</span>
+                                        </button>
+
+                                    </div>
+                                    <!-- Modal body -->
+                                    <form class="p-4 md:p-5">
+                                        <div class="grid gap-4 mb-4 grid-cols-1">
+                                            <div class="col-span-1">
+                                                <label for="new-color" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">New Color</label>
+                                                <input type="text" name="new-color" id="new-color" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type new color" required="">
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="text-white inline-flex items-center bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                            <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                                            Add new color
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div> 
+
+                        <!-- Add Categories Modal -->
+                        <div id="add-category-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                            <div class="relative p-4 w-full max-w-md max-h-full">
+                                <!-- Modal content -->
+                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                    <!-- Modal header -->
+                                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                                            Add New Category
+                                        </h3>
+                                        <button type="button" onclick="document.getElementById('add-category-modal').classList.add('hidden');" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white">
+                                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                            </svg>
+                                            <span class="sr-only">Close modal</span>
+                                        </button>
+
+                                    </div>
+                                    <!-- Modal body -->
+                                    <form class="p-4 md:p-5">
+                                        <div class="grid gap-4 mb-4 grid-cols-1">
+                                            <div class="col-span-1">
+                                                <label for="new-category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">New Category</label>
+                                                <input type="text" name="new-category" id="new-category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type new category" required="">
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="text-white inline-flex items-center bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                            <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                                            Add new category
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div> 
+
+                    <!-- modals end -->
+
+
+
+                    <div class="w-full md:w-1/2 xl:w-1/3 p-6">                      
+                        <!--Metric Card-->
+                        <div class="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5">
+                            <div class="flex flex-row items-center">
+                                <div class="flex-shrink pr-4">
+                                    <div class="rounded-full p-5 bg-green-600"><i class="fas fa-box pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
+                                </div>
+                                <div class="flex-1 text-right md:text-center">
+                                    <h2 class="font-bold uppercase text-gray-600">Total No of Products</h2>
+                                   <p class="font-bold text-3xl">3249 <span class="text-green-500"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/Metric Card-->
+                    </div>
+
                     <div class="w-full md:w-1/2 xl:w-1/3 p-6">
                         <!--Metric Card-->
                         <div class="bg-gradient-to-b from-pink-200 to-pink-100 border-b-4 border-pink-500 rounded-lg shadow-xl p-5">
@@ -192,8 +354,8 @@
                                     <div class="rounded-full p-5 bg-pink-600"><i class="fas fa-users fa-2x fa-inverse"></i></div>
                                 </div>
                                 <div class="flex-1 text-right md:text-center">
-                                    <h2 class="font-bold uppercase text-gray-600">Total Users</h2>
-                                    <p class="font-bold text-3xl">249 <span class="text-pink-500"><i class="fas fa-exchange-alt"></i></span></p>
+                                    <h2 class="font-bold uppercase text-gray-600">Total No of Users</h2>
+                                    <p class="font-bold text-3xl">249 <span class="text-pink-500"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -204,11 +366,11 @@
                         <div class="bg-gradient-to-b from-yellow-200 to-yellow-100 border-b-4 border-yellow-600 rounded-lg shadow-xl p-5">
                             <div class="flex flex-row items-center">
                                 <div class="flex-shrink pr-4">
-                                    <div class="rounded-full p-5 bg-yellow-600"><i class="fas fa-user-plus fa-2x fa-inverse"></i></div>
+                                    <div class="rounded-full p-5 bg-yellow-600"><i class="fas fa-credit-card pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
                                 </div>
                                 <div class="flex-1 text-right md:text-center">
-                                    <h2 class="font-bold uppercase text-gray-600">New Users</h2>
-                                    <p class="font-bold text-3xl">2 <span class="text-yellow-600"><i class="fas fa-caret-up"></i></span></p>
+                                    <h2 class="font-bold uppercase text-gray-600">Total No of Payments</h2>
+                                    <p class="font-bold text-3xl">2 <span class="text-yellow-600"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -216,13 +378,13 @@
                     </div>
                     <div class="w-full md:w-1/2 xl:w-1/3 p-6">
                         <!--Metric Card-->
-                        <div class="bg-gradient-to-b from-blue-200 to-blue-100 border-b-4 border-blue-500 rounded-lg shadow-xl p-5">
+                        <div class="bg-gradient-to-b from-teal-200 to-teal-100 border-b-4 border-teal-500 rounded-lg shadow-xl p-5">
                             <div class="flex flex-row items-center">
                                 <div class="flex-shrink pr-4">
-                                    <div class="rounded-full p-5 bg-blue-600"><i class="fas fa-server fa-2x fa-inverse"></i></div>
+                                    <div class="rounded-full p-5 bg-teal-600"><i class="fas fa-shopping-cart pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
                                 </div>
                                 <div class="flex-1 text-right md:text-center">
-                                    <h2 class="font-bold uppercase text-gray-600">Server Uptime</h2>
+                                    <h2 class="font-bold uppercase text-gray-600">Total No of Orders</h2>
                                     <p class="font-bold text-3xl">152 days</p>
                                 </div>
                             </div>
@@ -234,10 +396,10 @@
                         <div class="bg-gradient-to-b from-indigo-200 to-indigo-100 border-b-4 border-indigo-500 rounded-lg shadow-xl p-5">
                             <div class="flex flex-row items-center">
                                 <div class="flex-shrink pr-4">
-                                    <div class="rounded-full p-5 bg-indigo-600"><i class="fas fa-tasks fa-2x fa-inverse"></i></div>
+                                    <div class="rounded-full p-5 bg-indigo-600"><i class="fas fa-comments pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
                                 </div>
                                 <div class="flex-1 text-right md:text-center">
-                                    <h2 class="font-bold uppercase text-gray-600">To Do List</h2>
+                                    <h2 class="font-bold uppercase text-gray-600">Total No of Feedback</h2>
                                     <p class="font-bold text-3xl">7 tasks</p>
                                 </div>
                             </div>
@@ -249,11 +411,11 @@
                         <div class="bg-gradient-to-b from-red-200 to-red-100 border-b-4 border-red-500 rounded-lg shadow-xl p-5">
                             <div class="flex flex-row items-center">
                                 <div class="flex-shrink pr-4">
-                                    <div class="rounded-full p-5 bg-red-600"><i class="fas fa-inbox fa-2x fa-inverse"></i></div>
+                                    <div class="rounded-full p-5 bg-red-600"><i class="fas fa-map-marker-alt pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
                                 </div>
                                 <div class="flex-1 text-right md:text-center">
-                                    <h2 class="font-bold uppercase text-gray-600">Issues</h2>
-                                    <p class="font-bold text-3xl">3 <span class="text-red-500"><i class="fas fa-caret-up"></i></span></p>
+                                    <h2 class="font-bold uppercase text-gray-600">Total No of Address</h2>
+                                    <p class="font-bold text-3xl">3 <span class="text-red-500"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -408,9 +570,9 @@
                                 <table class="w-full p-5 text-gray-700">
                                     <thead>
                                     <tr>
-                                        <th class="text-left text-blue-900">Name</th>
-                                        <th class="text-left text-blue-900">Side</th>
-                                        <th class="text-left text-blue-900">Role</th>
+                                        <th class="text-left text-red-900">Name</th>
+                                        <th class="text-left text-red-900">Side</th>
+                                        <th class="text-left text-red-900">Role</th>
                                     </tr>
                                     </thead>
 
@@ -518,7 +680,7 @@
                                     </div>
 
                                     <div class="col-span-3 sm:col-span-2">
-                                    <label for="product-material" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Material</label>
+                                        <label for="product-material" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Material</label>
 
                                         <select id="select2" name="select2[]" class="hidden" multiple>
                                                 

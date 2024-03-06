@@ -46,9 +46,10 @@ $(document).ready(function() {
         // Validate Images
             var images = $('#images')[0].files;
             if (images.length === 0) {
-                $('#images').after('<p class="error-msg text-red-500">Please select at least one Image</p>');
+                $('#selectedImages').after('<p class="error-msg text-red-500">Please select at least one Image</p>');
                 isValid = false;
             }
+
         return isValid;
     }
 
