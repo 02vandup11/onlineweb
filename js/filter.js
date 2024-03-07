@@ -147,59 +147,60 @@ $(document).ready(function(){
   $(document).ready(function(){
     // Filter by color, material, and price
     $(".color-filter, .material-filter").change(function(){
-      filterProducts();
+        filterProducts();
     });
-  
+
     $("#priceRangeInput").on('input', function() {
-      filterProducts();
+        filterProducts();
     });
-  
+
     function filterProducts() {
-      var selectedColors = [];
-      var selectedMaterials = [];
-      var selectedPrice = parseInt($("#priceRangeInput").val());
-  
-      $(".color-filter:checked").each(function(){
-        selectedColors.push($(this).val().toLowerCase());
-      });
-  
-      $(".material-filter:checked").each(function(){
-        selectedMaterials.push($(this).val().toLowerCase());
-      });
-  
-      $(".product").each(function(){
-        var colors = $(this).data("colors").toLowerCase().split(",");
-        var materials = $(this).data("materials").toLowerCase().split(",");
-        var productPrice = parseInt($(this).find('.text-gray-700').text().replace('Rs.', ''));
-        var showProduct = true;
-  
-        if(selectedColors.length > 0 && !colors.some(r => selectedColors.includes(r))){
-          showProduct = false;
-        }
-        console.log(materials);
-        console.log(selectedMaterials);
-        if(selectedMaterials.length > 0 && !materials.some(r => selectedMaterials.includes(r))){
-          showProduct = false;
-        }
-  
-        if(productPrice > selectedPrice){
-          showProduct = false;
-        }
-  
-        if(showProduct){
-          $(this).show();
-        } else {
-          $(this).hide();
-        }
-      });
+        var selectedColors = [];
+        var selectedMaterials = [];
+        var selectedPrice = parseInt($("#priceRangeInput").val());
+
+        $(".color-filter:checked").each(function(){
+            selectedColors.push($(this).val().toLowerCase());
+        });
+
+        $(".material-filter:checked").each(function(){
+            selectedMaterials.push($(this).val().toLowerCase());
+        });
+
+        $(".product").each(function(){
+            var colors = $(this).data("colors").toLowerCase().split(",");
+            var materials = $(this).data("materials").toLowerCase().split(",");
+            var productPrice = parseInt($(this).data("price"));
+
+            var showProduct = true;
+
+            if(selectedColors.length > 0 && !colors.some(r => selectedColors.includes(r))){
+                showProduct = false;
+            }
+
+            if(selectedMaterials.length > 0 && !materials.some(r => selectedMaterials.includes(r))){
+                showProduct = false;
+            }
+
+            if(productPrice > selectedPrice){
+                showProduct = false;
+            }
+
+            if(showProduct){
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
     }
-  
+
     // Clear all filters
     $(".clear-all-filters").click(function() {
-      $(".color-filter, .material-filter").prop("checked", false);
-      $("#priceRangeInput").val(1500);
-      $(".product").show();
+        $(".color-filter, .material-filter").prop("checked", false);
+        $("#priceRangeInput").val(1500);
+        $(".product").show();
     });
-  });
+});
+
   
 

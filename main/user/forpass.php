@@ -18,8 +18,8 @@
 <body>
 <div id="page1" class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
 
-        <div class="font-sans mt-20">
-            <div class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100">
+        <div class="font-sans">
+            <div class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100 ml-80 w-full">
                 <div class="relative sm:max-w-sm w-full">
                     <div id="cardBackground1" class="card bg-yellow-800 shadow-lg w-full h-full rounded-3xl absolute transform -rotate-6"></div>
                     <div id="cardBackground2" class="card bg-orange-800 shadow-lg w-full h-full rounded-3xl absolute transform rotate-6"></div>
@@ -70,8 +70,8 @@
 
 <div id="page2" class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
 						<!-- component -->
-    <div class="font-sans mt-20">
-        <div class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100">
+    <div class="font-sans">
+        <div class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100 ml-80 w-full">
             <div class="relative sm:max-w-sm w-full">
                 <div id="cardBackground1" class="card bg-yellow-800 shadow-lg w-full h-full rounded-3xl absolute transform -rotate-6"></div>
                     <div id="cardBackground2" class="card bg-orange-800 shadow-lg w-full h-full rounded-3xl absolute transform rotate-6"></div>
@@ -124,8 +124,8 @@
 </div>
 					
 <div id="page3" class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
-    <div class="font-sans mt-20">
-        <div class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100">
+    <div class="font-sans">
+        <div class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100 ml-80 w-full">
             <div class="relative sm:max-w-sm w-full">
                 <div id="cardBackground1" class="card bg-yellow-800 shadow-lg w-full h-full rounded-3xl absolute transform -rotate-6"></div>
                     <div id="cardBackground2" class="card bg-orange-800 shadow-lg w-full h-full rounded-3xl absolute transform rotate-6"></div>

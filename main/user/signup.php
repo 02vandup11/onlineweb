@@ -20,8 +20,8 @@
  
 
 <!-- component -->
-<div class="font-sans mt-20  ">
-    <div class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100 ">
+<div class="font-sans bg-gray-100">
+    <div class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100 m-10">
         <div class="relative sm:max-w-sm w-full">
             <div class="card bg-yellow-800 shadow-lg  w-full h-full rounded-3xl absolute  transform -rotate-6"></div>
             <div class="card bg-orange-800 shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-6"></div>

@@ -39,9 +39,9 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
 
         
 
-<div id="gallery" class="relative w-full m-2  z-0" data-carousel="slide" >
+<div id="gallery" class="relative w-full my-10  z-0" data-carousel="slide" >
     <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96 mt-14">
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96 mt-20">
          <!-- Item 1 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item style="z-index: 1">
             <img src="https://media.istockphoto.com/id/1198714412/photo/bangles-made-of-gold.jpg?s=612x612&w=0&k=20&c=fvlLFQegczkC87aBXXuJli0XszW5O0DG_VBOKVXB2Lg=" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 " alt="">
@@ -86,7 +86,7 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
 
 <!-- category -->
 <div class="container mx-auto" >
-        <h1 class="text-5xl italic text-center font-bold text-amber-800 m-8" id="category">Categories</h1>
+        <h1 class="text-5xl italic text-center font-bold text-amber-800 " id="category">Categories</h1>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-4">
             <!-- php of blog post card 1 -->
@@ -143,173 +143,13 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
 
         </div>
 
-        <!-- Our Best Sales -->
-        <h1 class="text-5xl italic text-center font-bold text-amber-800 m-8">Our Best Sales</h1>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 m-4">
-            <!-- Product Card 1 -->
-            <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
-                    <img class="p-8 rounded-t-lg" src="https://images.unsplash.com/photo-1641290748359-1d944fc8359a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGVhcmluZ3xlbnwwfDB8MHx8fDA%3D"
-                        alt="product image" />
-                </a>
-                <div class="px-5 pb-5">
-                    <a href="#">
-                        <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Gold Hoop Earrings with Diamonds</h5>
-                    </a>
-                    <div class="flex items-center mt-2.5 mb-5">
-                        <!-- Rating stars and badge -->
-                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
-                    <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-                    </svg>
-                    <!-- Add more stars as needed  -->
-                </div>
-                <!-- // Rating badge  -->
-                <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-800 ms-3">5.0</span>
-                    </div>
-                    <!-- Price and Add to Cart button -->
-                    <div class="flex items-center justify-between">
-                        <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-                        <a href="#"
-                            class="text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
-                            Add to cart
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product Card 2 -->
-            <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
-                    <img class="p-8 rounded-t-lg" src="https://images.unsplash.com/photo-1613945407943-59cd755fd69e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHJpbmd8ZW58MHwwfDB8fHww"
-                        alt="product image" />
-                </a>
-                <div class="px-5 pb-5">
-                    <a href="#">
-                        <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Diamond Engagement Ring</h5>
-                    </a>
-                    <div class="flex items-center mt-2.5 mb-5">
-                        <!-- Rating stars and badge -->
-                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
-                    <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-                    </svg>
-                    <!-- Add more stars as needed  -->
-                </div>
-                <!-- // Rating badge  -->
-                <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-800 ms-3">5.0</span>
-                    </div>
-                    <!-- Price and Add to Cart button -->
-                    <div class="flex items-center justify-between">
-                        <span class="text-3xl font-bold text-gray-900 dark:text-white">$999</span>
-                        <a href="#"
-                            class="text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
-                            Add to cart
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product Card 3 -->
-            <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
-                    <img class="p-8 rounded-t-lg" src="https://plus.unsplash.com/premium_photo-1681276168529-fec94bbf342d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fG5lY2tsYWNlfGVufDB8MHwwfHx8MA%3D%3D"
-                        alt="product image" />
-                </a>
-                <div class="px-5 pb-5">
-                    <a href="#">
-                        <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Sapphire Pendant Necklace</h5>
-                    </a>
-                    <div class="flex items-center mt-2.5 mb-5">
-                        <!-- Rating stars and badge -->
-                        <div class="flex items-center space-x-1 rtl:space-x-reverse">
-                    <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                        <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
-                    </svg>
-                    <!-- Add more stars as needed  -->
-                </div>
-                <!-- // Rating badge  -->
-                <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-800 ms-3">5.0</span>
-                    </div>
-                    <!-- Price and Add to Cart button -->
-                    <div class="flex items-center justify-between">
-                        <span class="text-3xl font-bold text-gray-900 dark:text-white">$799</span>
-                        <a href="#"
-                            class="text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
-                            Add to cart
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Repeat similar structure for other cards -->
-
-        </div>
-    </div>
-
-
-
-
-<!-- chatbot -->
-
-<div class="fixed bottom-0 right-0 mb-4 mr-2 ">
-        <button id="open-chat" class="border-2 border-black-600 bg-amber-700 text-white  rounded-lg hover:bg-amber-600 transition duration-300 flex items-center">
-        
-        <svg fill="#050505" width="60px" height="50px" viewBox="-2.4 -2.4 28.80 28.80" id="conversation-alt" data-name="Flat Line" xmlns="http://www.w3.org/2000/svg" class="icon flat-line" transform="matrix(1, 0, 0, 1, 0, 0)" stroke="#050505"><g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(0,0), scale(1)"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="1.44"><path id="secondary" d="M17,4v8a1,1,0,0,1-1,1H7L3,17V4A1,1,0,0,1,4,3H16A1,1,0,0,1,17,4Z" style="fill: #c9b21d; stroke-width:1.08;"></path><path id="primary" d="M8,17h9l4,4V7a1,1,0,0,0-1-1H17" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width:1.08;"></path><path id="primary-2" data-name="primary" d="M17,4v8a1,1,0,0,1-1,1H7L3,17V4A1,1,0,0,1,4,3H16A1,1,0,0,1,17,4Z" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width:1.08;"></path></g><g id="SVGRepo_iconCarrier"><path id="secondary" d="M17,4v8a1,1,0,0,1-1,1H7L3,17V4A1,1,0,0,1,4,3H16A1,1,0,0,1,17,4Z" style="fill: #c9b21d; stroke-width:1.08;"></path><path id="primary" d="M8,17h9l4,4V7a1,1,0,0,0-1-1H17" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width:1.08;"></path><path id="primary-2" data-name="primary" d="M17,4v8a1,1,0,0,1-1,1H7L3,17V4A1,1,0,0,1,4,3H16A1,1,0,0,1,17,4Z" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width:1.08;"></path></g></svg>        
-        
-    </button>
-        
-    </div>
-    <div id="chat-container" class="hidden fixed bottom-16 right-4 w-96">
-        <div class="bg-white shadow-md rounded-lg max-w-lg w-full">
-            <div class="p-4 border-b bg-amber-800 text-white rounded-t-lg flex justify-between items-center">
-                <p class="text-lg font-semibold">Chat with us...</p>
-                <button id="close-chat" class="text-gray-300 hover:text-gray-400 focus:outline-none focus:text-gray-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
-            <div id="chatbox" class="p-4 h-80 overflow-y-auto">
-              <!-- Chat messages will be displayed here -->
-              <div class="mb-2 text-right">
-                <p class="bg-amber-800 text-white rounded-lg py-2 px-4 inline-block">hello</p>
-              </div>
-              <div class="mb-2">
-                <p class="bg-gray-200 text-gray-700 rounded-lg py-2 px-4 inline-block">This is a response from the chatbot.</p>
-              </div>
-              <div class="mb-2 text-right">
-                <p class="bg-amber-800 text-white rounded-lg py-2 px-4 inline-block">this example of chat</p>
-              </div>
-              <div class="mb-2">
-                <p class="bg-gray-200 text-gray-700 rounded-lg py-2 px-4 inline-block">This is a response from the chatbot.</p>
-              </div>
-              <div class="mb-2 text-right">
-                <p class="bg-amber-800 text-white rounded-lg py-2 px-4 inline-block">design with tailwind</p>
-              </div>
-              <div class="mb-2">
-                <p class="bg-gray-200 text-gray-700 rounded-lg py-2 px-4 inline-block">This is a response from the chatbot.</p>
-              </div>
-            </div>
-            <div class="p-4 border-t flex">
-                <input id="user-input" type="text" placeholder="Type a message" class="w-full px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-amber-600">
-                <button id="send-button" class="bg-amber-700 text-white px-4 py-2 rounded-r-md hover:bg-amber-600 transition duration-300">Send</button>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="2xl:container 2xl:mx-auto md:py-12 py-9">
+        <div class="2xl:container 2xl:mx-auto md:py-12 py-9">
             <div class="bg-amber-50 dark:bg-amber-800 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-8 md:gap-12 gap-14 lg:px-20 lg:py-12 py-10 md:px-12 px-4">
                 <!-- Delivery grid Card -->
                 <div class="">
                 <svg class="w-[35px] h-[35px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8" d="M12 6C6.5 1 1 8 5.8 13l6.2 7 6.2-7C23 8 17.5 1 12 6Z"/>
                 </svg>
-                    <!-- <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-1-svg1.svg" alt="delivery">
-                    <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/highlight-1-svg1dark.svg" alt="delivery"> -->
                     <h3 class="text-xl leading-5 dark:text-white font-semibold text-amber-800 lg:mt-10 mt-8">Best Product</h3>
                     <p class="text-base leading-6 font-normal dark:text-amber-300 text-amber-600 mt-4 lg:w-full md:w-9/12 w-full">Discover our bestseller, loved for its quality and style!</p>
                 </div>
@@ -341,7 +181,53 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
                     <p class="text-base leading-6 font-normal dark:text-amber-300 text-amber-600 mt-4 lg:w-full md:w-9/12 w-full">Transaction process has end to end encryption</p>
                 </div>
             </div>
+    </div>
+
+        
+</div>
+
+
+
+
+<!-- chatbot -->
+
+<div class="fixed bottom-0 right-0 mb-4 mr-4 ">
+        <button id="open-chat" class="border-2 border-black-600 bg-amber-700 text-white  rounded-lg hover:bg-amber-600 transition duration-300 flex items-center">
+        
+        <svg fill="#050505" width="60px" height="50px" viewBox="-2.4 -2.4 28.80 28.80" id="conversation-alt" data-name="Flat Line" xmlns="http://www.w3.org/2000/svg" class="icon flat-line" transform="matrix(1, 0, 0, 1, 0, 0)" stroke="#050505"><g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(0,0), scale(1)"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="1.44"><path id="secondary" d="M17,4v8a1,1,0,0,1-1,1H7L3,17V4A1,1,0,0,1,4,3H16A1,1,0,0,1,17,4Z" style="fill: #c9b21d; stroke-width:1.08;"></path><path id="primary" d="M8,17h9l4,4V7a1,1,0,0,0-1-1H17" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width:1.08;"></path><path id="primary-2" data-name="primary" d="M17,4v8a1,1,0,0,1-1,1H7L3,17V4A1,1,0,0,1,4,3H16A1,1,0,0,1,17,4Z" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width:1.08;"></path></g><g id="SVGRepo_iconCarrier"><path id="secondary" d="M17,4v8a1,1,0,0,1-1,1H7L3,17V4A1,1,0,0,1,4,3H16A1,1,0,0,1,17,4Z" style="fill: #c9b21d; stroke-width:1.08;"></path><path id="primary" d="M8,17h9l4,4V7a1,1,0,0,0-1-1H17" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width:1.08;"></path><path id="primary-2" data-name="primary" d="M17,4v8a1,1,0,0,1-1,1H7L3,17V4A1,1,0,0,1,4,3H16A1,1,0,0,1,17,4Z" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width:1.08;"></path></g></svg>        
+        
+    </button>
+        
+    </div>
+    <div id="chat-container" class="hidden fixed bottom-16 right-4 w-96">
+        <div class="bg-white shadow-md rounded-lg max-w-lg w-full">
+            <div class="p-4 border-b bg-amber-800 text-white rounded-t-lg flex justify-between items-center">
+                <p class="text-lg font-semibold">Chat with us...</p>
+                <button id="close-chat" class="text-gray-300 hover:text-gray-400 focus:outline-none focus:text-gray-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="chatbox" class="p-4 h-80 overflow-y-auto">
+              <!-- Chat messages will be displayed here -->
+              <!-- <div class="mb-2 text-right">
+                <p class="bg-amber-800 text-white rounded-lg py-2 px-4 inline-block">hello</p>
+              </div>
+              <div class="mb-2">
+                <p class="bg-gray-200 text-gray-700 rounded-lg py-2 px-4 inline-block">This is a response from the chatbot.</p>
+              </div>-->
+            </div>
+            <div class="p-4 border-t flex">
+                <input id="user-input" type="text" placeholder="Type a message" class="w-full px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-amber-600">
+                <button id="send-button" class="bg-amber-700 text-white px-4 py-2 rounded-r-md hover:bg-amber-600 transition duration-300">Send</button>
+            </div>
         </div>
+    </div>
+
+
+
+    
     
 
 
@@ -415,15 +301,7 @@ function addBotMessage(message) {
     chatbox.scrollTop = chatbox.scrollHeight;
 }
 
-// function respondToUser(userMessage) {
-//     // Replace this with your chatbot logic
-//     setTimeout(() => {
-//         addBotMessage("This is a response from the chatbot.");
-//     }, 500);
-// }
 
-// Automatically open the chatbox on page load
-// toggleChatbox();
 
         </script>
   

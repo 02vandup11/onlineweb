@@ -170,33 +170,7 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
                 <img src="https://cdn.pixabay.com/photo/2017/11/10/05/46/group-2935521_1280.png" class="w-12 h-12 rounded-full border-2 border-white" />
                 <div class="ml-3">
                   <h4 class="text-sm font-bold"><?php echo($row_of_review["cus_fname"])?> <?php echo($row_of_review["cus_lname"])?></h4>
-                  <div class="flex space-x-1 mt-1">
-                    <svg class="w-4 fill-gray-800" viewBox="0 0 14 13" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                    </svg>
-                    <svg class="w-4 fill-gray-800" viewBox="0 0 14 13" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                    </svg>
-                    <svg class="w-4 fill-gray-800" viewBox="0 0 14 13" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                    </svg>
-                    <svg class="w-4 fill-[#CED5D8]" viewBox="0 0 14 13" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                    </svg>
-                    <svg class="w-4 fill-[#CED5D8]" viewBox="0 0 14 13" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                    </svg>
-                  </div>
+                  
                   <p class="text-xs mt-4"> <?php echo($row_of_review["review_text"])?></p>
                 </div>
               </div>
@@ -217,7 +191,7 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
                       <div class="flex flex-wrap -mx-3 mb-6">
                           <h2 class="text-lg font-bold text-gray-800">Add a new Review</h2>
                           <div class="w-full md:w-full px-3 mb-2 mt-2">
-                              <textarea id="comment" class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white" name="body" placeholder='Type Your Comment' ></textarea>
+                              <textarea id="comment" class="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:text-gray-500  focus:bg-white" name="body" placeholder='Type Your Comment' ></textarea>
                               <p id="commentError" class="text-red-500 hidden">Please enter your review.</p>
                           </div>
                           <div class="w-full md:w-full flex items-start md:w-full px-3">
@@ -242,43 +216,11 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
                       </h2>
                       <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
                         <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                          <p class="mb-2 text-gray-500 dark:text-gray-400">Please consider your purchase carefully, as there is no return or exchange policy after you have bought a product. We recommend reviewing the product details and ensuring it meets your requirements before placing your order. Your understanding and cooperation are greatly appreciated.</p>
+                          <p class="mb-2 text-gray-500 dark:text-gray-400">Please consider your purchase carefully, as there is no return or exchange policy or canceling order after you have ordered a product. We recommend reviewing the product details and ensuring it meets your requirements before placing your order. Your understanding and cooperation are greatly appreciated.</p>
                           <!-- <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p> -->
                         </div>
                       </div>
-                      <!-- <h2 id="accordion-flush-heading-2">
-                        <button type="button" class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
-                          <span>Is there a Figma file available?</span>
-                          <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                          </svg>
-                        </button>
-                      </h2>
-                      <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
-                        <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                          <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
-                          <p class="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
-                        </div>
-                      </div> -->
-                      <!-- <h2 id="accordion-flush-heading-3">
-                        <button type="button" class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
-                          <span>What are the differences between Flowbite and Tailwind UI?</span>
-                          <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                          </svg>
-                        </button>
-                      </h2>
-                      <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
-                        <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                          <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.</p>
-                          <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best of two worlds.</p>
-                          <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-                          <ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
-                            <li><a href="https://flowbite.com/pro/" class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-                            <li><a href="https://tailwindui.com/" rel="nofollow" class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
-                          </ul>
-                        </div>
-                      </div> -->
+                      
                     </div>
 
 

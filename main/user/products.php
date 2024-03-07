@@ -127,24 +127,25 @@ $category = $_GET["category"];
                         </div>
                         <!-- Divider -->
                         <div class="mb-6 mt-6 h-px w-full bg-amber"></div>
-                        <!-- Filter Two -->
-                        <div class="flex flex-col gap-6">
-                            <!-- Price range input here -->
-                            <div class="flex cursor-pointer items-center justify-between py-4 [border-top:1px_solid_rgba(0,_0,_0,_0)] md:py-0">
-                              <p class="font-semibold">Price</p>
-                              <a href="#" class="inline-block text-sm text-black" onclick="clearPriceFilter()">
-                                <p>Clear</p>
-                              </a>
+                            <!-- Filter Two -->
+                            <div class="flex flex-col gap-6">
+                                <!-- Price range input here -->
+                                <div class="flex cursor-pointer items-center justify-between py-4 [border-top:1px_solid_rgba(0,_0,_0,_0)] md:py-0">
+                                    <p class="font-semibold">Price</p>
+                                    <a href="#" class="inline-block text-sm text-black" onclick="clearPriceFilter()">
+                                        <p>Clear</p>
+                                    </a>
+                                </div>
+                                <div class="relative mb-6">
+                                    <label for="priceRangeInput" class="sr-only">Price range</label>
+                                    <input id="priceRangeInput" type="range" value="1500" min="100" max="1500" class="w-full h-2 bg-gray-500 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                                    <span class="text-sm text-gray-700 dark:text-gray-700 absolute start-0 -bottom-6">Rs.100</span>
+                                    <span class="text-sm text-gray-700 dark:text-gray-700 absolute start-1/3 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">Rs.500</span>
+                                    <span class="text-sm text-gray-700 dark:text-gray-700 absolute start-2/3 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6 mr-2">Rs.1000</span>
+                                    <span class="text-sm text-gray-700 dark:text-gray-700 absolute end-0 -bottom-6">Rs.1500</span>
+                                </div>
                             </div>
-                              <div class="relative mb-6">
-                                <label for="labels-range-input" class="sr-only">Labels range</label>
-                                <input id="priceRangeInput" type="range" value="1000" min="100" max="1500" class="w-full h-2 bg-gray-500 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
-                                <span class="text-sm text-gray-700 dark:text-gray-700 absolute start-0 -bottom-6">Rs.100</span>
-                                <span class="text-sm text-gray-700 dark:text-gray-700 absolute start-1/3 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">Rs.500</span>
-                                <span class="text-sm text-gray-700 dark:text-gray-700 absolute start-2/3 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6 mr-2">Rs.1000</span> 
-                                <span class="text-sm text-gray-700 dark:text-gray-700 absolute end-0 -bottom-6">Rs.1500</span>
-                            </div>
-                        </div>
+
                     </form>
                 </div>
                 <!-- Decor -->

@@ -73,10 +73,11 @@
                     <div class="px-10 max-w-xl">
                         <h2 class="text-2xl text-white font-semibold">Ethnic Jewelry</h2>
                         <p class="mt-2 text-gray-400">Elevate your style with our timeless ethnic jewels – where tradition meets sophistication. Explore heritage-inspired craftsmanship for the modern connoisseur. Embrace elegance, celebrate culture.</p>
-                        <button class="flex items-center mt-4 px-3 py-2 bg-yellow-600 text-white text-sm uppercase font-medium rounded hover:bg-yellow-500 focus:outline-none focus:bg-yellow-500">
-                            <span>Shop Now</span>
-                            <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </button>
+                        <a href="login.php" class="flex items-center mt-4 px-3 py-2 w-40 bg-yellow-600 text-white text-sm uppercase font-medium rounded hover:bg-yellow-500 focus:outline-none focus:bg-yellow-500">
+                                <span>Shop Now</span>
+                                <svg class="h-5  mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+
                     </div>
                 </div>
             </div>
@@ -86,10 +87,11 @@
                         <div class="px-10 max-w-xl">
                             <h2 class="text-2xl text-white font-semibold">Captivating Elegance</h2>
                             <p class="mt-2 text-gray-400">Embrace Tradition with Our Ethnic Bangles Collection. Adorn Your Wrists with Timeless Craftsmanship and Cultural Splendor. Unveil the Artistry of Heritage.</p>
-                            <button class="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none">
+                            <a href="login.php" class="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none">
                                 <span>Shop Now</span>
                                 <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                            </button>
+                            </a>
+
                         </div>
                     </div>
                 </div>
@@ -98,10 +100,10 @@
                         <div class="px-10 max-w-xl">
                             <h2 class="text-2xl text-white font-semibold">Radiance Refined</h2>
                             <p class="mt-2 text-gray-400">Elevate your style with our stunning rings, where tradition meets modern elegance. Discover the perfect blend of craftsmanship and sophistication.</p>
-                            <button class="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none">
+                            <a href="login.php" class="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none">
                                 <span>Shop Now</span>
                                 <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -213,24 +215,24 @@
                 <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/2" style="background-image: url('https://media.istockphoto.com/id/1198714412/photo/bangles-made-of-gold.jpg?s=612x612&w=0&k=20&c=fvlLFQegczkC87aBXXuJli0XszW5O0DG_VBOKVXB2Lg=')">
                     <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                         <div class="px-10 max-w-xl">
-                            <h2 class="text-2xl text-white font-semibold">Captivating Elegance</h2>
-                            <p class="mt-2 text-gray-400">Embrace Tradition with Our Ethnic Bangles Collection. Adorn Your Wrists with Timeless Craftsmanship and Cultural Splendor. Unveil the Artistry of Heritage.</p>
-                            <button class="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none">
+                            <h2 class="text-2xl text-white font-semibold">Royal Splendor</h2>
+                            <p class="mt-2 text-gray-400">Step into Royalty with Our Exquisite Bangles Collection. Revel in the Opulence of Traditional Designs and Majestic Craftsmanship. Experience the Regal Charm on Your Wrist.</p>
+                            <a href="login.php" class="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none">
                                 <span>Shop Now</span>
                                 <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="w-full h-64 mt-8 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:mt-0 md:w-1/2" style="background-image: url('https://media.istockphoto.com/id/599908966/photo/gold-jewelry.jpg?s=612x612&w=0&k=20&c=eN8YsGoySwpKRTn3RBYZ5vQWKp1waCHDUC8C3DehjNQ=')">
                     <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
                         <div class="px-10 max-w-xl">
-                            <h2 class="text-2xl text-white font-semibold">Radiance Refined</h2>
-                            <p class="mt-2 text-gray-400">Elevate your style with our stunning rings, where tradition meets modern elegance. Discover the perfect blend of craftsmanship and sophistication.</p>
-                            <button class="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none">
+                            <h2 class="text-2xl text-white font-semibold">Timeless Grace</h2>
+                            <p class="mt-2 text-gray-400">Indulge in the Charm of Timeless Elegance with Our Ethnic Bangles Collection. Celebrate the Rich Heritage and Artisanal Mastery. Let Your Style Reflect the Beauty of Tradition.</p>
+                            <a href="login.php" class="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none">
                                 <span>Shop Now</span>
                                 <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -112,7 +112,9 @@ if(!empty($_GET["id"]))
 
                             <div class="w-full max-w-xl mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-20">
                                 <!-- Modal body -->
-                                <form id="productForm" class="p-4 md:p-5">
+                                <form id="productForm" class="p-4 md:p-5" enctype="multipart/form-data">
+                                <input type="text" id="product_id" class="hidden" value="<?php echo($row_of_product["pro_id"]); ?>">
+
                                  <div class="grid gap-4 mb-4 grid-cols-2">
                                     <div class="col-span-2">
                                        <label for="product-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product Name</label>
@@ -518,6 +520,7 @@ if(!empty($_GET["id"]))
                                        </button>
                                     </div>
                                  </div>
+
                               </form>
 </div>
 <?php

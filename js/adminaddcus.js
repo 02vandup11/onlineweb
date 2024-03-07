@@ -1,3 +1,6 @@
+$id = $('#product_id').val();
+console.log($id);
+
 $(document).ready(function() {
     // Function to validate the form
     function validateForm() {
@@ -99,7 +102,7 @@ $(document).ready(function() {
                         });
                         // Delay reload by 2 seconds
                         setTimeout(function(){
-                            window.location.href = "./editproduct.php";
+                            window.location.reload();
                          }, 1000);
                     } else {
                         jSuites.notification({
@@ -118,6 +121,15 @@ $(document).ready(function() {
             });
         }
     });
+
+
+
+    function validateForm() {
+        // Validation logic here
+        return true;
+    }
+
+
 });
 
 
