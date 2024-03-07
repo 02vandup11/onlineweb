@@ -118,7 +118,7 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
             </div>
 
             <div class="flex">
-            <a href="custom.php" class="inline-block">
+            <!-- <a href="custom.php" class="inline-block">
                 <button type="button"
                         class="px-6 py-2.5 text-white text-sm tracking-wider font-semibold border-none outline-none bg-gray-600 hover:bg-gray-700 active:bg-gray-600 m-4">
                         <div class="flex">
@@ -138,7 +138,7 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
                         Personalization
                         </div>
                 </button>
-            </a>
+            </a> -->
 
                 <button type="button" onclick="addtocart(<?php echo $row_of_product['pro_id']; ?>)"
                         class="px-6 py-2.5 text-white text-sm tracking-wider font-semibold border-none outline-none bg-gray-600 hover:bg-gray-700 active:bg-gray-600 m-4">

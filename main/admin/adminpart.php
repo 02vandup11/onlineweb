@@ -173,24 +173,28 @@
                 <div class="flex flex-wrap">
 
 
-                   <div class="w-full md:w-1/2 xl:w-1/3 p-6" onclick="document.getElementById('add-materials-modal').classList.remove('hidden');">
+                    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
                         <!--Metric Card-->
-                        <div class="bg-gradient-to-b from-purple-200 to-purple-100 border-b-4 border-purple-600 rounded-lg shadow-xl p-5">
+                        <div class="bg-gradient-to-b from-purple-200 to-purple-100 border-b-4 border-purple-600 rounded-lg shadow-xl p-5" onclick="document.getElementById('add-materials-modal').classList.remove('hidden');">
                             <div class="flex flex-row items-center">
                                 <div class="flex-shrink pr-4">
                                     <div class="rounded-full p-5 bg-purple-600"><i class="fas fa-plus pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
                                 </div>
                                 <div class="flex-1 text-right md:text-center">
-                                    <h2 class="font-bold uppercase text-gray-600">Add Materials</h2>
+                                    <h2 class="font-bold uppercase text-gray-600">Add Materials</h2>                              
                                 </div>
                             </div>
                         </div>
                         <!--/Metric Card-->
+                        <!-- Modal toggle for Materials -->
+                            <button data-modal-target="materials-modal" data-modal-toggle="materials-modal" class="ml-20 mt-2 block text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800" type="button">
+                                View Materials
+                            </button>
                     </div>
-                    <div class="w-full md:w-1/2 xl:w-1/3 p-6" onclick="document.getElementById('add-colors-modal').classList.remove('hidden');">
+                    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
                         
                         <!--Metric Card-->
-                        <div class="bg-gradient-to-b from-orange-200 to-orange-100 border-b-4 border-orange-600 rounded-lg shadow-xl p-5">
+                        <div class="bg-gradient-to-b from-orange-200 to-orange-100 border-b-4 border-orange-600 rounded-lg shadow-xl p-5" onclick="document.getElementById('add-colors-modal').classList.remove('hidden');">
                             <div class="flex flex-row items-center">
                                 <div class="flex-shrink pr-4">
                                     <div class="rounded-full p-5 bg-orange-600"><i class="fas fa-plus pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
@@ -201,11 +205,15 @@
                             </div>
                         </div>
                         <!--/Metric Card-->
+                            <!-- Modal toggle for Colors -->
+                                <button data-modal-target="colors-modal" data-modal-toggle="colors-modal" class="ml-20 mt-2 block text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800" type="button">
+                                    View Colors
+                                </button>
                     </div>
-                    <div class="w-full md:w-1/2 xl:w-1/3 p-6" onclick="document.getElementById('add-category-modal').classList.remove('hidden');">
+                    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
                         
                         <!--Metric Card-->
-                        <div class="bg-gradient-to-b from-cyan-200 to-cyan-100 border-b-4 border-cyan-600 rounded-lg shadow-xl p-5">
+                        <div class="bg-gradient-to-b from-cyan-200 to-cyan-100 border-b-4 border-cyan-600 rounded-lg shadow-xl p-5" onclick="document.getElementById('add-category-modal').classList.remove('hidden');">
                             <div class="flex flex-row items-center">
                                 <div class="flex-shrink pr-4">
                                     <div class="rounded-full p-5 bg-cyan-600"><i class="fas fa-plus pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
@@ -216,6 +224,10 @@
                             </div>
                         </div>
                         <!--/Metric Card-->
+                            <!-- Modal toggle for Categories -->
+                                <button data-modal-target="categories-modal" data-modal-toggle="categories-modal" class="ml-20 mt-2 block text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800" type="button">
+                                    View Categories
+                                </button>
                     </div>
 
 
@@ -244,17 +256,18 @@
                                         <div class="grid gap-4 mb-4 grid-cols-1">
                                             <div class="col-span-1">
                                                 <label for="new-material" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">New Material</label>
-                                                <input type="text" name="new-material" id="new-material" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type new material" required="">
+                                                <input type="text" name="new-material" id="new-material" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-600 focus:border-purple-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-purple-500 dark:focus:border-purple-500" placeholder="Type new material">
                                             </div>
                                         </div>
-                                        <button type="submit" class="text-white inline-flex items-center bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                        <div id="material-error-msg" class="text-purple-500 p-2"></div>
+                                        <button type="submit" class="text-white inline-flex items-center bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">
                                             <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
                                             Add new material
                                         </button>
                                     </form>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
 
                         <!-- Add Colors Modal -->
                         <div id="add-colors-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -279,17 +292,18 @@
                                         <div class="grid gap-4 mb-4 grid-cols-1">
                                             <div class="col-span-1">
                                                 <label for="new-color" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">New Color</label>
-                                                <input type="text" name="new-color" id="new-color" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type new color" required="">
+                                                <input type="text" name="new-color" id="new-color" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-600 focus:border-orange-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-orange-500 dark:focus:border-orange-500" placeholder="Type new color">
                                             </div>
                                         </div>
-                                        <button type="submit" class="text-white inline-flex items-center bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                        <div id="color-error-msg" class="text-orange-500 p-2"></div>
+                                        <button type="submit" class="text-white inline-flex items-center bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">
                                             <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
                                             Add new color
                                         </button>
                                     </form>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
 
                         <!-- Add Categories Modal -->
                         <div id="add-category-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -314,21 +328,223 @@
                                         <div class="grid gap-4 mb-4 grid-cols-1">
                                             <div class="col-span-1">
                                                 <label for="new-category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">New Category</label>
-                                                <input type="text" name="new-category" id="new-category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type new category" required="">
+                                                <input type="text" name="new-category" id="new-category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-cyan-500 dark:focus:border-cyan-500" placeholder="Type new category">
                                             </div>
                                         </div>
-                                        <button type="submit" class="text-white inline-flex items-center bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                        <div id="category-error-msg" class="text-cyan-500 p-2"></div>
+                                        <button type="submit" class="text-white inline-flex items-center bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800">
                                             <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
                                             Add new category
                                         </button>
                                     </form>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
+
 
                     <!-- modals end -->
 
+                    <!-- display modal -->
 
+                    <!-- Materials Modal -->
+                        <!-- Materials Modal -->
+                        <div id="materials-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                            <div class="relative p-4 w-full max-w-2xl max-h-full">
+                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Materials</h3>
+                                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="materials-modal">
+                                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                            </svg>
+                                            <span class="sr-only">Close modal</span>
+                                        </button>
+                                    </div>
+                                    <div class="p-4 md:p-5 space-y-4">
+                                        <table class="table-auto w-full">
+                                            <thead>
+                                                <tr>
+                                                    <th class="px-4 py-2">ID</th>
+                                                    <th class="px-4 py-2">Name</th>
+                                                    <th class="px-4 py-2">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                // Fetch materials from the database and loop through them to display in the table
+                                                $materialQuery = "SELECT * FROM `materials`";
+                                                $executequery = mysqli_query($con, $materialQuery);
+                                                if (mysqli_num_rows($executequery)) {
+                                                    while ($row_of_material = mysqli_fetch_assoc($executequery)) {
+                                                        ?>
+                                                        <tr>
+                                                            <td class="border px-4 py-2"><?php echo $row_of_material["material_id"]; ?></td>
+                                                            <td class="border px-4 py-2"><?php echo $row_of_material["material_name"]; ?></td>
+                                                            <td class="border px-4 py-2">
+                                                                <a href="../../main/ajax/edit_materialajax.php?id=<?php echo $row_of_material["material_id"]; ?>" class="text-blue-500 hover:text-blue-700 mr-2">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" viewBox="0 0 20 20" fill="currentColor">
+                                                                        <path fill-rule="evenodd" d="M15.293 4.293a1 1 0 00-1.414 0l-10 10a1 1 0 00-.211.316l-1 3a1 1 0 001.316 1.316l3-1a1 1 0 00.316-.211l10-10a1 1 0 000-1.414zM14 5l-9.998 10L5 14l10-9.998L14 5z" clip-rule="evenodd" />
+                                                                    </svg>
+                                                                </a>
+                                                                <a href="../../main/ajax/delete_materialajax.php?id=<?php echo $row_of_material["material_id"]; ?>" class="text-red-500 hover:text-red-700">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" viewBox="0 0 20 20" fill="currentColor">
+                                                                        <path fill-rule="evenodd" d="M5 4a1 1 0 011-1h8a1 1 0 011 1v1h4a1 1 0 010 2H4a1 1 0 010-2h4V4zm4 8a1 1 0 00-1 1v4a1 1 0 102 0v-4a1 1 0 00-1-1zm-4 0a1 1 0 011-1h8a1 1 0 011 1v4a1 1 0 01-1 1H6a1 1 0 01-1-1v-4z" clip-rule="evenodd" />
+                                                                    </svg>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <?php
+                                                    }
+                                                }
+                                                ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                                        <button data-modal-hide="materials-modal" type="button" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- Colors Modal -->
+                        <div id="colors-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                            <div class="relative p-4 w-full max-w-2xl max-h-full">
+                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Colors</h3>
+                                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="colors-modal">
+                                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                            </svg>
+                                            <span class="sr-only">Close modal</span>
+                                        </button>
+                                    </div>
+                                    <div class="p-4 md:p-5 space-y-4">
+                                        <table class="table-auto w-full">
+                                            <thead>
+                                                <tr>
+                                                    <th class="px-4 py-2">ID</th>
+                                                    <th class="px-4 py-2">Name</th>
+                                                    <th class="px-4 py-2">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                // Fetch colors from the database and loop through them to display in the table
+                                                $colorQuery = "SELECT * FROM `colors`";
+                                                $executequery = mysqli_query($con, $colorQuery);
+                                                if (mysqli_num_rows($executequery)) {
+                                                    while ($row_of_color = mysqli_fetch_assoc($executequery)) {
+                                                        ?>
+                                                        <tr>
+                                                            <td class="border px-4 py-2"><?php echo $row_of_color["color_id"]; ?></td>
+                                                            <td class="border px-4 py-2"><?php echo $row_of_color["color_name"]; ?></td>
+                                                            <td class="border px-4 py-2">
+                                                                <a href="../../main/ajax/edit_colorajax.php?id=<?php echo $row_of_color["color_id"]; ?>" class="text-blue-500 hover:text-blue-700 mr-2">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" viewBox="0 0 20 20" fill="currentColor">
+                                                                        <path fill-rule="evenodd" d="M15.293 4.293a1 1 0 00-1.414 0l-10 10a1 1 0 00-.211.316l-1 3a1 1 0 001.316 1.316l3-1a1 1 0 00.316-.211l10-10a1 1 0 000-1.414zM14 5l-9.998 10L5 14l10-9.998L14 5z" clip-rule="evenodd" />
+                                                                    </svg>
+                                                                </a>
+                                                                <a href="../../main/ajax/delete_colorajax.php?id=<?php echo $row_of_color["color_id"]; ?>" class="text-red-500 hover:text-red-700">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" viewBox="0 0 20 20" fill="currentColor">
+                                                                        <path fill-rule="evenodd" d="M5 4a1 1 0 011-1h8a1 1 0 011 1v1h4a1 1 0 010 2H4a1 1 0 010-2h4V4zm4 8a1 1 0 00-1 1v4a1 1 0 102 0v-4a1 1 0 00-1-1zm-4 0a1 1 0 011-1h8a1 1 0 011 1v4a1 1 0 01-1 1H6a1 1 0 01-1-1v-4z" clip-rule="evenodd" />
+                                                                    </svg>
+
+
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <?php
+                                                    }
+                                                }
+                                                ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                                        <button data-modal-hide="colors-modal" type="button" class="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- Categories Modal -->
+                        <div id="categories-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                            <div class="relative p-4 w-full max-w-2xl max-h-full">
+                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Categories</h3>
+                                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="categories-modal">
+                                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                            </svg>
+                                            <span class="sr-only">Close modal</span>
+                                        </button>
+                                    </div>
+                                    <div class="p-4 md:p-5 space-y-4">
+                                        <table class="table-auto w-full">
+                                            <thead>
+                                                <tr>
+                                                    <th class="px-4 py-2">ID</th>
+                                                    <th class="px-4 py-2">Name</th>
+                                                    <th class="px-4 py-2">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                $category = "SELECT * FROM `category`";
+                                                $executequery = mysqli_query($con, $category);
+                                                if (mysqli_num_rows($executequery)) {
+                                                    while ($row_of_category = mysqli_fetch_assoc($executequery)) {
+                                                ?>
+                                                        <tr>
+                                                            <td class="border px-4 py-2"><?php echo $row_of_category["category_id"]; ?></td>
+                                                            <td class="border px-4 py-2"><?php echo $row_of_category["category_name"]; ?></td>
+                                                            <td class="border px-4 py-2">
+                                                                <a href="../../main/ajax/edit_categoryajax.php?id=<?php echo $row_of_category["category_id"]; ?>" class="text-blue-500 hover:text-blue-700 mr-2">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" viewBox="0 0 20 20" fill="currentColor">
+                                                                        <path fill-rule="evenodd" d="M15.293 4.293a1 1 0 00-1.414 0l-10 10a1 1 0 00-.211.316l-1 3a1 1 0 001.316 1.316l3-1a1 1 0 00.316-.211l10-10a1 1 0 000-1.414zM14 5l-9.998 10L5 14l10-9.998L14 5z" clip-rule="evenodd" />
+                                                                    </svg>
+                                                                </a>
+                                                                <a href="../../main/ajax/delete_categoryajax.php?id=<?php echo $row_of_category["category_id"]; ?>" class="text-red-500 hover:text-red-700">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" viewBox="0 0 20 20" fill="currentColor">
+                                                                        <path fill-rule="evenodd" d="M13 6a1 1 0 011 1v8a1 1 0 01-2 0V7a1 1 0 011-1zM7 6a1 1 0 011 1v8a1 1 0 01-2 0V7a1 1 0 011-1z" clip-rule="evenodd" />
+                                                                    </svg>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                <?php
+                                                    }
+                                                }
+                                                ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                                        <button data-modal-hide="categories-modal" type="button" class="text-white bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- end display modal -->
+
+                    
+
+
+
+                    <?php
+                    // Query to get the total number of products
+                    $productQuery = "SELECT COUNT(*) AS total_products FROM `product`";
+                    $result = mysqli_query($con, $productQuery);
+                    $row = mysqli_fetch_assoc($result);
+                    $totalProducts = $row['total_products'];
+                    ?>
 
                     <div class="w-full md:w-1/2 xl:w-1/3 p-6">                      
                         <!--Metric Card-->
@@ -339,92 +555,209 @@
                                 </div>
                                 <div class="flex-1 text-right md:text-center">
                                     <h2 class="font-bold uppercase text-gray-600">Total No of Products</h2>
-                                   <p class="font-bold text-3xl">3249 <span class="text-green-500"></span></p>
+                                    <p class="font-bold text-3xl"><?php echo $totalProducts; ?> <span class="text-green-500"></span></p>
                                 </div>
                             </div>
                         </div>
                         <!--/Metric Card-->
                     </div>
 
-                    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-                        <!--Metric Card-->
-                        <div class="bg-gradient-to-b from-pink-200 to-pink-100 border-b-4 border-pink-500 rounded-lg shadow-xl p-5">
-                            <div class="flex flex-row items-center">
-                                <div class="flex-shrink pr-4">
-                                    <div class="rounded-full p-5 bg-pink-600"><i class="fas fa-users fa-2x fa-inverse"></i></div>
-                                </div>
-                                <div class="flex-1 text-right md:text-center">
-                                    <h2 class="font-bold uppercase text-gray-600">Total No of Users</h2>
-                                    <p class="font-bold text-3xl">249 <span class="text-pink-500"></span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/Metric Card-->
-                    </div>
-                    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-                        <!--Metric Card-->
-                        <div class="bg-gradient-to-b from-yellow-200 to-yellow-100 border-b-4 border-yellow-600 rounded-lg shadow-xl p-5">
-                            <div class="flex flex-row items-center">
-                                <div class="flex-shrink pr-4">
-                                    <div class="rounded-full p-5 bg-yellow-600"><i class="fas fa-credit-card pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
-                                </div>
-                                <div class="flex-1 text-right md:text-center">
-                                    <h2 class="font-bold uppercase text-gray-600">Total No of Payments</h2>
-                                    <p class="font-bold text-3xl">2 <span class="text-yellow-600"></span></p>
+
+                    <?php
+                        // Query to get the total number of customers
+                        $customerQuery = "SELECT COUNT(*) AS total_customers FROM `Customer`";
+                        $result = mysqli_query($con, $customerQuery);
+                        $row = mysqli_fetch_assoc($result);
+                        $totalCustomers = $row['total_customers'];
+                        ?>
+
+                        <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                            <!--Metric Card-->
+                            <div class="bg-gradient-to-b from-pink-200 to-pink-100 border-b-4 border-pink-500 rounded-lg shadow-xl p-5">
+                                <div class="flex flex-row items-center">
+                                    <div class="flex-shrink pr-4">
+                                        <div class="rounded-full p-5 bg-pink-600"><i class="fas fa-users fa-2x fa-inverse"></i></div>
+                                    </div>
+                                    <div class="flex-1 text-right md:text-center">
+                                        <h2 class="font-bold uppercase text-gray-600">Total No of Users</h2>
+                                        <p class="font-bold text-3xl"><?php echo $totalCustomers; ?> <span class="text-pink-500"></span></p>
+                                    </div>
                                 </div>
                             </div>
+                            <!--/Metric Card-->
                         </div>
-                        <!--/Metric Card-->
-                    </div>
-                    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-                        <!--Metric Card-->
-                        <div class="bg-gradient-to-b from-teal-200 to-teal-100 border-b-4 border-teal-500 rounded-lg shadow-xl p-5">
-                            <div class="flex flex-row items-center">
-                                <div class="flex-shrink pr-4">
-                                    <div class="rounded-full p-5 bg-teal-600"><i class="fas fa-shopping-cart pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
+
+
+                        <?php
+                            // Query to get the total number of payments
+                            $paymentQuery = "SELECT COUNT(*) AS total_payments FROM `Payment`";
+                            $result = mysqli_query($con, $paymentQuery);
+                            $row = mysqli_fetch_assoc($result);
+                            $totalPayments = $row['total_payments'];
+                            ?>
+
+                            <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                                <!--Metric Card-->
+                                <div class="bg-gradient-to-b from-yellow-200 to-yellow-100 border-b-4 border-yellow-600 rounded-lg shadow-xl p-5">
+                                    <div class="flex flex-row items-center">
+                                        <div class="flex-shrink pr-4">
+                                            <div class="rounded-full p-5 bg-yellow-600"><i class="fas fa-credit-card pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
+                                        </div>
+                                        <div class="flex-1 text-right md:text-center">
+                                            <h2 class="font-bold uppercase text-gray-600">Total No of Payments</h2>
+                                            <p class="font-bold text-3xl"><?php echo $totalPayments; ?> <span class="text-yellow-600"></span></p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="flex-1 text-right md:text-center">
-                                    <h2 class="font-bold uppercase text-gray-600">Total No of Orders</h2>
-                                    <p class="font-bold text-3xl">152 days</p>
-                                </div>
+                                <!--/Metric Card-->
                             </div>
-                        </div>
-                        <!--/Metric Card-->
-                    </div>
-                    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-                        <!--Metric Card-->
-                        <div class="bg-gradient-to-b from-indigo-200 to-indigo-100 border-b-4 border-indigo-500 rounded-lg shadow-xl p-5">
-                            <div class="flex flex-row items-center">
-                                <div class="flex-shrink pr-4">
-                                    <div class="rounded-full p-5 bg-indigo-600"><i class="fas fa-comments pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
+
+
+                            <?php
+                                // Query to get the total number of orders
+                                $orderQuery = "SELECT COUNT(*) AS total_orders FROM Orders";
+                                $result = mysqli_query($con, $orderQuery);
+                                $row = mysqli_fetch_assoc($result);
+                                $totalOrders = $row['total_orders'];
+                                ?>
+
+                                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                                    <!--Metric Card-->
+                                    <div class="bg-gradient-to-b from-teal-200 to-teal-100 border-b-4 border-teal-500 rounded-lg shadow-xl p-5">
+                                        <div class="flex flex-row items-center">
+                                            <div class="flex-shrink pr-4">
+                                                <div class="rounded-full p-5 bg-teal-600"><i class="fas fa-shopping-cart pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
+                                            </div>
+                                            <div class="flex-1 text-right md:text-center">
+                                                <h2 class="font-bold uppercase text-gray-600">Total No of Orders</h2>
+                                                <p class="font-bold text-3xl"><?php echo $totalOrders; ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/Metric Card-->
                                 </div>
-                                <div class="flex-1 text-right md:text-center">
-                                    <h2 class="font-bold uppercase text-gray-600">Total No of Feedback</h2>
-                                    <p class="font-bold text-3xl">7 tasks</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/Metric Card-->
-                    </div>
-                    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-                        <!--Metric Card-->
-                        <div class="bg-gradient-to-b from-red-200 to-red-100 border-b-4 border-red-500 rounded-lg shadow-xl p-5">
-                            <div class="flex flex-row items-center">
-                                <div class="flex-shrink pr-4">
-                                    <div class="rounded-full p-5 bg-red-600"><i class="fas fa-map-marker-alt pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
-                                </div>
-                                <div class="flex-1 text-right md:text-center">
-                                    <h2 class="font-bold uppercase text-gray-600">Total No of Address</h2>
-                                    <p class="font-bold text-3xl">3 <span class="text-red-500"></span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/Metric Card-->
-                    </div>
+
+                                <?php
+                                    // Query to get the total number of feedback
+                                    $feedbackQuery = "SELECT COUNT(*) AS total_feedback FROM Review";
+                                    $result = mysqli_query($con, $feedbackQuery);
+                                    $row = mysqli_fetch_assoc($result);
+                                    $totalFeedback = $row['total_feedback'];
+                                    ?>
+
+                                    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                                        <!--Metric Card-->
+                                        <div class="bg-gradient-to-b from-indigo-200 to-indigo-100 border-b-4 border-indigo-500 rounded-lg shadow-xl p-5">
+                                            <div class="flex flex-row items-center">
+                                                <div class="flex-shrink pr-4">
+                                                    <div class="rounded-full p-5 bg-indigo-600"><i class="fas fa-comments pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
+                                                </div>
+                                                <div class="flex-1 text-right md:text-center">
+                                                    <h2 class="font-bold uppercase text-gray-600">Total No of Feedback</h2>
+                                                    <p class="font-bold text-3xl"><?php echo $totalFeedback; ?></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--/Metric Card-->
+                                    </div>
+
+                                    <?php
+                                        // Query to get the total number of addresses
+                                        $addressQuery = "SELECT COUNT(*) AS total_addresses FROM Address";
+                                        $result = mysqli_query($con, $addressQuery);
+                                        $row = mysqli_fetch_assoc($result);
+                                        $totalAddresses = $row['total_addresses'];
+                                        ?>
+
+                                        <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                                            <!--Metric Card-->
+                                            <div class="bg-gradient-to-b from-red-200 to-red-100 border-b-4 border-red-500 rounded-lg shadow-xl p-5">
+                                                <div class="flex flex-row items-center">
+                                                    <div class="flex-shrink pr-4">
+                                                        <div class="rounded-full p-5 bg-red-600"><i class="fas fa-map-marker-alt pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
+                                                    </div>
+                                                    <div class="flex-1 text-right md:text-center">
+                                                        <h2 class="font-bold uppercase text-gray-600">Total No of Address</h2>
+                                                        <p class="font-bold text-3xl"><?php echo $totalAddresses; ?></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/Metric Card-->
+                                        </div>
+
+                                        <?php
+                                            // Query to get the total number of materials
+                                            $materialQuery = "SELECT COUNT(*) AS total_materials FROM Materials";
+                                            $result = mysqli_query($con, $materialQuery);
+                                            $materialRow = mysqli_fetch_assoc($result);
+                                            $totalMaterials = $materialRow['total_materials'];
+
+                                            // Query to get the total number of colors
+                                            $colorQuery = "SELECT COUNT(*) AS total_colors FROM Colors";
+                                            $result = mysqli_query($con, $colorQuery);
+                                            $colorRow = mysqli_fetch_assoc($result);
+                                            $totalColors = $colorRow['total_colors'];
+
+                                            // Query to get the total number of categories
+                                            $categoryQuery = "SELECT COUNT(*) AS total_categories FROM Category";
+                                            $result = mysqli_query($con, $categoryQuery);
+                                            $categoryRow = mysqli_fetch_assoc($result);
+                                            $totalCategories = $categoryRow['total_categories'];
+                                            ?>
+
+                                        <div class="flex flex-wrap -mx-4">
+                                                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                                                    <!--Metric Card for Materials-->
+                                                    <div class="bg-gradient-to-b from-orange-200 to-orange-100 border-b-4 border-orange-600 rounded-lg shadow-xl p-5">
+                                                        <div class="flex flex-row items-center">
+                                                            <div class="flex-shrink pr-4">
+                                                                <div class="rounded-full p-5 bg-orange-600"><i class="fas fa-box pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
+                                                            </div>
+                                                            <div class="flex-1 text-right md:text-center">
+                                                                <h2 class="font-bold uppercase text-gray-600">Total No of Materials</h2>
+                                                                <p class="font-bold text-3xl"><?php echo $totalMaterials; ?></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--/Metric Card for Materials-->
+                                                </div>
+                                                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                                                    <!--Metric Card for Colors-->
+                                                    <div class="bg-gradient-to-b from-stone-200 to-stone-100 border-b-4 border-stone-600 rounded-lg shadow-xl p-5">
+                                                        <div class="flex flex-row items-center">
+                                                            <div class="flex-shrink pr-4">
+                                                                <div class="rounded-full p-5 bg-stone-600"><i class="fas fa-palette pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
+                                                            </div>
+                                                            <div class="flex-1 text-right md:text-center">
+                                                                <h2 class="font-bold uppercase text-gray-600">Total No of Colors</h2>
+                                                                <p class="font-bold text-3xl"><?php echo $totalColors; ?></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--/Metric Card for Colors-->
+                                                </div>
+                                                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                                                    <!--Metric Card for Categories-->
+                                                    <div class="bg-gradient-to-b from-lime-200 to-lime-100 border-b-4 border-lime-600 rounded-lg shadow-xl p-5">
+                                                        <div class="flex flex-row items-center">
+                                                            <div class="flex-shrink pr-4">
+                                                                <div class="rounded-full p-5 bg-lime-600"><i class="fas fa-tags pr-0 md:pr-3 fa-2x fa-inverse"></i></div>
+                                                            </div>
+                                                            <div class="flex-1 text-right md:text-center">
+                                                                <h2 class="font-bold uppercase text-gray-600">Total No of Categories</h2>
+                                                                <p class="font-bold text-3xl"><?php echo $totalCategories; ?></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--/Metric Card for Categories-->
+                                                </div>
+                                        </div>
+
+
                 </div>
 
 
-                <div class="flex flex-row flex-wrap flex-grow mt-2">
+            <div class="flex flex-row flex-wrap flex-grow mt-2">
 
                 <div class="w-full md:w-1/2 xl:w-1/2 p-6">
                     <!--Graph Card-->
@@ -602,22 +935,22 @@
                         <!--/table Card-->
                     </div>
 
-                <div class="w-full md:w-1/2 xl:w-1/2 p-6">
-                    <!--Advert Card-->
-                    <div class="bg-white border-transparent rounded-lg shadow-xl">
-                        <div class="bg-gradient-to-b from-gray-300 to-gray-100 uppercase text-gray-800 border-b-2 border-gray-300 rounded-tl-lg rounded-tr-lg p-2">
-                            <h2 class="font-bold uppercase text-gray-600">Advert</h2>
+                    <div class="w-full md:w-1/2 xl:w-1/2 p-6">
+                        <!--Advert Card-->
+                        <div class="bg-white border-transparent rounded-lg shadow-xl">
+                            <div class="bg-gradient-to-b from-gray-300 to-gray-100 uppercase text-gray-800 border-b-2 border-gray-300 rounded-tl-lg rounded-tr-lg p-2">
+                                <h2 class="font-bold uppercase text-gray-600">Advert</h2>
+                            </div>
+                            <div class="p-5 text-center">
+
+
+                                <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7D52JJ&placement=wwwtailwindtoolboxcom" id="_carbonads_js"></script>
+
+
+                            </div>
                         </div>
-                        <div class="p-5 text-center">
-
-
-                            <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7D52JJ&placement=wwwtailwindtoolboxcom" id="_carbonads_js"></script>
-
-
-                        </div>
+                        <!--/Advert Card-->
                     </div>
-                    <!--/Advert Card-->
-                </div>
 
 
                 </div>
@@ -1037,6 +1370,7 @@
       </script>
 
       <script src="../../js/addproduct.js"></script>
+      <script src="../../js/addcatmatcol.js"></script>
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 

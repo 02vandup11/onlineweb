@@ -87,7 +87,7 @@ $(document).ready(function() {
             // Send the AJAX request with FormData
             $.ajax({
                 type: 'POST',
-                url: '../ajax/adminaddproductajax.php',
+                url: '../ajax/adminaddcusajax.php',
                 data: formData,
                 processData: false, // Prevent jQuery from automatically processing the FormData object
                 contentType: false, // Prevent jQuery from automatically setting the content type
@@ -99,7 +99,7 @@ $(document).ready(function() {
                         });
                         // Delay reload by 2 seconds
                         setTimeout(function(){
-                            window.location.reload();
+                            window.location.href = "./editproduct.php";
                          }, 1000);
                     } else {
                         jSuites.notification({
@@ -119,3 +119,10 @@ $(document).ready(function() {
         }
     });
 });
+
+
+
+
+
+
+

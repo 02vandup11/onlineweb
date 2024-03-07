@@ -480,29 +480,29 @@ if(!empty($_GET["id"]))
 
                                         <script>
                                             document.getElementById('images').addEventListener('change', function (event) {
-    const fileList = event.target.files;
-    const selectedImagesContainer = document.getElementById('selectedImages');
+                                                const fileList = event.target.files;
+                                                const selectedImagesContainer = document.getElementById('selectedImages');
 
-    const maxFiles = 5;
-    if (fileList.length + selectedImagesContainer.childElementCount > maxFiles) {
-        event.target.value = ''; // Clear the selected files
-        return;
-    }
+                                                const maxFiles = 5;
+                                                if (fileList.length + selectedImagesContainer.childElementCount > maxFiles) {
+                                                    event.target.value = ''; // Clear the selected files
+                                                    return;
+                                                }
 
-    for (let i = 0; i < fileList.length; i++) {
-        if (selectedImagesContainer.childElementCount + i < maxFiles) {
-            const file = fileList[i];
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                const img = document.createElement('img');
-                img.src = e.target.result;
-                img.classList.add('size-6', 'm-1');
-                selectedImagesContainer.appendChild(img);
-            };
-            reader.readAsDataURL(file);
-        }
-    }
-});
+                                                for (let i = 0; i < fileList.length; i++) {
+                                                    if (selectedImagesContainer.childElementCount + i < maxFiles) {
+                                                        const file = fileList[i];
+                                                        const reader = new FileReader();
+                                                        reader.onload = function (e) {
+                                                            const img = document.createElement('img');
+                                                            img.src = e.target.result;
+                                                            img.classList.add('size-6', 'm-1');
+                                                            selectedImagesContainer.appendChild(img);
+                                                        };
+                                                        reader.readAsDataURL(file);
+                                                    }
+                                                }
+                                            });
 
                                         </script>
                                     </div>
