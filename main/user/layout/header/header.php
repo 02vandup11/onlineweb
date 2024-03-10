@@ -100,5 +100,5 @@ include("../../config/connect.php");
 
 </nav>
 
-<script src="../../js/cart.js"></script>
+<script src="../../js/buycart.js"></script>
 

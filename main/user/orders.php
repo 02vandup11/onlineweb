@@ -26,6 +26,7 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
     <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
 
+
 </head>
 
 <body>
@@ -187,5 +188,6 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
 include("./layout/footer/footer.php");
 ?>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 
 </body>
