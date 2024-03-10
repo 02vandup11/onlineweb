@@ -214,7 +214,7 @@ $category = $_GET["category"];
                                     <a href="singleproducts.php?category=<?php echo $category; ?>&id=<?php echo $product_id; ?>">
                                         <div>
                                             <h3 class="text-lg font-bold text-gray-800"><?php echo $pro_name; ?></h3>
-                                            <h4 class="text-lg text-gray-700 font-bold mt-4">Rs.<?php echo $pro_price; ?></h4>
+                                            <h4 id="price" class="text-lg text-gray-700 font-bold mt-4">Rs.<?php echo $pro_price; ?></h4>
                                         </div>
                                     </a>
                                 </div>

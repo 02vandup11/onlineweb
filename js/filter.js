@@ -21,7 +21,7 @@ $(document).ready(function() {
   function filterProductsByPrice(price) {
     let products = document.querySelectorAll('.bg-white');
     products.forEach(product => {
-      let productPrice = parseInt(product.querySelector('.text-gray-700').innerText.replace('Rs.', ''));
+      let productPrice = parseInt(product.querySelector('#price').innerText.replace('Rs.', ''));
       if (productPrice <= price) {
         product.style.display = 'block';
       } else {
