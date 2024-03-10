@@ -37,7 +37,7 @@ function generateOtp() {
 $("#reset").click(function () {
     var email = $("#email").val();
     $.ajax({
-        url: "../Ajax/forpassajax.php", // Replace with the actual URL of your server-side script
+        url: "../ajax/forpassajax.php", // Replace with the actual URL of your server-side script
         type: "POST",
         data: {
             email: email,
@@ -120,7 +120,7 @@ $("#changepass").click(function (e) {
     } else {
         errorElement.text("");
         $.ajax({
-            url: "../Ajax/forpassajax.php", // Replace with the actual URL of your server-side script
+            url: "../ajax/forpassajax.php", // Replace with the actual URL of your server-side script
             type: "POST",
             data: {
                 re_email: email,
@@ -136,7 +136,7 @@ $("#changepass").click(function (e) {
                     });
                     $("#password").val("");
                     $("#confirm-password").val("");
-                    window.location.href = "Login.php"
+                    window.location.href = "login.php"
 
                 } else {
                     jSuites.notification({

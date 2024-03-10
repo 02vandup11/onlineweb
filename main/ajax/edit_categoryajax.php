@@ -29,9 +29,9 @@ if (isset($_POST['update'])) {
     $updateResult = mysqli_query($con, $updateQuery);
 
     if ($updateResult) {
-        echo "Category updated successfully.";
+        // echo "Material updated successfully.";
         // Redirect to the admin part page
-        header("Location: ../../main/admin/adminpart.php");
+        header("Location:../admin/adminpart.php");
         exit;
     } else {
         echo "Error updating category.";

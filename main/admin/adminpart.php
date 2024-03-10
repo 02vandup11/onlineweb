@@ -565,7 +565,7 @@
 
                     <?php
                         // Query to get the total number of customers
-                        $customerQuery = "SELECT COUNT(*) AS total_customers FROM `Customer`";
+                        $customerQuery = "SELECT COUNT(*) AS total_customers FROM `customer`";
                         $result = mysqli_query($con, $customerQuery);
                         $row = mysqli_fetch_assoc($result);
                         $totalCustomers = $row['total_customers'];
@@ -590,7 +590,7 @@
 
                         <?php
                             // Query to get the total number of payments
-                            $paymentQuery = "SELECT COUNT(*) AS total_payments FROM `Payment`";
+                            $paymentQuery = "SELECT COUNT(*) AS total_payments FROM `payment`";
                             $result = mysqli_query($con, $paymentQuery);
                             $row = mysqli_fetch_assoc($result);
                             $totalPayments = $row['total_payments'];
@@ -615,7 +615,7 @@
 
                             <?php
                                 // Query to get the total number of orders
-                                $orderQuery = "SELECT COUNT(*) AS total_orders FROM Orders";
+                                $orderQuery = "SELECT COUNT(*) AS total_orders FROM orders";
                                 $result = mysqli_query($con, $orderQuery);
                                 $row = mysqli_fetch_assoc($result);
                                 $totalOrders = $row['total_orders'];
@@ -639,7 +639,7 @@
 
                                 <?php
                                     // Query to get the total number of feedback
-                                    $feedbackQuery = "SELECT COUNT(*) AS total_feedback FROM Review";
+                                    $feedbackQuery = "SELECT COUNT(*) AS total_feedback FROM review";
                                     $result = mysqli_query($con, $feedbackQuery);
                                     $row = mysqli_fetch_assoc($result);
                                     $totalFeedback = $row['total_feedback'];
@@ -663,7 +663,7 @@
 
                                     <?php
                                         // Query to get the total number of addresses
-                                        $addressQuery = "SELECT COUNT(*) AS total_addresses FROM Address";
+                                        $addressQuery = "SELECT COUNT(*) AS total_addresses FROM address";
                                         $result = mysqli_query($con, $addressQuery);
                                         $row = mysqli_fetch_assoc($result);
                                         $totalAddresses = $row['total_addresses'];
@@ -687,19 +687,19 @@
 
                                         <?php
                                             // Query to get the total number of materials
-                                            $materialQuery = "SELECT COUNT(*) AS total_materials FROM Materials";
+                                            $materialQuery = "SELECT COUNT(*) AS total_materials FROM materials";
                                             $result = mysqli_query($con, $materialQuery);
                                             $materialRow = mysqli_fetch_assoc($result);
                                             $totalMaterials = $materialRow['total_materials'];
 
                                             // Query to get the total number of colors
-                                            $colorQuery = "SELECT COUNT(*) AS total_colors FROM Colors";
+                                            $colorQuery = "SELECT COUNT(*) AS total_colors FROM colors";
                                             $result = mysqli_query($con, $colorQuery);
                                             $colorRow = mysqli_fetch_assoc($result);
                                             $totalColors = $colorRow['total_colors'];
 
                                             // Query to get the total number of categories
-                                            $categoryQuery = "SELECT COUNT(*) AS total_categories FROM Category";
+                                            $categoryQuery = "SELECT COUNT(*) AS total_categories FROM category";
                                             $result = mysqli_query($con, $categoryQuery);
                                             $categoryRow = mysqli_fetch_assoc($result);
                                             $totalCategories = $categoryRow['total_categories'];

@@ -162,7 +162,6 @@ $category = $_GET["category"];
                                     $pro_name = $row_of_product["pro_name"];
                                     $pro_descrip = $row_of_product["pro_descrip"];
                                     $pro_price = $row_of_product["pro_price"];
-                                    $pro_customization = $row_of_product["pro_customization"];
                                     $imageQuery = "SELECT image_name FROM image WHERE image_product_id = $product_id LIMIT 1";
                                     $execute_image = mysqli_query($con, $imageQuery);
                                     if (mysqli_num_rows($execute_image) > 0) {
