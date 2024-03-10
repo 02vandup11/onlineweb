@@ -281,7 +281,7 @@ function addUserMessage(message) {
     chatbox.scrollTop = chatbox.scrollHeight;
     $.ajax({
                 type: 'POST',
-                url: '../ajax/chatbotajax.php',
+                url: '../ajax/botajax.php',
                 data:'value='+message,
                 success: function(data) {
                     console.log(data);

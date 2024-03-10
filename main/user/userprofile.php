@@ -327,7 +327,7 @@ if(isset($_SESSION["email"]) && isset($_SESSION["firstname"]) && isset($_SESSION
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 
 <script src="../../js/addaddress.js"></script>
-<script src="../../js/customerdetails.js"></script>
+<script src="../../js/userdetails.js"></script>
 
 
 </body>

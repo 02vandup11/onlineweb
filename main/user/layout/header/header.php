@@ -39,7 +39,7 @@ include("../../config/connect.php");
         <a href="orders.php" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-700 md:p-0 md:dark:hover:text-yellow-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Orders</a>
       </li>
       <li class="mt-2 text-lg">
-        <a href="contact.php" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-700 md:p-0 md:dark:hover:text-yellow-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+        <a href="about.php" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-700 md:p-0 md:dark:hover:text-yellow-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
       </li>
 
 
@@ -79,7 +79,7 @@ include("../../config/connect.php");
 </div>
 
 <li>       <!-- component -->
-  <a href="cart.php" class="flex ml-2 ">
+  <a href="buycart.php" class="flex ml-2 ">
       <div class="relative py-2">
           <div class="t-0 absolute left-3">
               <p class="flex h-1 w-1 items-center justify-center rounded-full bg-amber-800 p-2 ml-1 text-xs text-white" id="cartnum" ></p>

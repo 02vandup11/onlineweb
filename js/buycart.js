@@ -45,7 +45,7 @@ function getcartdetails() {
     cart:userCartItems,
   }
   $.ajax({
-        url: "../Ajax/cartajax.php", // Replace with the actual URL of your server-side script
+        url: "../Ajax/buycartajax.php", // Replace with the actual URL of your server-side script
         type: "POST",
         data: {
           data:JSON.stringify(dataOfcart),

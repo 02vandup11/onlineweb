@@ -29,7 +29,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'POST',
-            url: '../ajax/customerdetailsajax.php',
+            url: '../ajax/userdetailsajax.php',
             data: {
                 firstName:firstName,
                 lastName:lastName,
